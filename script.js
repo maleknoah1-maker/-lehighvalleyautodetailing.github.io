@@ -316,21 +316,47 @@ window.addEventListener('scroll', () => {
 })();
 
 // ─── BEFORE / AFTER CAROUSEL (gallery) ───
-// Click a thumbnail to show that before/after pair in the main frame.
+// Auto-advances every 5s; click a thumbnail to jump to that pair.
+// Hovering the carousel pauses autoplay; leaving resumes it.
 (function () {
+  const carousel = document.querySelector('.gallery-carousel');
   const slides = document.querySelectorAll('.gallery-slide');
   const thumbs = document.querySelectorAll('.gallery-thumb');
-  if (!slides.length || !thumbs.length) return;
+  if (!carousel || !slides.length || !thumbs.length) return;
+
+  const AUTOPLAY_MS = 5000;
+  let current = 0;
+  let timer = null;
+
+  function show(i) {
+    current = i;
+    slides.forEach((slide, j) => slide.classList.toggle('is-active', j === i));
+    thumbs.forEach((t, j) => {
+      t.classList.toggle('is-active', j === i);
+      t.setAttribute('aria-pressed', String(j === i));
+    });
+  }
+
+  function start() {
+    if (!timer) timer = setInterval(() => show((current + 1) % slides.length), AUTOPLAY_MS);
+  }
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
 
   thumbs.forEach((thumb, i) => {
     thumb.addEventListener('click', () => {
-      slides.forEach((slide, j) => slide.classList.toggle('is-active', j === i));
-      thumbs.forEach((t, j) => {
-        t.classList.toggle('is-active', j === i);
-        t.setAttribute('aria-pressed', String(j === i));
-      });
+      show(i);
+      // Restart the timer so autoplay doesn't advance right after a manual pick
+      if (timer) { stop(); start(); }
     });
   });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+
+  start();
 })();
 
 // ─── FORMSPREE SUBMISSION ───

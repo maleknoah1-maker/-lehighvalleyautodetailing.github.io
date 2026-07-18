@@ -124,16 +124,9 @@ section { position: relative; }
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
-.nav-logo {
-  height: 44px;
-  width: auto;
-  display: block;
-  transition: height 0.3s ease;
-}
-#nav.scrolled .nav-logo { height: 36px; }
 
 .nav-links {
   display: flex;
@@ -743,7 +736,7 @@ section { position: relative; }
 }
 .gallery-thumbs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -981,7 +974,8 @@ footer {
 
   /* Stack Before above After so photo detail isn't lost on narrow screens */
   .gallery-slide { grid-template-columns: 1fr; }
-  .gallery-thumbs { gap: 0.6rem; }
+  /* 6 thumbs: two rows of three on narrow screens, still no scrolling */
+  .gallery-thumbs { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
 
   .form-row { grid-template-columns: 1fr; }
 
