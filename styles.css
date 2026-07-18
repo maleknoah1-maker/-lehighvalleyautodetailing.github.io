@@ -716,23 +716,57 @@ section { position: relative; }
 
 .gallery-header { margin-bottom: 3.5rem; }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* ─── BEFORE / AFTER CAROUSEL ─── */
+.gallery-carousel {
+  max-width: 920px;
+  margin: 0 auto;
 }
-.gallery-item {
-  position: relative;
-  aspect-ratio: 4/3;
+.gallery-frame {
   background: var(--dark2);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 3px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.6rem;
+}
+.gallery-slide {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+.gallery-slide.is-active { display: grid; }
+.gallery-half { position: relative; }
+.gallery-half img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery-thumb {
+  padding: 0;
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.25s, border-color 0.25s;
+}
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.gallery-thumb:hover { opacity: 0.8; }
+.gallery-thumb.is-active {
+  opacity: 1;
+  border-color: var(--silver);
 }
 .gallery-badge {
   position: absolute;
@@ -757,13 +791,6 @@ section { position: relative; }
 }
 .gallery-placeholder-icon { opacity: 0.08; }
 .gallery-placeholder-icon svg { width: 40px; }
-.gallery-placeholder-text {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.3;
-}
 
 /* ══════════════════════════════════════════
    CONTACT
@@ -945,7 +972,6 @@ footer {
     gap: 3.5rem;
   }
 
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -953,7 +979,9 @@ footer {
 
   .addons-grid { grid-template-columns: 1fr; }
 
-  .gallery-grid { grid-template-columns: 1fr; }
+  /* Stack Before above After so photo detail isn't lost on narrow screens */
+  .gallery-slide { grid-template-columns: 1fr; }
+  .gallery-thumbs { gap: 0.6rem; }
 
   .form-row { grid-template-columns: 1fr; }
 

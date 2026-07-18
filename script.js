@@ -315,6 +315,24 @@ window.addEventListener('scroll', () => {
   });
 })();
 
+// ─── BEFORE / AFTER CAROUSEL (gallery) ───
+// Click a thumbnail to show that before/after pair in the main frame.
+(function () {
+  const slides = document.querySelectorAll('.gallery-slide');
+  const thumbs = document.querySelectorAll('.gallery-thumb');
+  if (!slides.length || !thumbs.length) return;
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      slides.forEach((slide, j) => slide.classList.toggle('is-active', j === i));
+      thumbs.forEach((t, j) => {
+        t.classList.toggle('is-active', j === i);
+        t.setAttribute('aria-pressed', String(j === i));
+      });
+    });
+  });
+})();
+
 // ─── FORMSPREE SUBMISSION ───
 (function () {
   var form = document.getElementById('contact-form');
