@@ -425,13 +425,52 @@ section { position: relative; }
 /* Lift section content above the dot layer */
 #services .container { position: relative; z-index: 1; }
 
-.services-header { margin-bottom: 4rem; }
+.services-header { margin-bottom: 2.75rem; }
+
+/* ─── PILL TOGGLE (service category tabs) ─── */
+.pill-toggle {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-top: 1.75rem;
+  padding: 0.35rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.02);
+}
+.pill {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.pill:hover { color: var(--text); }
+.pill.is-active {
+  background: var(--silver);
+  color: var(--black);
+}
+
+/* Panel head (swaps per tab) */
+.panel-head { margin-bottom: 3rem; }
 
 .pricing-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   align-items: start;
+}
+/* Exterior tab has two tiers — center them */
+.pricing-cards.two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .pricing-card {
@@ -674,6 +713,42 @@ section { position: relative; }
   font-weight: 700;
   color: var(--silver);
   letter-spacing: 0.04em;
+}
+
+/* Group subheaders + divider within Add-Ons */
+.addons-group-head {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 1.25rem;
+}
+.addons-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 3rem 0;
+}
+
+/* Exterior add-ons: three price columns like the tier cards */
+.addon-item-priced {
+  justify-content: flex-start;
+  gap: 0.85rem;
+}
+.addon-note {
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+}
+.addon-price-rows {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
 }
 
 /* ══════════════════════════════════════════
@@ -954,7 +1029,8 @@ footer {
   .about-image { order: -1; }
   .about-img-placeholder { max-width: 480px; margin: 0 auto; }
 
-  .pricing-cards {
+  .pricing-cards,
+  .pricing-cards.two {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
@@ -980,6 +1056,10 @@ footer {
   .form-row { grid-template-columns: 1fr; }
 
   .stats-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Keep the three pills on one row on small screens */
+  .pill-toggle { width: 100%; justify-content: space-between; }
+  .pill { padding: 0.6rem 0.75rem; letter-spacing: 0.1em; font-size: 0.62rem; }
 }
 
 @media (max-width: 420px) {

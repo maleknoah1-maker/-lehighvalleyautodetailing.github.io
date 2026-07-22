@@ -230,6 +230,64 @@ window.addEventListener('scroll', () => {
   });
 })();
 
+// ─── PACKAGE PILL TABS + PRICE ODOMETER ───
+// All three panels live in the DOM (crawlable); pills show/hide them.
+// On switch, the shown panel's price numbers roll up to their targets
+// in a fast (<0.5s) count-up. Feature lists and labels swap instantly.
+(function () {
+  const pills  = document.querySelectorAll('.pill-toggle .pill');
+  const panels = document.querySelectorAll('.pricing-panel');
+  if (!pills.length || !panels.length) return;
+
+  // Cache each price's integer target up front so a roll always knows
+  // its destination regardless of what's currently on screen.
+  document.querySelectorAll('.pricing-panel .price-amount').forEach(function (el) {
+    el.dataset.value = el.textContent.replace(/[^0-9]/g, '');
+  });
+
+  const DURATION = 420; // milliseconds — under the 0.5s cap
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function rollPrices(panel) {
+    panel.querySelectorAll('.price-amount').forEach(function (el) {
+      const target = parseInt(el.dataset.value, 10);
+      if (isNaN(target)) return;
+      // Token cancels any still-running roll on this element (rapid clicks).
+      el._roll = (el._roll || 0) + 1;
+      const myRoll = el._roll;
+      const start = performance.now();
+      (function step(now) {
+        if (el._roll !== myRoll) return;
+        const t = Math.min(1, (now - start) / DURATION);
+        el.textContent = '$' + Math.round(easeOut(t) * target);
+        if (t < 1) requestAnimationFrame(step);
+        else el.textContent = '$' + target;
+      })(start);
+    });
+  }
+
+  function activate(name) {
+    pills.forEach(function (p) {
+      const on = p.dataset.tab === name;
+      p.classList.toggle('is-active', on);
+      p.setAttribute('aria-selected', String(on));
+    });
+    panels.forEach(function (panel) {
+      const on = panel.dataset.panel === name;
+      panel.hidden = !on;
+      if (on) {
+        // Ensure any reveal elements in the shown panel aren't stuck hidden.
+        panel.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('visible'); });
+        rollPrices(panel);
+      }
+    });
+  }
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () { activate(pill.dataset.tab); });
+  });
+})();
+
 // ─── ANIMATED GRID PATTERN (gallery) ───
 // Ports AnimatedGridPattern: numSquares=30, maxOpacity=0.1, duration=3s, repeatDelay=1s
 // Each rect: fade in over 3s → hold → fade out over 3s → reposition → repeat
