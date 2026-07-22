@@ -245,7 +245,7 @@ window.addEventListener('scroll', () => {
     el.dataset.value = el.textContent.replace(/[^0-9]/g, '');
   });
 
-  const DURATION = 850; // milliseconds — slow, smooth roll
+  const DURATION = 1400; // milliseconds — slow, smooth roll
   function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
 
   function rollPrices(panel) {
