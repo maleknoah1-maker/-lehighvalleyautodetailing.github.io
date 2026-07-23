@@ -485,7 +485,7 @@ window.addEventListener('scroll', () => {
       var lastFired = 0;
       link.addEventListener('click', function () {
         var now = Date.now();
-        if (now - lastFired < 500) return; // collapse duplicate/ghost click events from a single tap
+        if (now - lastFired < 1200) return; // collapse duplicate/ghost click events from a single tap
         lastFired = now;
         gtag('event', eventName, {
           'event_category': 'engagement',
