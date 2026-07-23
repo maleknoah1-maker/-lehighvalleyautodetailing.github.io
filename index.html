@@ -163,7 +163,7 @@
           <a href="#contact" class="btn-primary btn-solid">Book My Detail</a>
           <a href="#services" class="btn-primary">View Services</a>
         </div>
-        <a href="tel:+14847191144" class="hero-phone">(484) 719-1144</a>
+        <a href="tel:+14847191144" class="hero-phone" data-ga-label="hero_phone">(484) 719-1144</a>
       </div>
       <div class="hero-scroll" aria-hidden="true">
         <span>Scroll</span>
@@ -814,10 +814,10 @@
               <div class="contact-info-item">
                 <div class="contact-info-label">Phone</div>
                 <div class="contact-info-value">
-                  <a href="tel:+14847191144">(484) 719-1144</a>
+                  <a href="tel:+14847191144" data-ga-label="contact_phone">(484) 719-1144</a>
                 </div>
                 <div class="contact-info-sub">
-                  <a href="sms:+14847191144" class="contact-text-link">Text us a photo of your car for a fast quote</a>
+                  <a href="sms:+14847191144" class="contact-text-link" data-ga-label="contact_text">Text us a photo of your car for a fast quote</a>
                 </div>
               </div>
               <div class="contact-info-item">
@@ -829,7 +829,14 @@
               <div class="contact-info-item">
                 <div class="contact-info-label">Follow Us</div>
                 <div class="contact-info-value">
-                  <a href="https://instagram.com/lehighautodetail" target="_blank" rel="noopener">@lehighautodetail on Instagram</a>
+                  <a href="https://instagram.com/lehighautodetail" class="contact-social-link" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
+                      <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
+                    </svg>
+                    <span>@lehighautodetail</span>
+                  </a>
                 </div>
               </div>
             </div>

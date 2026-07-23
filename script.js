@@ -451,6 +451,12 @@ window.addEventListener('scroll', () => {
       if (res.ok) {
         form.style.display = 'none';
         thankyou.style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit', {
+            'event_category': 'engagement',
+            'event_label': 'contact_form'
+          });
+        }
       } else {
         return res.json().then(function (json) {
           throw new Error(json.errors ? json.errors.map(function(e){ return e.message; }).join(', ') : 'Submission failed.');
@@ -461,6 +467,29 @@ window.addEventListener('scroll', () => {
       btn.textContent = originalText;
       btn.disabled = false;
       alert('Sorry, something went wrong: ' + err.message + '\nPlease try emailing us directly.');
+    });
+  });
+})();
+
+// ─── GA4 CLICK TRACKING (phone / text) ───
+(function () {
+  if (typeof gtag !== 'function') return;
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      gtag('event', 'phone_click', {
+        'event_category': 'engagement',
+        'event_label': link.getAttribute('data-ga-label') || 'phone'
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href^="sms:"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      gtag('event', 'text_click', {
+        'event_category': 'engagement',
+        'event_label': link.getAttribute('data-ga-label') || 'text'
+      });
     });
   });
 })();

@@ -1335,6 +1335,16 @@ footer {
 }
 .footer-social:hover { color: var(--text); }
 .footer-social svg { width: 18px; height: 18px; }
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.contact-social-link:hover { opacity: 0.75; }
+.contact-social-link svg { width: 16px; height: 16px; flex-shrink: 0; }
 .footer-copy {
   font-size: 0.65rem;
   font-weight: 300;
