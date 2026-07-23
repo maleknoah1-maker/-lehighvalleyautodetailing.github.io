@@ -1241,7 +1241,8 @@ section { position: relative; }
   background-position: right 1rem center;
   padding-right: 2.5rem;
 }
-.form-group select option { background: var(--dark2); }
+.form-group select option,
+.form-group select optgroup { background: var(--dark2); }
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
