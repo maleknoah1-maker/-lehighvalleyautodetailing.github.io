@@ -51,6 +51,7 @@ window.addEventListener('scroll', () => {
 // ─── HERO MESH GRADIENT (WebGL) ───
 (function () {
   const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return; // page has no hero section (e.g. /faq)
   const gl = canvas.getContext('webgl', { antialias: false, alpha: false });
   if (!gl) return; // silently skip if WebGL unavailable
 
@@ -101,38 +102,48 @@ window.addEventListener('scroll', () => {
       vec2 uv = gl_FragCoord.xy / u_res;
       uv.y = 1.0 - uv.y;
 
-      float t = u_time * 0.07;
+      float t = u_time * 0.09;
 
-      // Two domain-warped fbm layers for fluid mesh look
-      vec2 q = vec2(fbm(uv * 2.1 + vec2(t, t * 0.6)),
-                    fbm(uv * 2.1 + vec2(t * 0.8, -t * 0.5)));
+      // Two domain-warped fbm layers for fluid mesh look — large-scale flow
+      // (not blobby) but with more warp/detail weight than before so the
+      // motion actually reads as smoke, not a near-static wash.
+      vec2 q = vec2(fbm(uv * 1.6 + vec2(t, t * 0.6)),
+                    fbm(uv * 1.6 + vec2(t * 0.8, -t * 0.5)));
 
-      float n = fbm(uv * 1.8 + 1.8 * q + vec2(-t * 0.4, t * 0.3));
-      n += fbm(uv * 3.4 + vec2(t * 0.5, -t * 0.7)) * 0.35;
-      n /= 1.35;
+      float n = fbm(uv * 1.4 + 1.6 * q + vec2(-t * 0.4, t * 0.3));
+      n += fbm(uv * 2.4 + vec2(t * 0.5, -t * 0.7)) * 0.28;
+      n /= 1.28;
 
-      // Map n (0–1) to luxury dark range
-      // Base: #0a0a0a (0.039) → mid: #181818 (0.094) → peak: #252525 (0.145)
-      // Plus rare silver flicker only at extreme highs
+      // Map n (0–1) to luxury dark range — wider than before so the smoke
+      // actually shows up instead of reading as a near-flat black wash.
+      // Base: #0a0a0a (0.039) → mid: #212121 (0.13) → peak: #3b3b3b (0.23)
+      // Plus a brighter silver flicker at extreme highs
       float base   = 0.039;
-      float mid    = 0.094;
-      float peak   = 0.148;
+      float mid    = 0.13;
+      float peak   = 0.23;
 
-      float bright;
-      if (n < 0.5) {
-        bright = mix(base, mid,  n * 2.0);
-      } else {
-        bright = mix(mid,  peak, (n - 0.5) * 2.0);
-      }
+      // Smoothstep (not linear) blending between stops so the slope is
+      // continuous at n=0.5 — a plain two-segment lerp leaves a visible
+      // seam where the segments meet.
+      float bright = mix(base, mid, smoothstep(0.0, 1.0, n * 2.0));
+      bright = mix(bright, mix(mid, peak, smoothstep(0.0, 1.0, (n - 0.5) * 2.0)), step(0.5, n));
 
-      // Very faint silver shimmer in brightest spots (~top 8%)
-      float shimmer = smoothstep(0.88, 1.0, n) * 0.055;
+      // Silver shimmer in brightest spots (~top 8%)
+      float shimmer = smoothstep(0.88, 1.0, n) * 0.09;
       bright += shimmer;
 
       // Subtle vignette keeps edges anchored to pure black
       float dist = length(uv - 0.5) * 1.4;
       float vignette = 1.0 - clamp(dist * dist, 0.0, 0.72);
       bright *= vignette;
+
+      // Dither: this range is so dark and narrow (~10-38 of 255) that even a
+      // mathematically smooth gradient quantizes into visible 8-bit banding.
+      // A tiny per-pixel random offset (±0.5 LSB) breaks the contour lines up
+      // without reading as visible grain — the standard fix for banding on
+      // dark, low-contrast gradients.
+      float dither = (hash(gl_FragCoord.xy) - 0.5) * (1.0 / 255.0);
+      bright += dither;
 
       gl_FragColor = vec4(vec3(bright), 1.0);
     }
