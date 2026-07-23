@@ -1146,6 +1146,30 @@ section { position: relative; }
   align-items: start;
 }
 
+.contact-map {
+  margin-top: 4rem;
+}
+.contact-map-frame {
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  line-height: 0; /* remove iframe's inline-element gap */
+}
+.contact-map-iframe {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+.contact-map-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 .contact-info {}
 .contact-info-items {
   margin-top: 2rem;
@@ -1392,6 +1416,9 @@ footer {
   .form-row { grid-template-columns: 1fr; }
 
   .stats-grid { grid-template-columns: 1fr 1fr; }
+
+  .contact-map { margin-top: 3rem; }
+  .contact-map-iframe { height: 260px; }
 
   /* Keep the three pills on one row on small screens */
   .pill-toggle { width: 100%; justify-content: space-between; }
