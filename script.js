@@ -474,22 +474,27 @@ window.addEventListener('scroll', () => {
 // ─── GA4 CLICK TRACKING (phone / text) ───
 (function () {
   if (typeof gtag !== 'function') return;
+  if (window.__gaClickTrackingBound) return; // don't re-run this setup if the script ever loads twice
+  window.__gaClickTrackingBound = true;
 
-  document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      gtag('event', 'phone_click', {
-        'event_category': 'engagement',
-        'event_label': link.getAttribute('data-ga-label') || 'phone'
+  function bindTracking(selector, eventName, fallbackLabel) {
+    document.querySelectorAll(selector).forEach(function (link) {
+      if (link.dataset.gaBound === 'true') return; // never attach more than one listener per element
+      link.dataset.gaBound = 'true';
+
+      var lastFired = 0;
+      link.addEventListener('click', function () {
+        var now = Date.now();
+        if (now - lastFired < 500) return; // collapse duplicate/ghost click events from a single tap
+        lastFired = now;
+        gtag('event', eventName, {
+          'event_category': 'engagement',
+          'event_label': link.getAttribute('data-ga-label') || fallbackLabel
+        });
       });
     });
-  });
+  }
 
-  document.querySelectorAll('a[href^="sms:"]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      gtag('event', 'text_click', {
-        'event_category': 'engagement',
-        'event_label': link.getAttribute('data-ga-label') || 'text'
-      });
-    });
-  });
+  bindTracking('a[href^="tel:"]', 'phone_click', 'phone');
+  bindTracking('a[href^="sms:"]', 'text_click', 'text');
 })();
