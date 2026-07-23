@@ -10,6 +10,13 @@
   <meta property="og:description" content="Professional interior auto detailing in Coopersburg, PA. Serving the Lehigh Valley, Allentown, and Bethlehem." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lehighvalleyautodetailing.com" />
+  <meta property="og:image" content="https://lehighvalleyautodetailing.com/images/06-after-second-row.jpg" />
+  <meta property="og:image:alt" content="Second-row leather seats and floor mats after detailing — cleaned and conditioned" />
+  <meta property="og:site_name" content="Lehigh Valley Auto Detailing" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lehigh Valley Auto Detailing | Professional Interior Detailing | Coopersburg, PA" />
+  <meta name="twitter:description" content="Professional interior auto detailing in Coopersburg, PA. Serving the Lehigh Valley, Allentown, and Bethlehem." />
+  <meta name="twitter:image" content="https://lehighvalleyautodetailing.com/images/06-after-second-row.jpg" />
   <link rel="canonical" href="https://lehighvalleyautodetailing.com" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
@@ -17,6 +24,80 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- ══ LocalBusiness / AutoDetailing structured data (JSON-LD) ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["AutoDetailing", "LocalBusiness"],
+    "name": "Lehigh Valley Auto Detailing",
+    "url": "https://lehighvalleyautodetailing.com",
+    "image": "https://lehighvalleyautodetailing.com/images/06-after-second-row.jpg",
+    "telephone": "+1-484-719-1144",
+    "email": "lehighvalleyautodetailing@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Coopersburg",
+      "addressRegion": "PA",
+      "postalCode": "18036",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Coopersburg" },
+      { "@type": "City", "name": "Allentown" },
+      { "@type": "City", "name": "Bethlehem" },
+      { "@type": "City", "name": "Center Valley" },
+      { "@type": "City", "name": "Emmaus" },
+      { "@type": "City", "name": "Quakertown" }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "description": "By appointment only"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Detailing Packages",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Interior Detailing",
+          "itemListElement": [
+            { "@type": "Offer", "priceCurrency": "USD", "price": "80", "itemOffered": { "@type": "Service", "name": "Basic Interior Clean (Car / Sedan)" } },
+            { "@type": "Offer", "priceCurrency": "USD", "price": "150", "itemOffered": { "@type": "Service", "name": "Standard Interior Detail (Car / Sedan)" } },
+            { "@type": "Offer", "priceCurrency": "USD", "price": "225", "itemOffered": { "@type": "Service", "name": "Deep Interior Restoration (Car / Sedan)" } }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Exterior Detailing",
+          "itemListElement": [
+            { "@type": "Offer", "priceCurrency": "USD", "price": "50", "itemOffered": { "@type": "Service", "name": "Maintenance Wash & Dry (Car / Sedan)" } },
+            { "@type": "Offer", "priceCurrency": "USD", "price": "100", "itemOffered": { "@type": "Service", "name": "Full Exterior Detail (Car / Sedan)" } }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Combo Detailing",
+          "itemListElement": [
+            { "@type": "Offer", "priceCurrency": "USD", "price": "115", "itemOffered": { "@type": "Service", "name": "Full Detail Refresh (Car / Sedan)" } },
+            { "@type": "Offer", "priceCurrency": "USD", "price": "220", "itemOffered": { "@type": "Service", "name": "Full Detail Complete (Car / Sedan)" } },
+            { "@type": "Offer", "priceCurrency": "USD", "price": "285", "itemOffered": { "@type": "Service", "name": "Full Detail Ultimate (Car / Sedan)" } }
+          ]
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- ══ Google Analytics 4 ══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHWCRL0JG6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XHWCRL0JG6');
+  </script>
 </head>
 <body>
 
@@ -55,7 +136,7 @@
       <div class="hero-inner">
         <img src="images/lehigh-valley-auto-detailing-logo.png" class="hero-logo" alt="Lehigh Valley Auto Detailing" />
         <p class="hero-location">Interior Detailing &nbsp;•&nbsp; Coopersburg, PA</p>
-        <p class="hero-slogan">The Detail Your Vehicle Deserves.</p>
+        <h1 class="hero-slogan">The Detail Your Vehicle Deserves.</h1>
         <a href="#services" class="btn-primary">View Services</a>
       </div>
       <div class="hero-scroll" aria-hidden="true">
