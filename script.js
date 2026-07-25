@@ -48,177 +48,23 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// ─── HERO MESH GRADIENT (WebGL) ───
+// ─── HERO SLIDESHOW ───
+// Cross-fades through the hero's background photos on a timer. Mirrors the
+// gallery carousel's autoplay pattern (same AUTOPLAY_MS, same setInterval
+// approach) — see the carousel IIFE below for the sibling implementation.
 (function () {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return; // page has no hero section (e.g. /faq)
-  const gl = canvas.getContext('webgl', { antialias: false, alpha: false });
-  if (!gl) return; // silently skip if WebGL unavailable
+  const slides = document.querySelectorAll('.hero-slideshow .hero-slide');
+  if (!slides.length) return; // page has no hero section (e.g. /faq, /services)
 
-  const VS = `
-    attribute vec2 a_pos;
-    void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
-  `;
+  const AUTOPLAY_MS = 5000;
+  let current = 0;
 
-  // Smooth value-noise fbm mesh gradient — dark luxury palette
-  // Colors: #0a0a0a → #1a1a1a → #222222, with very faint silver shimmer
-  const FS = `
-    precision highp float;
-    uniform float u_time;
-    uniform vec2  u_res;
-
-    // Value noise hash
-    float hash(vec2 p) {
-      p = fract(p * vec2(234.34, 435.345));
-      p += dot(p, p + 34.23);
-      return fract(p.x * p.y);
-    }
-
-    // Bicubic-smoothed value noise
-    float vnoise(vec2 p) {
-      vec2 i = floor(p);
-      vec2 f = fract(p);
-      f = f * f * (3.0 - 2.0 * f);
-      return mix(
-        mix(hash(i),               hash(i + vec2(1.0, 0.0)), f.x),
-        mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x),
-        f.y
-      );
-    }
-
-    // 4-octave fBm
-    float fbm(vec2 p) {
-      float v = 0.0, a = 0.5;
-      p += vec2(17.4, 5.3);
-      for (int i = 0; i < 4; i++) {
-        v += a * vnoise(p);
-        p  = p * 2.03 + vec2(1.7, 9.2);
-        a *= 0.5;
-      }
-      return v;
-    }
-
-    void main() {
-      vec2 uv = gl_FragCoord.xy / u_res;
-      uv.y = 1.0 - uv.y;
-
-      float t = u_time * 0.09;
-
-      // Two domain-warped fbm layers for fluid mesh look — large-scale flow
-      // (not blobby) but with more warp/detail weight than before so the
-      // motion actually reads as smoke, not a near-static wash.
-      vec2 q = vec2(fbm(uv * 1.6 + vec2(t, t * 0.6)),
-                    fbm(uv * 1.6 + vec2(t * 0.8, -t * 0.5)));
-
-      float n = fbm(uv * 1.4 + 1.6 * q + vec2(-t * 0.4, t * 0.3));
-      n += fbm(uv * 2.4 + vec2(t * 0.5, -t * 0.7)) * 0.28;
-      n /= 1.28;
-
-      // Map n (0–1) to luxury dark range — wider than before so the smoke
-      // actually shows up instead of reading as a near-flat black wash.
-      // Base: #0a0a0a (0.039) → mid: #212121 (0.13) → peak: #3b3b3b (0.23)
-      // Plus a brighter silver flicker at extreme highs
-      float base   = 0.039;
-      float mid    = 0.13;
-      float peak   = 0.23;
-
-      // Smoothstep (not linear) blending between stops so the slope is
-      // continuous at n=0.5 — a plain two-segment lerp leaves a visible
-      // seam where the segments meet.
-      float bright = mix(base, mid, smoothstep(0.0, 1.0, n * 2.0));
-      bright = mix(bright, mix(mid, peak, smoothstep(0.0, 1.0, (n - 0.5) * 2.0)), step(0.5, n));
-
-      // Silver shimmer in brightest spots (~top 8%)
-      float shimmer = smoothstep(0.88, 1.0, n) * 0.09;
-      bright += shimmer;
-
-      // Subtle vignette keeps edges anchored to pure black
-      float dist = length(uv - 0.5) * 1.4;
-      float vignette = 1.0 - clamp(dist * dist, 0.0, 0.72);
-      bright *= vignette;
-
-      // Dither: this range is so dark and narrow (~10-38 of 255) that even a
-      // mathematically smooth gradient quantizes into visible 8-bit banding.
-      // A tiny per-pixel random offset (±0.5 LSB) breaks the contour lines up
-      // without reading as visible grain — the standard fix for banding on
-      // dark, low-contrast gradients.
-      float dither = (hash(gl_FragCoord.xy) - 0.5) * (1.0 / 255.0);
-      bright += dither;
-
-      gl_FragColor = vec4(vec3(bright), 1.0);
-    }
-  `;
-
-  function compileShader(type, src) {
-    const s = gl.createShader(type);
-    gl.shaderSource(s, src);
-    gl.compileShader(s);
-    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
-      console.warn('Shader compile error:', gl.getShaderInfoLog(s));
-      return null;
-    }
-    return s;
-  }
-
-  const vs = compileShader(gl.VERTEX_SHADER, VS);
-  const fs = compileShader(gl.FRAGMENT_SHADER, FS);
-  if (!vs || !fs) return;
-
-  const prog = gl.createProgram();
-  gl.attachShader(prog, vs);
-  gl.attachShader(prog, fs);
-  gl.linkProgram(prog);
-  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-    console.warn('Program link error:', gl.getProgramInfoLog(prog));
-    return;
-  }
-  gl.useProgram(prog);
-
-  // Full-screen quad
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const aPos = gl.getAttribLocation(prog, 'a_pos');
-  gl.enableVertexAttribArray(aPos);
-  gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes  = gl.getUniformLocation(prog, 'u_res');
-
-  function resize() {
-    const w = canvas.clientWidth  * Math.min(window.devicePixelRatio, 1.5) | 0;
-    const h = canvas.clientHeight * Math.min(window.devicePixelRatio, 1.5) | 0;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-      gl.viewport(0, 0, w, h);
-    }
-  }
-
-  let rafId;
-  function render(ts) {
-    resize();
-    gl.uniform1f(uTime, ts * 0.001);
-    gl.uniform2f(uRes, canvas.width, canvas.height);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    rafId = requestAnimationFrame(render);
-  }
-
-  // Pause when hero leaves viewport — save GPU
-  const heroSection = document.getElementById('hero');
-  const visObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        if (!rafId) rafId = requestAnimationFrame(render);
-      } else {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
+  setInterval(function () {
+    current = (current + 1) % slides.length;
+    slides.forEach(function (slide, i) {
+      slide.classList.toggle('is-active', i === current);
     });
-  }, { threshold: 0 });
-  visObs.observe(heroSection);
-
-  rafId = requestAnimationFrame(render);
+  }, AUTOPLAY_MS);
 })();
 
 // ─── SPOTLIGHT CARD — per-card relative pointer tracking ───
