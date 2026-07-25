@@ -1180,6 +1180,12 @@ section { position: relative; }
   text-align: center;
 }
 
+.footer-map {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 0.5rem;
+}
+
 .contact-info {}
 .contact-info-items {
   margin-top: 2rem;
