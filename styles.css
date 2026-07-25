@@ -518,6 +518,14 @@ section { position: relative; }
   gap: 3rem;
 }
 .how-item {}
+.how-icon {
+  margin-bottom: 1rem;
+}
+.how-icon-svg {
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+}
 .how-num {
   font-size: 0.75rem;
   font-weight: 700;
