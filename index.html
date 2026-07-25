@@ -58,38 +58,6 @@
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "description": "By appointment only"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Detailing Packages",
-      "itemListElement": [
-        {
-          "@type": "OfferCatalog",
-          "name": "Interior Detailing",
-          "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "80", "itemOffered": { "@type": "Service", "name": "Basic Interior Clean (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "150", "itemOffered": { "@type": "Service", "name": "Standard Interior Detail (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "225", "itemOffered": { "@type": "Service", "name": "Deep Interior Restoration (Car / Sedan)" } }
-          ]
-        },
-        {
-          "@type": "OfferCatalog",
-          "name": "Exterior Detailing",
-          "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "50", "itemOffered": { "@type": "Service", "name": "Maintenance Wash & Dry (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "100", "itemOffered": { "@type": "Service", "name": "Full Exterior Detail (Car / Sedan)" } }
-          ]
-        },
-        {
-          "@type": "OfferCatalog",
-          "name": "Combo Detailing",
-          "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "115", "itemOffered": { "@type": "Service", "name": "Full Detail Refresh (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "220", "itemOffered": { "@type": "Service", "name": "Full Detail Complete (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "285", "itemOffered": { "@type": "Service", "name": "Full Detail Ultimate (Car / Sedan)" } }
-          ]
-        }
-      ]
     }
   }
   </script>
@@ -114,7 +82,16 @@
         </a>
         <ul class="nav-links">
           <li><a href="/#about">About</a></li>
-          <li><a href="/#services">Services</a></li>
+          <li>
+            <a href="/services" class="nav-leaves">
+              Services
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.5 2h4.5v4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 2 7.5 8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
           <li><a href="/#addons">Add-Ons</a></li>
           <li>
             <a href="/faq" class="nav-leaves">
@@ -139,7 +116,14 @@
   <!-- Mobile menu -->
   <nav class="mobile-menu" aria-label="Mobile navigation">
     <a href="/#about">About</a>
-    <a href="/#services">Services</a>
+    <a href="/services" class="nav-leaves">
+      Services
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9.5 2h4.5v4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 2 7.5 8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
     <a href="/#addons">Add-Ons</a>
     <a href="/faq" class="nav-leaves">
       FAQs
@@ -172,7 +156,7 @@
         <h1 class="hero-slogan">The Detail Your Vehicle Deserves.</h1>
         <div class="hero-cta-row">
           <a href="#contact" class="btn-primary btn-solid">Book My Detail</a>
-          <a href="#services" class="btn-primary">View Services</a>
+          <a href="/services" class="btn-primary">View Services</a>
         </div>
         <a href="tel:+14847191144" class="hero-phone" data-ga-label="hero_phone">(484) 719-1144</a>
       </div>
@@ -297,299 +281,11 @@
 
     <div class="section-fade-divider" aria-hidden="true"></div>
 
-    <!-- ══ SERVICES ══ -->
-    <section id="services" aria-label="Detailing packages">
-      <div class="container">
-        <div class="services-header reveal">
-          <p class="label">Packages</p>
-          <div class="section-divider"></div>
-          <div class="pill-toggle" role="tablist" aria-label="Service category">
-            <button class="pill is-active" type="button" role="tab" id="pill-interior" data-tab="interior" aria-selected="true" aria-controls="panel-interior">Interior</button>
-            <button class="pill" type="button" role="tab" id="pill-exterior" data-tab="exterior" aria-selected="false" aria-controls="panel-exterior">Exterior</button>
-            <button class="pill" type="button" role="tab" id="pill-combo" data-tab="combo" aria-selected="false" aria-controls="panel-combo">Combo</button>
-          </div>
-        </div>
-
-        <!-- ── INTERIOR PANEL ── -->
-        <div class="pricing-panel" id="panel-interior" data-panel="interior" role="tabpanel" aria-labelledby="pill-interior">
-          <div class="panel-head reveal">
-            <h2 class="section-heading">Interior Detailing<br>Packages.</h2>
-            <p class="section-subtext">Every service is spelled out — you see exactly what you're getting.</p>
-          </div>
-
-          <div class="pricing-cards">
-
-            <!-- BASIC -->
-            <div class="pricing-card reveal reveal-delay-1" data-glow>
-              <p class="card-tier">Tier 01</p>
-              <h3 class="card-title">Basic Interior<br>Clean</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$80</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$100</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$120</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Full vacuum — seats, carpets, and trunk</li>
-                <li>Wipe and clean all hard surfaces (dash, console, door panels)</li>
-                <li>Clean interior windows</li>
-              </ul>
-            </div>
-
-            <!-- STANDARD -->
-            <div class="pricing-card featured reveal reveal-delay-2" data-glow>
-              <div class="badge-popular">Most Popular</div>
-              <p class="card-tier">Tier 02</p>
-              <h3 class="card-title">Standard Interior<br>Detail</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$150</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$175</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$200</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Full vacuum — seats, carpets, and trunk</li>
-                <li>Wipe and clean all hard surfaces (dash, console, door panels)</li>
-                <li>Clean interior windows</li>
-                <li>Steam clean crevices, vents, and tight areas</li>
-                <li>Carpet and cloth seat shampoo with extraction</li>
-                <li>Leather surfaces wiped and cleaned</li>
-                <li>Door jambs cleaned</li>
-                <li>UV protectant applied to dash and trim</li>
-              </ul>
-            </div>
-
-            <!-- DEEP -->
-            <div class="pricing-card reveal reveal-delay-3" data-glow>
-              <p class="card-tier">Tier 03</p>
-              <h3 class="card-title">Deep Interior<br>Restoration</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$225</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$260</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$300</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Full vacuum — seats, carpets, and trunk</li>
-                <li>Wipe and clean all hard surfaces (dash, console, door panels)</li>
-                <li>Clean interior windows</li>
-                <li>Steam clean crevices, vents, and tight areas</li>
-                <li>Carpet and cloth seat shampoo with extraction</li>
-                <li>Leather surfaces wiped and cleaned</li>
-                <li>Door jambs cleaned</li>
-                <li>UV protectant applied to dash and trim</li>
-                <li>Multiple extraction passes on all fabric surfaces</li>
-                <li>Full steam sanitation of all surfaces</li>
-                <li>Seatbelts steamed and cleaned</li>
-                <li>Full trunk and cargo area including spare tire well</li>
-                <li>All compartments detailed (console, door pockets)</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="pricing-note reveal">
-            <p>Prices may vary based on vehicle condition. Heavily soiled vehicles may incur an additional surcharge ($25–$75). We do not access gloveboxes to protect your personal documents.</p>
-          </div>
-
-          <p class="panel-cta reveal">Ready to book? <a href="#contact">Get in Touch</a></p>
-        </div>
-
-        <!-- ── EXTERIOR PANEL ── -->
-        <div class="pricing-panel" id="panel-exterior" data-panel="exterior" role="tabpanel" aria-labelledby="pill-exterior" hidden>
-          <div class="panel-head">
-            <h2 class="section-heading">Exterior Detailing<br>Packages.</h2>
-            <p class="section-subtext">Protect and restore your vehicle's exterior. Every service is spelled out — you see exactly what you're getting.</p>
-          </div>
-
-          <div class="pricing-cards two">
-
-            <!-- MAINTENANCE WASH -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 01</p>
-              <h3 class="card-title">Maintenance<br>Wash &amp; Dry</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$50</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$60</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$70</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Foam pre-wash</li>
-                <li>Hand wash</li>
-                <li>Wheels and tires cleaned</li>
-                <li>Hand dry</li>
-                <li>Exterior windows</li>
-                <li>Tire dressing</li>
-              </ul>
-            </div>
-
-            <!-- FULL EXTERIOR -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 02</p>
-              <h3 class="card-title">Full Exterior<br>Detail</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$100</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$120</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$140</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Foam pre-wash</li>
-                <li>Hand wash</li>
-                <li>Wheels and tires cleaned</li>
-                <li>Hand dry</li>
-                <li>Exterior windows</li>
-                <li>Tire dressing</li>
-                <li>Exterior trim dressed and protected</li>
-                <li>Bug and tar removal</li>
-                <li>Door jambs cleaned</li>
-                <li>Spray sealant (3 to 6 months protection)</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <p class="panel-cta">Ready to book? <a href="#contact">Get in Touch</a></p>
-        </div>
-
-        <!-- ── COMBO PANEL ── -->
-        <div class="pricing-panel" id="panel-combo" data-panel="combo" role="tabpanel" aria-labelledby="pill-combo" hidden>
-          <div class="panel-head">
-            <h2 class="section-heading">Combo Detailing<br>Packages.</h2>
-            <p class="section-subtext">Interior and exterior together — the best value. Every service is spelled out — you see exactly what you're getting.</p>
-          </div>
-
-          <div class="pricing-cards">
-
-            <!-- REFRESH -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 01</p>
-              <h3 class="card-title">Full Detail<br>Refresh</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$115</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$140</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$165</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Basic Interior Clean</li>
-                <li>Complete Maintenance Wash &amp; Dry</li>
-              </ul>
-            </div>
-
-            <!-- COMPLETE -->
-            <div class="pricing-card featured" data-glow>
-              <div class="badge-popular">Most Popular</div>
-              <p class="card-tier">Tier 02</p>
-              <h3 class="card-title">Full Detail<br>Complete</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$220</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$260</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$300</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Standard Interior Detail</li>
-                <li>Complete Full Exterior Detail</li>
-              </ul>
-            </div>
-
-            <!-- ULTIMATE -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 03</p>
-              <h3 class="card-title">Full Detail<br>Ultimate</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$285</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$340</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$385</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Deep Interior Restoration</li>
-                <li>Complete Full Exterior Detail</li>
-              </ul>
-            </div>
-
-          </div>
-
-          <p class="panel-cta">Ready to book? <a href="#contact">Get in Touch</a></p>
-        </div>
-
-      </div>
-    </section>
+    <!-- ══ VIEW PRICING BRIDGE ══ -->
+    <div class="services-bridge reveal">
+      <p>Full pricing for Interior, Exterior, and Combo packages.</p>
+      <a href="/services" class="btn-primary btn-solid">View Pricing</a>
+    </div>
 
     <div class="section-fade-divider" aria-hidden="true"></div>
 
@@ -600,6 +296,7 @@
           <p class="label">Enhancements</p>
           <div class="section-divider"></div>
           <h2 id="addons-heading" class="section-heading">Add-On<br>Services.</h2>
+          <p class="addons-context">Pair these with any package — full pricing on our <a href="/services">Services page</a>.</p>
         </div>
 
         <p class="addons-group-head reveal">Interior Add-Ons</p>

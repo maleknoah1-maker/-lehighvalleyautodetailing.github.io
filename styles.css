@@ -595,6 +595,21 @@ section { position: relative; }
 
 .services-header { margin-bottom: 2.75rem; }
 
+/* ─── VIEW PRICING BRIDGE (replaces the old in-page Services section) ─── */
+.services-bridge {
+  padding: 4rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.services-bridge p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
 /* ─── PILL TOGGLE (service category tabs) ─── */
 .pill-toggle {
   display: inline-flex;
@@ -844,6 +859,20 @@ section { position: relative; }
 }
 
 .addons-header { margin-bottom: 3.5rem; }
+
+.addons-context {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+.addons-context a {
+  color: var(--silver);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192,192,192,0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+.addons-context a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ─── SPOTLIGHT CARD GRID ─── */
 .addons-grid {
