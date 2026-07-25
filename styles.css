@@ -594,8 +594,8 @@ section { position: relative; }
 }
 .pill:hover { color: var(--text); }
 .pill.is-active {
-  background: var(--silver);
-  color: var(--black);
+  background: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Panel head (swaps per tab) */
