@@ -142,8 +142,18 @@ section { position: relative; }
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
