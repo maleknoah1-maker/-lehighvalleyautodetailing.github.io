@@ -258,6 +258,19 @@ section { position: relative; }
   padding: calc(var(--nav-height) + 2rem) 2rem 4rem;
 }
 
+/* ─── TOP/BOTTOM BORDER BARS ─── */
+.hero-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-bar-top { top: 0; }
+.hero-bar-bottom { bottom: 0; }
+
 /* ─── PHOTO SLIDESHOW ─── */
 .hero-slideshow {
   position: absolute;
@@ -329,13 +342,27 @@ section { position: relative; }
   display: block;
 }
 
+/* Translucent card behind the text/CTAs so they stay legible over any
+   slideshow photo — the logo above it is deliberately left uncovered. */
+.hero-text-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: rgba(10,10,10,0.45);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .hero-location {
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-top: 0.5rem;
 }
 
 .hero-slogan {
@@ -1504,6 +1531,7 @@ footer {
 @media (max-width: 420px) {
   .container { padding: 0 1.25rem; }
   .hero-logo { width: 90vw; }
+  .hero-text-panel { padding: 1.5rem 1.25rem; }
 }
 
 /* ══════════════════════════════════════════
