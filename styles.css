@@ -1156,9 +1156,6 @@ section { position: relative; }
   align-items: start;
 }
 
-.contact-map {
-  margin-top: 4rem;
-}
 .contact-map-frame {
   background: var(--dark2);
   border: 1px solid rgba(255,255,255,0.05);
@@ -1184,6 +1181,9 @@ section { position: relative; }
   width: 100%;
   max-width: 500px;
   margin-top: 0.5rem;
+}
+.footer-map .contact-map-iframe {
+  height: 260px;
 }
 
 .contact-info {}
@@ -1443,7 +1443,6 @@ footer {
 
   .stats-grid { grid-template-columns: 1fr 1fr; }
 
-  .contact-map { margin-top: 3rem; }
   .contact-map-iframe { height: 260px; }
 
   /* Keep the three pills on one row on small screens */
