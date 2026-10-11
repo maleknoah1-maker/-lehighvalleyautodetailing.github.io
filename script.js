@@ -38,13 +38,18 @@ revealEls.forEach(el => observer.observe(el));
 // ─── SMOOTH ACTIVE NAV ───
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
+// Links are root-absolute ("/#about", "/services#addons"), so match on both
+// path and hash. Trailing slashes are stripped so "/services/" == "/services".
+const stripSlash = p => p.replace(/\/+$/, '') || '/';
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(s => {
     if (window.scrollY >= s.offsetTop - 120) current = s.id;
   });
   navLinks.forEach(link => {
-    link.style.color = link.getAttribute('href') === '#' + current ? 'var(--text)' : '';
+    const here = current && link.hash === '#' + current &&
+      stripSlash(link.pathname) === stripSlash(location.pathname);
+    link.style.color = here ? 'var(--text)' : '';
   });
 }, { passive: true });
 
@@ -143,6 +148,12 @@ window.addEventListener('scroll', () => {
   pills.forEach(function (pill) {
     pill.addEventListener('click', function () { activate(pill.dataset.tab); });
   });
+
+  // Deep links from the homepage package cards: /services#exterior etc.
+  const fromHash = location.hash.slice(1);
+  if (Array.prototype.some.call(pills, function (p) { return p.dataset.tab === fromHash; })) {
+    activate(fromHash);
+  }
 })();
 
 // ─── ANIMATED GRID PATTERN (gallery) ───
@@ -230,47 +241,153 @@ window.addEventListener('scroll', () => {
   });
 })();
 
-// ─── BEFORE / AFTER CAROUSEL (gallery) ───
-// Auto-advances every 5s; click a thumbnail to jump to that pair.
-// Hovering the carousel pauses autoplay; leaving resumes it.
+// ─── BEFORE / AFTER CAROUSELS (gallery) ───
+// One carousel per category tab (Exterior / Interior). The visible one
+// auto-advances every 5s; clicking a thumbnail jumps to that pair, and
+// hovering pauses autoplay. Videos only play while their slide is showing.
 (function () {
-  const carousel = document.querySelector('.gallery-carousel');
-  const slides = document.querySelectorAll('.gallery-slide');
-  const thumbs = document.querySelectorAll('.gallery-thumb');
-  if (!carousel || !slides.length || !thumbs.length) return;
+  const carousels = document.querySelectorAll('.gallery-carousel');
+  if (!carousels.length) return;
 
   const AUTOPLAY_MS = 5000;
-  let current = 0;
-  let timer = null;
 
-  function show(i) {
-    current = i;
-    slides.forEach((slide, j) => slide.classList.toggle('is-active', j === i));
-    thumbs.forEach((t, j) => {
-      t.classList.toggle('is-active', j === i);
-      t.setAttribute('aria-pressed', String(j === i));
+  const instances = Array.from(carousels, carousel => {
+    const slides = carousel.querySelectorAll('.gallery-slide');
+    const thumbs = carousel.querySelectorAll('.gallery-thumb');
+    let current = 0;
+    let timer = null;
+
+    function syncVideos() {
+      slides.forEach((slide, j) => {
+        slide.querySelectorAll('video').forEach(v => {
+          if (j === current && !carousel.hidden) {
+            v.preload = 'auto';
+            const p = v.play();
+            if (p) p.catch(() => {}); // autoplay can be refused; the poster still shows
+          } else {
+            v.pause();
+          }
+        });
+      });
+    }
+
+    function show(i) {
+      current = i;
+      slides.forEach((slide, j) => slide.classList.toggle('is-active', j === i));
+      thumbs.forEach((t, j) => {
+        t.classList.toggle('is-active', j === i);
+        t.setAttribute('aria-pressed', String(j === i));
+      });
+      syncVideos();
+    }
+
+    function start() {
+      if (!timer && !carousel.hidden) {
+        timer = setInterval(() => show((current + 1) % slides.length), AUTOPLAY_MS);
+      }
+    }
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => {
+        show(i);
+        // Restart the timer so autoplay doesn't advance right after a manual pick
+        if (timer) { stop(); start(); }
+      });
     });
-  }
 
-  function start() {
-    if (!timer) timer = setInterval(() => show((current + 1) % slides.length), AUTOPLAY_MS);
-  }
-  function stop() {
-    clearInterval(timer);
-    timer = null;
-  }
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
 
-  thumbs.forEach((thumb, i) => {
-    thumb.addEventListener('click', () => {
-      show(i);
-      // Restart the timer so autoplay doesn't advance right after a manual pick
-      if (timer) { stop(); start(); }
+    return { carousel, show, start, stop, get current() { return current; } };
+  });
+
+  // Category tabs
+  const tabs = document.querySelectorAll('[data-gallery-tab]');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const name = tab.dataset.galleryTab;
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', String(on));
+      });
+      instances.forEach(inst => {
+        const on = inst.carousel.dataset.gallery === name;
+        inst.stop();
+        inst.carousel.hidden = !on;
+        if (on) {
+          inst.carousel.classList.add('visible'); // skip the scroll-reveal fade
+          inst.show(0);
+          inst.start();
+        } else {
+          inst.show(inst.current); // pauses its videos
+        }
+      });
     });
   });
 
+  instances.forEach(inst => { inst.show(0); inst.start(); });
+})();
+
+// ─── REVIEWS CAROUSEL ───
+// Fades through .review-slide elements every 7s. Dots are generated from the
+// slide count. Hover or keyboard focus pauses; reduced-motion users get no
+// autoplay. Does nothing while the section is hidden or has no slides.
+(function () {
+  const section = document.getElementById('reviews');
+  if (!section || section.hidden) return;
+  const slides = section.querySelectorAll('.review-slide');
+  const dotsWrap = section.querySelector('.reviews-dots');
+  const carousel = section.querySelector('.reviews-carousel');
+  if (!slides.length) return;
+
+  const AUTOPLAY_MS = 7000;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let timer = null;
+
+  const dots = Array.from(slides, (_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'reviews-dot';
+    dot.setAttribute('aria-label', 'Show review ' + (i + 1) + ' of ' + slides.length);
+    dot.addEventListener('click', () => { show(i); restart(); });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  function show(i) {
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, j) => {
+      s.classList.toggle('is-active', j === current);
+      s.setAttribute('aria-hidden', String(j !== current));
+    });
+    dots.forEach((d, j) => d.setAttribute('aria-current', String(j === current)));
+  }
+
+  function start() {
+    if (!reduceMotion && !timer && slides.length > 1) {
+      timer = setInterval(() => show(current + 1), AUTOPLAY_MS);
+    }
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
+
+  section.querySelectorAll('.reviews-arrow').forEach(btn => {
+    btn.addEventListener('click', () => { show(current + Number(btn.dataset.dir)); restart(); });
+  });
+  if (slides.length < 2) section.querySelector('.reviews-controls').style.display = 'none';
+
   carousel.addEventListener('mouseenter', stop);
   carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
 
+  show(0);
   start();
 })();
 
