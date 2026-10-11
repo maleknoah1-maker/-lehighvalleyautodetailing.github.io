@@ -174,6 +174,18 @@ section { position: relative; }
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--text); }
+.nav-links a { white-space: nowrap; }
+/* Seven links: tighten spacing on small laptops before the hamburger takes over */
+@media (max-width: 1200px) {
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { letter-spacing: 0.14em; }
+  .nav-book { padding: 0.5rem 0.9rem; }
+}
+@media (max-width: 1060px) {
+  .nav-logo-img { height: 32px; }
+  .nav-links { gap: 1.1rem; }
+  .nav-links a { font-size: 0.65rem; letter-spacing: 0.1em; }
+}
 .nav-book {
   background: transparent;
   border: 1px solid var(--accent);
