@@ -1260,6 +1260,53 @@ section { position: relative; }
 .faq-answer a:hover { color: var(--accent-light); }
 
 /* ══════════════════════════════════════════
+   LEGAL PAGES (Privacy Policy, Service Policies)
+══════════════════════════════════════════ */
+.legal {
+  padding: calc(var(--nav-height) + 5rem) 0 7rem;
+  background: var(--dark1);
+}
+.legal-header { margin-bottom: 3rem; }
+.legal-updated {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.legal-body { max-width: 760px; }
+.legal-body h2 {
+  margin: 2.75rem 0 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.legal-body p,
+.legal-body li {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+.legal-body p + p { margin-top: 0.85rem; }
+.legal-body .legal-intro { font-size: 1rem; color: var(--silver-light); }
+.legal-body strong { color: var(--text); font-weight: 600; }
+.legal-body ul { margin: 0.85rem 0 0 1.1rem; display: grid; gap: 0.5rem; }
+.legal-body a {
+  color: var(--silver);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+.legal-body a:hover { color: var(--text); }
+
+@media (max-width: 640px) {
+  .legal { padding: calc(var(--nav-height) + 3rem) 0 5rem; }
+}
+
+/* ══════════════════════════════════════════
    GALLERY
 ══════════════════════════════════════════ */
 #gallery {
@@ -1689,6 +1736,14 @@ section { position: relative; }
   letter-spacing: 0.05em;
   color: var(--text-muted);
 }
+.form-legal {
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+.form-legal a { color: var(--silver); text-underline-offset: 2px; }
+.form-legal a:hover { color: var(--text); }
 
 /* ══════════════════════════════════════════
    FOOTER
@@ -1713,6 +1768,17 @@ footer {
 .footer-col-brand { align-items: flex-start; }
 .footer-col-map { align-items: center; text-align: center; }
 .footer-col-payment { align-items: flex-end; text-align: right; }
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+.footer-legal a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--text); }
 
 .footer-col-payment .payment-accepted {
   align-items: flex-end;
