@@ -1207,6 +1207,126 @@ section { position: relative; }
 .gallery-placeholder-icon svg { width: 40px; }
 
 /* ══════════════════════════════════════════
+   REVIEWS
+══════════════════════════════════════════ */
+#reviews {
+  padding: 8rem 0;
+  background: var(--dark1);
+}
+/* While the section is hidden, drop its trailing divider so two don't stack */
+#reviews[hidden] + .section-fade-divider { display: none; }
+
+.reviews-header { margin-bottom: 3.5rem; }
+
+.reviews-carousel {
+  max-width: 760px;
+  margin: 0 auto;
+}
+/* All slides share one grid cell, so the track is always as tall as the
+   longest review and nothing below jumps when slides change. */
+.reviews-track { display: grid; }
+.review-slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 2.75rem 2.5rem;
+  background: var(--dark2);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s;
+}
+.review-slide.is-active { opacity: 1; visibility: visible; }
+
+.review-stars {
+  color: #d9a93a;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+.review-text { margin: 1.5rem 0; }
+.review-text p {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.review-author {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1rem;
+}
+.review-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.review-source {
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.reviews-arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s;
+}
+.reviews-arrow:hover { color: var(--text); border-color: var(--silver); }
+.reviews-arrow svg { width: 14px; }
+.reviews-dots { display: flex; gap: 0.5rem; }
+.reviews-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.reviews-dot[aria-current="true"] { background: var(--silver); }
+
+.reviews-more {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.reviews-more a { color: var(--text-muted); text-underline-offset: 3px; }
+.reviews-more a:hover { color: var(--text); }
+
+@media (max-width: 640px) {
+  #reviews { padding: 5rem 0; }
+  .review-slide { padding: 2rem 1.5rem; }
+  .review-text p { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-slide { transition: none; }
+}
+
+/* ══════════════════════════════════════════
    CONTACT
 ══════════════════════════════════════════ */
 #contact {
