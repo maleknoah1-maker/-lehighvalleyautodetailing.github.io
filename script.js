@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0, rootMargin: '0px 0px 15% 0px' }); // fire just before an element scrolls in, so nothing sits blank
 
 revealEls.forEach(el => observer.observe(el));
 
@@ -63,6 +63,13 @@ window.addEventListener('scroll', () => {
 
   const AUTOPLAY_MS = 5000;
   let current = 0;
+
+  // Only the first slide loads up front; the rest (data-src) load after the page does.
+  window.addEventListener('load', function () {
+    slides.forEach(function (slide) {
+      if (slide.dataset.src) slide.src = slide.dataset.src;
+    });
+  });
 
   setInterval(function () {
     current = (current + 1) % slides.length;
@@ -333,62 +340,17 @@ window.addEventListener('scroll', () => {
   instances.forEach(inst => { inst.show(0); inst.start(); });
 })();
 
-// ─── REVIEWS CAROUSEL ───
-// Fades through .review-slide elements every 7s. Dots are generated from the
-// slide count. Hover or keyboard focus pauses; reduced-motion users get no
-// autoplay. Does nothing while the section is hidden or has no slides.
+// ─── REVIEWS: "Show all" on phones ───
+// Phones show the first three cards; the button reveals the rest.
 (function () {
-  const section = document.getElementById('reviews');
-  if (!section || section.hidden) return;
-  const slides = section.querySelectorAll('.review-slide');
-  const dotsWrap = section.querySelector('.reviews-dots');
-  const carousel = section.querySelector('.reviews-carousel');
-  if (!slides.length) return;
-
-  const AUTOPLAY_MS = 7000;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let current = 0;
-  let timer = null;
-
-  const dots = Array.from(slides, (_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'reviews-dot';
-    dot.setAttribute('aria-label', 'Show review ' + (i + 1) + ' of ' + slides.length);
-    dot.addEventListener('click', () => { show(i); restart(); });
-    dotsWrap.appendChild(dot);
-    return dot;
+  const btn = document.querySelector('.reviews-more-btn');
+  const grid = document.getElementById('reviews-grid');
+  if (!btn || !grid) return;
+  btn.addEventListener('click', () => {
+    grid.classList.add('is-expanded');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.hidden = true;
   });
-
-  function show(i) {
-    current = (i + slides.length) % slides.length;
-    slides.forEach((s, j) => {
-      s.classList.toggle('is-active', j === current);
-      s.setAttribute('aria-hidden', String(j !== current));
-    });
-    dots.forEach((d, j) => d.setAttribute('aria-current', String(j === current)));
-  }
-
-  function start() {
-    if (!reduceMotion && !timer && slides.length > 1) {
-      timer = setInterval(() => show(current + 1), AUTOPLAY_MS);
-    }
-  }
-  function stop() { clearInterval(timer); timer = null; }
-  function restart() { stop(); start(); }
-
-  section.querySelectorAll('.reviews-arrow').forEach(btn => {
-    btn.addEventListener('click', () => { show(current + Number(btn.dataset.dir)); restart(); });
-  });
-  if (slides.length < 2) section.querySelector('.reviews-controls').style.display = 'none';
-
-  carousel.addEventListener('mouseenter', stop);
-  carousel.addEventListener('mouseleave', start);
-  carousel.addEventListener('focusin', stop);
-  carousel.addEventListener('focusout', start);
-
-  show(0);
-  start();
 })();
 
 // ─── FORMSPREE SUBMISSION ───

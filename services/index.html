@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interior & Exterior Detailing Packages & Pricing | Lehigh Valley Auto Detailing</title>
+  <title>Detailing Packages &amp; Prices | Lehigh Valley Auto Detailing</title>
   <meta name="description" content="Full pricing for Interior, Exterior, and Combo auto detailing packages in Coopersburg, PA. Every service spelled out, no surprise charges." />
   <meta name="keywords" content="auto detailing prices Coopersburg PA, car detailing packages Lehigh Valley, interior exterior detailing cost" />
-  <meta property="og:title" content="Interior & Exterior Detailing Packages & Pricing | Lehigh Valley Auto Detailing" />
+  <meta property="og:title" content="Detailing Packages &amp; Prices | Lehigh Valley Auto Detailing" />
   <meta property="og:description" content="Full pricing for Interior, Exterior, and Combo auto detailing packages in Coopersburg, PA. Every service spelled out, no surprise charges." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lehighvalleyautodetailing.com/services" />
-  <meta property="og:image" content="https://lehighvalleyautodetailing.com/images/hero-exterior-front.jpg" />
-  <meta property="og:image:alt" content="Silver Lexus RX after a full exterior detail, paint gloss reflecting the house behind it" />
+  <meta property="og:url" content="https://lehighvalleyautodetailing.com/services/" />
+  <meta property="og:image" content="https://lehighvalleyautodetailing.com/images/hero-rear-window.jpg" />
+  <meta property="og:image:alt" content="Lexus rear window and paint after an exterior detail, glossy enough to reflect the trees and sky" />
   <meta property="og:site_name" content="Lehigh Valley Auto Detailing" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Interior & Exterior Detailing Packages & Pricing | Lehigh Valley Auto Detailing" />
+  <meta name="twitter:title" content="Detailing Packages &amp; Prices | Lehigh Valley Auto Detailing" />
   <meta name="twitter:description" content="Full pricing for Interior, Exterior, and Combo auto detailing packages in Coopersburg, PA. Every service spelled out, no surprise charges." />
-  <meta name="twitter:image" content="https://lehighvalleyautodetailing.com/images/hero-exterior-front.jpg" />
-  <link rel="canonical" href="https://lehighvalleyautodetailing.com/services" />
+  <meta name="twitter:image" content="https://lehighvalleyautodetailing.com/images/hero-rear-window.jpg" />
+  <link rel="canonical" href="https://lehighvalleyautodetailing.com/services/" />
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,17 +25,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
 
-  <!-- ══ LocalBusiness / AutoDetailing structured data (JSON-LD) ══ -->
+  <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["AutoDetailing", "LocalBusiness"],
+    "@type": "AutomotiveBusiness",
     "name": "Lehigh Valley Auto Detailing",
-    "url": "https://lehighvalleyautodetailing.com",
-    "image": "https://lehighvalleyautodetailing.com/images/hero-exterior-front.jpg",
+    "description": "Interior and exterior auto detailing in Coopersburg, PA, by appointment. Customers drop their vehicles off; serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.",
+    "url": "https://lehighvalleyautodetailing.com/",
+    "logo": "https://lehighvalleyautodetailing.com/images/lehigh-valley-auto-detailing-logo-wide.png",
+    "image": "https://lehighvalleyautodetailing.com/images/hero-rear-window.jpg",
     "telephone": "+1-484-719-1144",
-    "email": "lehighvalleyautodetailing@gmail.com",
+    "email": "noah@lehighvalleyautodetailing.com",
     "priceRange": "$$",
+    "hasMap": "https://www.google.com/maps?cid=6334011887982355620",
     "sameAs": [
       "https://www.google.com/maps?cid=6334011887982355620",
       "https://instagram.com/lehighautodetailing"
@@ -48,12 +51,30 @@
       "addressCountry": "US"
     },
     "areaServed": [
-      { "@type": "City", "name": "Coopersburg" },
-      { "@type": "City", "name": "Allentown" },
-      { "@type": "City", "name": "Bethlehem" },
-      { "@type": "City", "name": "Center Valley" },
-      { "@type": "City", "name": "Emmaus" },
-      { "@type": "City", "name": "Quakertown" }
+      {
+        "@type": "City",
+        "name": "Coopersburg"
+      },
+      {
+        "@type": "City",
+        "name": "Allentown"
+      },
+      {
+        "@type": "City",
+        "name": "Bethlehem"
+      },
+      {
+        "@type": "City",
+        "name": "Center Valley"
+      },
+      {
+        "@type": "City",
+        "name": "Emmaus"
+      },
+      {
+        "@type": "City",
+        "name": "Quakertown"
+      }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -63,30 +84,114 @@
           "@type": "OfferCatalog",
           "name": "Interior Detailing",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "80", "itemOffered": { "@type": "Service", "name": "Basic Interior Clean (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "150", "itemOffered": { "@type": "Service", "name": "Standard Interior Detail (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "225", "itemOffered": { "@type": "Service", "name": "Deep Interior Restoration (Car / Sedan)" } }
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "80",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Basic Interior Clean (Car / Sedan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "150",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Standard Interior Detail (Car / Sedan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "225",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Deep Interior Restoration (Car / Sedan)"
+              }
+            }
           ]
         },
         {
           "@type": "OfferCatalog",
           "name": "Exterior Detailing",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "50", "itemOffered": { "@type": "Service", "name": "Maintenance Wash & Dry (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "100", "itemOffered": { "@type": "Service", "name": "Full Exterior Detail (Car / Sedan)" } }
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "50",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Maintenance Wash & Dry (Car / Sedan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "100",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Exterior Detail (Car / Sedan)"
+              }
+            }
           ]
         },
         {
           "@type": "OfferCatalog",
           "name": "Combo Detailing",
           "itemListElement": [
-            { "@type": "Offer", "priceCurrency": "USD", "price": "115", "itemOffered": { "@type": "Service", "name": "Full Detail Refresh (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "220", "itemOffered": { "@type": "Service", "name": "Full Detail Complete (Car / Sedan)" } },
-            { "@type": "Offer", "priceCurrency": "USD", "price": "285", "itemOffered": { "@type": "Service", "name": "Full Detail Ultimate (Car / Sedan)" } }
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "115",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Detail Refresh (Car / Sedan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "220",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Detail Complete (Car / Sedan)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "285",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Detail Ultimate (Car / Sedan)"
+              }
+            }
           ]
         }
       ]
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lehighvalleyautodetailing.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services & Pricing",
+        "item": "https://lehighvalleyautodetailing.com/services/"
+      }
+    ]
   }
   </script>
 
@@ -109,16 +214,11 @@
           <img src="../images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="nav-logo-img" />
         </a>
         <ul class="nav-links">
-          <li><a href="/#about">About</a></li>
-          <li>
-            <a href="/services" aria-current="page">Services</a>
-          </li>
-          <li><a href="/services#addons">Add-Ons</a></li>
-          <li>
-            <a href="/faq">FAQs</a>
-          </li>
+          <li><a href="/services/" aria-current="page">Services</a></li>
           <li><a href="/#gallery">Gallery</a></li>
           <li><a href="/#reviews">Reviews</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/faq/">FAQs</a></li>
           <li><a href="/#contact" class="nav-book">Book Now</a></li>
         </ul>
         <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -130,12 +230,11 @@
 
   <!-- Mobile menu -->
   <nav class="mobile-menu" aria-label="Mobile navigation">
-    <a href="/#about">About</a>
-    <a href="/services" aria-current="page">Services</a>
-    <a href="/services#addons">Add-Ons</a>
-    <a href="/faq">FAQs</a>
+    <a href="/services/" aria-current="page">Services &amp; Pricing</a>
     <a href="/#gallery">Gallery</a>
     <a href="/#reviews">Reviews</a>
+    <a href="/#about">About</a>
+    <a href="/faq/">FAQs</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
 
@@ -567,7 +666,7 @@
             <span>@lehighautodetailing</span>
           </a>
           <p class="footer-copy">&copy; 2026 Lehigh Valley Auto Detailing. Coopersburg, PA.</p>
-          <p class="footer-legal"><a href="/service-policies">Service Policies</a><span aria-hidden="true">&middot;</span><a href="/privacy">Privacy Policy</a></p>
+          <p class="footer-legal"><a href="/service-policies/">Service Policies</a><span aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></p>
         </div>
 
         <div class="footer-col footer-col-map">
@@ -597,6 +696,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- ══ STICKY MOBILE CTA (phones only) ══ -->
+  <nav class="mobile-cta" aria-label="Quick contact">
+    <a href="tel:+14847191144" data-ga-label="sticky_call">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Call
+    </a>
+    <a href="sms:+14847191144" data-ga-label="sticky_text">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Text
+    </a>
+    <a href="/#contact" class="mobile-cta-book">Request a Time</a>
+  </nav>
 
   <script src="../script.js"></script>
 </body>
