@@ -1292,5 +1292,62 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
 .reviews-cta { margin-top: 2.75rem; }
 /* Exterior photo: favor the headlight and grille over the house */
 .s-card[href="/exterior-detailing/"] .s-img img { object-position: 50% 100%; }
-/* Reviews: cards size to their own text instead of matching the longest one */
-.marquee-track { align-items: flex-start; }
+/* Reviews: long reviews are clamped; "Read full review" opens the whole text */
+.r-card { display: flex; flex-direction: column; }
+.r-card blockquote p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+}
+.r-card figcaption { margin-top: auto; }
+.r-more {
+  align-self: flex-start;
+  margin: -0.4rem 0 1.1rem;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--silver);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
+  cursor: pointer;
+}
+.r-more:hover { color: var(--text); border-color: var(--silver); }
+.review-dialog {
+  width: min(600px, calc(100vw - 2rem));
+  max-height: 85vh;
+  margin: auto;
+  padding: 2.25rem 2rem 2rem;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.review-dialog::backdrop { background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); }
+.review-dialog p { margin: 1rem 0 1.4rem; font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; color: var(--silver-2); }
+.review-dialog .rd-name { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.review-dialog .rd-name span { display: block; margin-top: 0.25rem; font-weight: 400; color: var(--muted); }
+.review-dialog .rd-close {
+  position: absolute;
+  top: 0.9rem; right: 0.9rem;
+  width: 36px; height: 36px;
+  font-size: 1.2rem;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.review-dialog .rd-close:hover { color: var(--text); border-color: var(--silver); }
+.review-dialog .rd-google { display: inline-block; margin-top: 1.4rem; font-size: 0.8rem; color: var(--muted); text-underline-offset: 3px; }
+.review-dialog { overflow-y: auto; }
+@media (max-width: 640px) {
+  .review-dialog { padding: 2rem 1.4rem 1.5rem; }
+  .review-dialog p { font-size: 1.12rem; }
+}
