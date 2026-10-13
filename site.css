@@ -865,3 +865,6 @@ h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); }
   }
   body { padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
 }
+
+/* Full Detail photo: keep the whole car in the square crop, less floor */
+.s-card--featured .s-img img { object-position: 50% 0; }
