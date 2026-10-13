@@ -588,28 +588,13 @@ h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); }
   border-color: transparent transparent transparent var(--text);
 }
 
-/* ══════════ ABOUT (pinned, words light up while scrolling) ══════════ */
-.about {
-  padding: 0;
-  height: 220vh;
-  overflow: visible;
-  background: radial-gradient(60% 50% at 50% 30%, #1b1b1b 0%, var(--panel) 70%);
-}
-.about-pin {
-  position: sticky;
-  top: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 7rem 0;
-}
+/* ══════════ ABOUT ══════════ */
+.about { background: radial-gradient(60% 50% at 50% 30%, #1b1b1b 0%, var(--panel) 70%); }
 .statement {
   margin-top: 1.5rem;
   font-size: clamp(1.9rem, 4.2vw, 3.3rem);
   line-height: 1.18;
 }
-.statement .w { opacity: 0.16; transition: opacity 0.25s linear; }
-.statement .w.on { opacity: 1; }
 .stats {
   list-style: none;
   display: grid;
@@ -761,9 +746,6 @@ h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .lights span, .marquee-track { animation: none !important; }
-  .statement .w { opacity: 1; }
-  .about { height: auto; }
-  .about-pin { position: static; }
 }
 
 /* ══════════ RESPONSIVE ══════════ */
@@ -824,7 +806,6 @@ h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); }
   .gallery-thumbs::-webkit-scrollbar { display: none; }
   .gallery-thumb { flex: 0 0 23%; }
 
-  .about { height: 170vh; }
   .stats { grid-template-columns: 1fr 1fr; row-gap: 1.75rem; }
   .r-card { width: 290px; padding: 1.4rem; }
   .r-card p { font-size: 1.1rem; }
