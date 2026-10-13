@@ -1292,3 +1292,5 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
 .reviews-cta { margin-top: 2.75rem; }
 /* Exterior photo: favor the headlight and grille over the house */
 .s-card[href="/exterior-detailing/"] .s-img img { object-position: 50% 100%; }
+/* Reviews: cards size to their own text instead of matching the longest one */
+.marquee-track { align-items: flex-start; }
