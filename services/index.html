@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
   <title>Detailing Packages &amp; Prices | Lehigh Valley Auto Detailing</title>
   <meta name="description" content="Full pricing for Interior, Exterior, and Combo auto detailing packages in Coopersburg, PA. Every service spelled out, no surprise charges." />
   <meta name="keywords" content="auto detailing prices Coopersburg PA, car detailing packages Lehigh Valley, interior exterior detailing cost" />
@@ -18,12 +19,12 @@
   <meta name="twitter:description" content="Full pricing for Interior, Exterior, and Combo auto detailing packages in Coopersburg, PA. Every service spelled out, no surprise charges." />
   <meta name="twitter:image" content="https://lehighvalleyautodetailing.com/images/hero-rear-window.jpg" />
   <link rel="canonical" href="https://lehighvalleyautodetailing.com/services/" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 
   <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -204,48 +205,49 @@
     gtag('config', 'G-XHWCRL0JG6');
   </script>
 </head>
-<body>
+<body class="v2">
 
-  <!-- ══ NAVIGATION ══ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/" class="nav-logo" aria-label="Lehigh Valley Auto Detailing home">
-          <img src="../images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="nav-logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="/services/" aria-current="page">Services</a></li>
-          <li><a href="/#gallery">Gallery</a></li>
-          <li><a href="/#reviews">Reviews</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/faq/">FAQs</a></li>
-          <li><a href="/#contact" class="nav-book">Book Now</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <!-- ══ HEADER (floating glass bar) ══ -->
+  <header class="site-header" id="nav">
+    <div class="bar">
+      <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
+        <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
+      </a>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <a href="/#contact" class="btn btn-silver btn-sm">Book Now</a>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
-
-  <!-- Mobile menu -->
+  </header>
   <nav class="mobile-menu" aria-label="Mobile navigation">
-    <a href="/services/" aria-current="page">Services &amp; Pricing</a>
+    <a href="/services/">Services &amp; Pricing</a>
     <a href="/#gallery">Gallery</a>
     <a href="/#reviews">Reviews</a>
     <a href="/#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="tel:+14847191144">Call (484) 719-1144</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
 
   <main>
 
+    <!-- ══ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="page-heading">
+      <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Services &amp; Pricing</span></nav>
+        <p class="eyebrow">Packages &amp; Pricing</p>
+        <h1 id="page-heading" class="section-heading">Detailing packages <em>&amp; prices.</em></h1>
+        <p class="lead sub">Interior, exterior and full detail packages in Coopersburg, PA, priced by vehicle size. Every service is spelled out, with no surprise charges. No deposit, and you pay at pickup.</p>
+        <div class="cta-row"><a href="/#contact" class="btn btn-silver">Request a Time</a><a href="sms:+14847191144" class="btn btn-ghost" data-ga-label="services_text">Text a Photo for a Quote</a></div>
+        <a href="/#reviews" class="trust-line"><span class="stars">★★★★★</span> 5.0 on Google · 7 reviews</a>
+      </div>
+    </section>
+
     <!-- ══ SERVICES ══ -->
-    <section id="services" aria-label="Detailing packages">
+    <section id="services" class="panel" aria-label="Detailing packages">
       <div class="container">
         <div class="services-header reveal">
-          <h1 class="label">Detailing Packages &amp; Pricing</h1>
-          <div class="section-divider"></div>
+          <p class="eyebrow">Choose a category</p>
           <div class="pill-toggle" role="tablist" aria-label="Service category">
             <button class="pill is-active" type="button" role="tab" id="pill-interior" data-tab="interior" aria-selected="true" aria-controls="panel-interior">Interior</button>
             <button class="pill" type="button" role="tab" id="pill-exterior" data-tab="exterior" aria-selected="false" aria-controls="panel-exterior">Exterior</button>
@@ -256,7 +258,7 @@
         <!-- ── INTERIOR PANEL ── -->
         <div class="pricing-panel" id="panel-interior" data-panel="interior" role="tabpanel" aria-labelledby="pill-interior">
           <div class="panel-head reveal">
-            <h2 class="section-heading">Interior Detailing<br>Packages.</h2>
+            <h2 class="section-heading">Interior detailing <em>packages.</em></h2>
             <p class="section-subtext">Every service is spelled out — you see exactly what you're getting.</p>
           </div>
 
@@ -286,6 +288,7 @@
                 <li>Wipe and clean all hard surfaces (dash, console, door panels)</li>
                 <li>Clean interior windows</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- STANDARD -->
@@ -318,6 +321,7 @@
                 <li>Door jambs cleaned</li>
                 <li>UV protectant applied to dash and trim</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- DEEP -->
@@ -354,6 +358,7 @@
                 <li>Full trunk and cargo area including spare tire well</li>
                 <li>All compartments detailed (console, door pockets)</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
           </div>
@@ -362,14 +367,14 @@
             <p>Prices may vary based on vehicle condition. Heavily soiled vehicles may incur an additional surcharge ($25–$75). Pet hair is handled separately by the Pet Hair Removal add-on. We do not access gloveboxes to protect your personal documents.</p>
           </div>
 
-          <p class="panel-cta reveal">Ready to book? <a href="/#contact">Get in Touch</a></p>
+          <p class="panel-cta reveal">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
           <p class="panel-more"><a href="/interior-detailing/">More about interior detailing &rarr;</a></p>
         </div>
 
         <!-- ── EXTERIOR PANEL ── -->
         <div class="pricing-panel" id="panel-exterior" data-panel="exterior" role="tabpanel" aria-labelledby="pill-exterior" hidden>
           <div class="panel-head">
-            <h2 class="section-heading">Exterior Detailing<br>Packages.</h2>
+            <h2 class="section-heading">Exterior detailing <em>packages.</em></h2>
             <p class="section-subtext">Protect and restore your vehicle's exterior. Every service is spelled out — you see exactly what you're getting.</p>
           </div>
 
@@ -402,6 +407,7 @@
                 <li>Exterior windows</li>
                 <li>Tire dressing</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- FULL EXTERIOR -->
@@ -435,18 +441,19 @@
                 <li>Door jambs cleaned</li>
                 <li>Spray sealant (3 to 6 months protection)</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
           </div>
 
-          <p class="panel-cta">Ready to book? <a href="/#contact">Get in Touch</a></p>
+          <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
           <p class="panel-more"><a href="/exterior-detailing/">More about exterior detailing &rarr;</a></p>
         </div>
 
         <!-- ── COMBO PANEL ── -->
         <div class="pricing-panel" id="panel-combo" data-panel="combo" role="tabpanel" aria-labelledby="pill-combo" hidden>
           <div class="panel-head">
-            <h2 class="section-heading">Combo Detailing<br>Packages.</h2>
+            <h2 class="section-heading">Combo detailing <em>packages.</em></h2>
             <p class="section-subtext">Interior and exterior together — the best value. Every service is spelled out — you see exactly what you're getting.</p>
           </div>
 
@@ -475,6 +482,7 @@
                 <li>Complete Basic Interior Clean</li>
                 <li>Complete Maintenance Wash &amp; Dry</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- COMPLETE -->
@@ -501,6 +509,7 @@
                 <li>Complete Standard Interior Detail</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- ULTIMATE -->
@@ -526,26 +535,25 @@
                 <li>Complete Deep Interior Restoration</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
           </div>
 
-          <p class="panel-cta">Ready to book? <a href="/#contact">Get in Touch</a></p>
+          <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
           <p class="panel-more"><a href="/full-detail/">More about full details &rarr;</a></p>
         </div>
 
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
     <!-- ══ ADD-ONS ══ -->
-    <section id="addons" aria-labelledby="addons-heading">
+    <section id="addons" class="panel" aria-labelledby="addons-heading">
       <div class="container">
         <div class="addons-header reveal">
           <p class="label">Enhancements</p>
           <div class="section-divider"></div>
-          <h2 id="addons-heading" class="section-heading">Add-On<br>Services.</h2>
+          <h2 id="addons-heading" class="section-heading">Add-on <em>services.</em></h2>
         </div>
 
         <p class="addons-group-head reveal">Interior Add-Ons</p>
@@ -649,71 +657,45 @@
 
         </div>
 
+        <div class="cta-band reveal">
+          <p>Know what you need? <em>Let's get it booked.</em><small>No deposit · No cancellation fee · Pay at pickup</small></p>
+          <div class="cta-row"><a href="/#contact" class="btn btn-silver">Request a Time</a><a href="sms:+14847191144" class="btn btn-ghost" data-ga-label="band_text">Text a Photo</a></div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- ══ FOOTER ══ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-col footer-col-brand">
-          <img src="../images/lehigh-valley-auto-detailing-logo-wide.png" class="footer-logo" alt="Lehigh Valley Auto Detailing" />
-          <a href="https://instagram.com/lehighautodetailing" class="footer-social" target="_blank" rel="noopener" aria-label="Follow us on Instagram (@lehighautodetailing)">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
-            </svg>
-            <span>@lehighautodetailing</span>
-          </a>
-          <p class="footer-copy">&copy; 2026 Lehigh Valley Auto Detailing. Coopersburg, PA.</p>
-          <p class="footer-services"><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a></p>
-          <p class="footer-legal"><a href="/service-policies/">Service Policies</a><span aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></p>
-        </div>
-
-        <div class="footer-col footer-col-map">
-          <div class="footer-map">
-            <div class="contact-map-frame">
-              <iframe
-                class="contact-map-iframe"
-                src="https://www.google.com/maps?q=Coopersburg,PA+18036&output=embed"
-                width="100%"
-                height="260"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Map showing the Coopersburg, PA service area"></iframe>
-            </div>
-            <p class="contact-map-note">Exact drop-off address provided upon booking confirmation.</p>
-          </div>
-        </div>
-
-        <div class="footer-col footer-col-payment">
-          <div class="payment-accepted">
-            <p class="payment-label">Payment Accepted</p>
-            <p class="payment-methods">Visa &middot; Mastercard &middot; American Express &middot; Discover &middot; Apple Pay &middot; Google Pay</p>
-            <p class="payment-secure">Secure payments powered by Stripe</p>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="f-cta">
+        <h2>Ready when <em>you are.</em></h2>
+        <div class="cta-row"><a href="/#contact" class="btn btn-silver">Request a Time</a><a href="tel:+14847191144" class="btn btn-ghost" data-ga-label="footer_call">(484) 719-1144</a></div>
       </div>
+      <div class="f-cols">
+        <div>
+          <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
+        </div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
+        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
+      </div>
+      <p class="wordmark" aria-hidden="true">Lehigh Valley <em>Auto Detailing</em></p>
+      <p class="f-copy">&copy; 2026 Lehigh Valley Auto Detailing · Coopersburg, PA</p>
     </div>
   </footer>
 
   <!-- ══ STICKY MOBILE CTA (phones only) ══ -->
   <nav class="mobile-cta" aria-label="Quick contact">
-    <a href="tel:+14847191144" data-ga-label="sticky_call">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Call
-    </a>
-    <a href="sms:+14847191144" data-ga-label="sticky_text">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Text
-    </a>
+    <a href="tel:+14847191144" data-ga-label="sticky_call">Call</a>
+    <a href="sms:+14847191144" data-ga-label="sticky_text">Text</a>
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="../script.js"></script>
+  <script src="/script.js"></script>
+  <script src="/site.js"></script>
 </body>
 </html>

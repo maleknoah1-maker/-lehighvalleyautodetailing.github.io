@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
   <title>Full Car Detail Inside & Out in Coopersburg, PA | From $115</title>
   <meta name="description" content="Full interior and exterior car detailing in Coopersburg, PA, priced below booking them separately. Three combo tiers from $115. Serving the Lehigh Valley." />
   <meta property="og:title" content="Full Car Detail Inside & Out in Coopersburg, PA | From $115" />
@@ -13,12 +14,12 @@
   <meta property="og:site_name" content="Lehigh Valley Auto Detailing" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://lehighvalleyautodetailing.com/full-detail/" />
-  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/site.css" />
 
   <!-- ══ Service + breadcrumb + FAQ structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -146,44 +147,34 @@
     gtag('config', 'G-XHWCRL0JG6');
   </script>
 </head>
-<body>
+<body class="v2">
 
-  <!-- ══ NAVIGATION ══ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/" class="nav-logo" aria-label="Lehigh Valley Auto Detailing home">
-          <img src="../images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="nav-logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/#gallery">Gallery</a></li>
-          <li><a href="/#reviews">Reviews</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/faq/">FAQs</a></li>
-          <li><a href="/#contact" class="nav-book">Book Now</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <!-- ══ HEADER (floating glass bar) ══ -->
+  <header class="site-header" id="nav">
+    <div class="bar">
+      <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
+        <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
+      </a>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <a href="/#contact" class="btn btn-silver btn-sm">Book Now</a>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
-
-  <!-- Mobile menu -->
+  </header>
   <nav class="mobile-menu" aria-label="Mobile navigation">
     <a href="/services/">Services &amp; Pricing</a>
     <a href="/#gallery">Gallery</a>
     <a href="/#reviews">Reviews</a>
     <a href="/#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="tel:+14847191144">Call (484) 719-1144</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
 
   <main>
 
     <!-- ══ SERVICE INTRO ══ -->
-    <section class="svc-hero" aria-labelledby="svc-heading">
+    <section class="svc-hero page-hero" aria-labelledby="svc-heading">
+      <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="container">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a><span aria-hidden="true">/</span><a href="/services/">Services</a><span aria-hidden="true">/</span><span aria-current="page">Full Detail</span>
@@ -192,37 +183,35 @@
           <div class="svc-hero-text">
             <p class="label">Full Detail</p>
             <div class="section-divider"></div>
-            <h1 id="svc-heading" class="section-heading">Full Car Detailing,<br>Inside &amp; Out.</h1>
+            <h1 id="svc-heading" class="section-heading">Full car detailing, <em>inside &amp; out.</em></h1>
             <p class="svc-intro">Interior and exterior together, in one appointment, for less than booking them separately. Pick the interior level your car needs, and the outside gets a hand wash or a full exterior detail to match.</p>
             <p class="svc-price-line">Three combo tiers · <strong>From $115</strong> for cars and sedans</p>
             <div class="svc-cta-row">
-              <a href="/#contact" class="btn-primary btn-solid">Request a Time</a>
-              <a href="sms:+14847191144" class="btn-primary" data-ga-label="full-detail_text">Text a Photo for a Quote</a>
+              <a href="/#contact" class="btn btn-silver">Request a Time</a>
+              <a href="sms:+14847191144" class="btn btn-ghost" data-ga-label="full-detail_text">Text a Photo for a Quote</a>
             </div>
             <a href="/#reviews" class="svc-trust"><span class="hero-stars" aria-hidden="true">★★★★★</span> 5.0 on Google · 7 reviews</a>
           </div>
           <div class="svc-hero-photos">
             <div class="svc-pair">
-              <div class="gallery-half"><img src="../images/15-before-front-end.webp" srcset="../images/15-before-front-end-360.webp 360w, ../images/15-before-front-end.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Lexus front end before a full detail, dull paint with debris on the bumper" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
-              <div class="gallery-half"><img src="../images/16-after-front-end.webp" srcset="../images/16-after-front-end-360.webp 360w, ../images/16-after-front-end.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Lexus front end after a full detail, hood and bumper glossy" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              <div class="gallery-half"><img src="/images/15-before-front-end.webp" srcset="/images/15-before-front-end-360.webp 360w, /images/15-before-front-end.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Lexus front end before a full detail, dull paint with debris on the bumper" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+              <div class="gallery-half"><img src="/images/16-after-front-end.webp" srcset="/images/16-after-front-end-360.webp 360w, /images/16-after-front-end.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Lexus front end after a full detail, hood and bumper glossy" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
             </div>
             <div class="svc-pair">
-              <div class="gallery-half"><img src="../images/03-before-dashboard.webp" srcset="../images/03-before-dashboard-360.webp 360w, ../images/03-before-dashboard.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Dashboard and console before a full detail, dusty with grime on the screen" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
-              <div class="gallery-half"><img src="../images/04-after-dashboard.webp" srcset="../images/04-after-dashboard-360.webp 360w, ../images/04-after-dashboard.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Dashboard and console after a full detail, dust-free and clean" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              <div class="gallery-half"><img src="/images/03-before-dashboard.webp" srcset="/images/03-before-dashboard-360.webp 360w, /images/03-before-dashboard.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Dashboard and console before a full detail, dusty with grime on the screen" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+              <div class="gallery-half"><img src="/images/04-after-dashboard.webp" srcset="/images/04-after-dashboard-360.webp 360w, /images/04-after-dashboard.webp 720w" sizes="(max-width: 640px) 50vw, 300px" alt="Dashboard and console after a full detail, dust-free and clean" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
     <!-- ══ DETAILS ══ -->
-    <section class="svc-section">
+    <section class="svc-section panel">
       <div class="container svc-narrow">
         <p class="label">How It Works</p>
         <div class="section-divider"></div>
-        <h2 class="section-heading">Three Combos,<br>One Drop-Off.</h2>
+        <h2 class="section-heading">Three combos, <em>one drop-off.</em></h2>
         <p class="svc-lead">Each combo pairs one of our interior tiers with one of our exterior tiers. You get both, done in a single visit, at a lower price than booking them one at a time.</p>
         <div class="svc-tiers">
           <div class="svc-tier">
@@ -249,17 +238,19 @@
             </tbody>
           </table>
         </div>
+        <div class="cta-band reveal">
+          <p>Not sure which tier? <em>Send us a photo.</em><small>Text (484) 719-1144 and we'll recommend the right package.</small></p>
+          <div class="cta-row"><a href="sms:+14847191144" class="btn btn-silver">Text a Photo</a><a href="/#contact" class="btn btn-ghost">Request a Time</a></div>
+        </div>
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
     <!-- ══ PACKAGES & PRICES ══ -->
-    <section class="svc-section svc-pricing" aria-labelledby="svc-pricing-heading">
+    <section class="svc-section svc-pricing panel" aria-labelledby="svc-pricing-heading">
       <div class="container">
         <p class="label">Pricing</p>
         <div class="section-divider"></div>
-        <h2 id="svc-pricing-heading" class="section-heading">Full Detail<br>Prices.</h2>
+        <h2 id="svc-pricing-heading" class="section-heading">Full detail <em>prices.</em></h2>
         <p class="section-subtext">Interior and exterior together, priced by vehicle size.</p>
         <div class="svc-pricing-cards">
 <div class="pricing-cards">
@@ -287,6 +278,7 @@
                 <li>Complete Basic Interior Clean</li>
                 <li>Complete Maintenance Wash &amp; Dry</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- COMPLETE -->
@@ -313,6 +305,7 @@
                 <li>Complete Standard Interior Detail</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
             <!-- ULTIMATE -->
@@ -338,6 +331,7 @@
                 <li>Complete Deep Interior Restoration</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
           </div>
@@ -346,14 +340,12 @@
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
     <!-- ══ FAQ ══ -->
-    <section class="svc-section" aria-labelledby="svc-faq-heading">
+    <section class="svc-section panel" aria-labelledby="svc-faq-heading">
       <div class="container svc-narrow">
         <p class="label">Questions</p>
         <div class="section-divider"></div>
-        <h2 id="svc-faq-heading" class="section-heading">Full Detail<br>FAQs.</h2>
+        <h2 id="svc-faq-heading" class="section-heading">Full detail <em>FAQs.</em></h2>
         <div class="faq-list svc-faq">
           <details class="faq-item">
             <summary class="faq-question">Is a full detail cheaper than booking interior and exterior separately?</summary>
@@ -376,14 +368,14 @@
     </section>
 
     <!-- ══ CTA + RELATED ══ -->
-    <section class="svc-section svc-cta-band" aria-labelledby="svc-cta-heading">
+    <section class="svc-section svc-cta-band panel" aria-labelledby="svc-cta-heading">
       <div class="container">
         <div class="svc-cta-box">
-          <h2 id="svc-cta-heading" class="section-heading">Ready When<br>You Are.</h2>
+          <h2 id="svc-cta-heading" class="section-heading">Book your <em>full detail.</em></h2>
           <p>No deposit, no cancellation fee, and you pay at pickup. Request a time or text a photo of your vehicle for a quick quote.</p>
           <div class="svc-cta-row">
-            <a href="/#contact" class="btn-primary btn-solid">Request a Time</a>
-            <a href="tel:+14847191144" class="btn-primary" data-ga-label="full-detail_call">(484) 719-1144</a>
+            <a href="/#contact" class="btn btn-silver">Request a Time</a>
+            <a href="tel:+14847191144" class="btn btn-ghost" data-ga-label="full-detail_call">(484) 719-1144</a>
           </div>
         </div>
         <p class="label svc-related-label">Other Services</p>
@@ -398,65 +390,35 @@
   </main>
 
   <!-- ══ FOOTER ══ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-col footer-col-brand">
-          <img src="../images/lehigh-valley-auto-detailing-logo-wide.png" class="footer-logo" alt="Lehigh Valley Auto Detailing" />
-          <a href="https://instagram.com/lehighautodetailing" class="footer-social" target="_blank" rel="noopener" aria-label="Follow us on Instagram (@lehighautodetailing)">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
-            </svg>
-            <span>@lehighautodetailing</span>
-          </a>
-          <p class="footer-copy">&copy; 2026 Lehigh Valley Auto Detailing. Coopersburg, PA.</p>
-          <p class="footer-services"><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a></p>
-          <p class="footer-legal"><a href="/service-policies/">Service Policies</a><span aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></p>
-        </div>
-
-        <div class="footer-col footer-col-map">
-          <div class="footer-map">
-            <div class="contact-map-frame">
-              <iframe
-                class="contact-map-iframe"
-                src="https://www.google.com/maps?q=Coopersburg,PA+18036&output=embed"
-                width="100%"
-                height="260"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Map showing the Coopersburg, PA service area"></iframe>
-            </div>
-            <p class="contact-map-note">Exact drop-off address provided upon booking confirmation.</p>
-          </div>
-        </div>
-
-        <div class="footer-col footer-col-payment">
-          <div class="payment-accepted">
-            <p class="payment-label">Payment Accepted</p>
-            <p class="payment-methods">Visa &middot; Mastercard &middot; American Express &middot; Discover &middot; Apple Pay &middot; Google Pay</p>
-            <p class="payment-secure">Secure payments powered by Stripe</p>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="f-cta">
+        <h2>Ready when <em>you are.</em></h2>
+        <div class="cta-row"><a href="/#contact" class="btn btn-silver">Request a Time</a><a href="tel:+14847191144" class="btn btn-ghost" data-ga-label="footer_call">(484) 719-1144</a></div>
       </div>
+      <div class="f-cols">
+        <div>
+          <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
+        </div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
+        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
+      </div>
+      <p class="wordmark" aria-hidden="true">Lehigh Valley <em>Auto Detailing</em></p>
+      <p class="f-copy">&copy; 2026 Lehigh Valley Auto Detailing · Coopersburg, PA</p>
     </div>
   </footer>
 
   <!-- ══ STICKY MOBILE CTA (phones only) ══ -->
   <nav class="mobile-cta" aria-label="Quick contact">
-    <a href="tel:+14847191144" data-ga-label="sticky_call">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Call
-    </a>
-    <a href="sms:+14847191144" data-ga-label="sticky_text">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Text
-    </a>
+    <a href="tel:+14847191144" data-ga-label="sticky_call">Call</a>
+    <a href="sms:+14847191144" data-ga-label="sticky_text">Text</a>
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="../script.js"></script>
+  <script src="/script.js"></script>
+  <script src="/site.js"></script>
 </body>
 </html>
