@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=3" />
+  <link rel="stylesheet" href="/site.css?v=4" />
 
   <script type="application/ld+json">
   {
@@ -50,6 +50,12 @@
   </script>
 </head>
 <body class="v2">
+  <!-- ══ ANNOUNCEMENT (dismissible; remembered in localStorage) ══ -->
+  <div class="announce" id="announce" role="region" aria-label="Announcement">
+    <p><span class="announce-new">New:</span> Mobile detailing is now available. We come to you anywhere in the Lehigh Valley. <a href="/mobile-detailing/">See mobile pricing →</a></p>
+    <button type="button" class="announce-close" aria-label="Dismiss announcement">×</button>
+  </div>
+  <script>try{if(localStorage.getItem('lvad-announce-mobile')==='dismissed'){var a=document.getElementById('announce');a.parentNode.removeChild(a);}}catch(e){}</script>
 
   <!-- ══ HEADER (floating glass bar) ══ -->
   <header class="site-header" id="nav">
@@ -143,10 +149,10 @@
       <div class="f-cols">
         <div>
           <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
-          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
-        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
         <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
@@ -162,7 +168,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=3"></script>
-  <script src="/site.js?v=3"></script>
+  <script src="/script.js?v=4"></script>
+  <script src="/site.js?v=4"></script>
 </body>
 </html>

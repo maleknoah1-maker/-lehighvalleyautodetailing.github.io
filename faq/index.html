@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=3" />
+  <link rel="stylesheet" href="/site.css?v=4" />
 
   <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
     "@context": "https://schema.org",
     "@type": "AutomotiveBusiness",
     "name": "Lehigh Valley Auto Detailing",
-    "description": "Interior and exterior auto detailing in Coopersburg, PA, by appointment. Customers drop their vehicles off; serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.",
+    "description": "Interior and exterior auto detailing in Coopersburg, PA, by appointment. Drop-off in Coopersburg or mobile service at your driveway, serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.",
     "url": "https://lehighvalleyautodetailing.com/",
     "logo": "https://lehighvalleyautodetailing.com/images/lehigh-valley-auto-detailing-logo-wide.png",
     "image": "https://lehighvalleyautodetailing.com/images/hero-rear-window.jpg",
@@ -119,7 +119,7 @@
         "name": "Do you come to me, or do I bring my car to you?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You bring your car to us in Coopersburg, PA. We don't offer mobile service at this time. We send the exact drop-off address when we confirm your appointment."
+          "text": "Both. You can bring your car to us in Coopersburg, PA (we send the exact drop-off address when we confirm), or book mobile and we'll come to your driveway. Mobile service adds a travel fee of $40 in most of the Lehigh Valley. See full mobile pricing."
         }
       },
       {
@@ -135,7 +135,7 @@
         "name": "Will I be charged extra if my vehicle is heavily soiled?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "In some cases, yes. Vehicles with excessive dirt, mud, or stains may incur an additional surcharge of $25 to $75 depending on the work required. This is always communicated to you at drop-off before we begin, never after."
+          "text": "In some cases, yes. Vehicles with excessive dirt, mud, or stains may incur an additional surcharge of $25 to $75 depending on the work required. This is always communicated to you before we begin, never after."
         }
       },
       {
@@ -169,6 +169,38 @@
           "@type": "Answer",
           "text": "A car wash cleans the surface. A detail goes deeper. We shampoo and extract carpets and seats, steam clean crevices and vents, condition leather, and treat and protect every surface so it lasts. A wash makes your car look clean for a day. A detail actually removes what's built up over months and protects against the next round of wear."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is the mobile travel fee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mobile service is the package price plus a travel fee. Zone 1 is +$40: Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg). Zone 2 is +$60: 15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton. A second vehicle at the same address has no extra travel fee. Mobile service is available within 25 miles of Coopersburg. Outside that area, drop-off is still available. See mobile pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to have ready for a mobile detail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A driveway or parking spot where you're allowed to have work done (some apartment complexes and HOAs don't allow it, so please check first), an outdoor electrical outlet within 50 feet of the vehicle, and a working outdoor water spigot for exterior services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if it rains on my mobile appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exterior mobile services depend on the weather. If it's raining or below 40°F, we'll reschedule at no charge, or you can switch to drop-off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you detail my car at my apartment or work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, as long as the property allows it and there's an outlet within reach. Please check with your property manager first."
+        }
       }
     ]
   }
@@ -184,6 +216,12 @@
   </script>
 </head>
 <body class="v2">
+  <!-- ══ ANNOUNCEMENT (dismissible; remembered in localStorage) ══ -->
+  <div class="announce" id="announce" role="region" aria-label="Announcement">
+    <p><span class="announce-new">New:</span> Mobile detailing is now available. We come to you anywhere in the Lehigh Valley. <a href="/mobile-detailing/">See mobile pricing →</a></p>
+    <button type="button" class="announce-close" aria-label="Dismiss announcement">×</button>
+  </div>
+  <script>try{if(localStorage.getItem('lvad-announce-mobile')==='dismissed'){var a=document.getElementById('announce');a.parentNode.removeChild(a);}}catch(e){}</script>
 
   <!-- ══ HEADER (floating glass bar) ══ -->
   <header class="site-header" id="nav">
@@ -244,7 +282,35 @@
           <details class="faq-item">
             <summary class="faq-question">Do you come to me, or do I bring my car to you?</summary>
             <div class="faq-answer">
-              <p>You bring your car to us in Coopersburg, PA. We don't offer mobile service at this time. We send the exact drop-off address when we confirm your appointment.</p>
+              <p>Both. You can bring your car to us in Coopersburg, PA (we send the exact drop-off address when we confirm), or book mobile and we'll come to your driveway. Mobile service adds a travel fee of $40 in most of the Lehigh Valley. <a href="/mobile-detailing/">See full mobile pricing</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How much is the mobile travel fee?</summary>
+            <div class="faq-answer">
+              <p>Mobile service is the package price plus a travel fee. Zone 1 is +$40: Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg). Zone 2 is +$60: 15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton. A second vehicle at the same address has no extra travel fee. Mobile service is available within 25 miles of Coopersburg. Outside that area, drop-off is still available. <a href="/mobile-detailing/">See mobile pricing</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What do I need to have ready for a mobile detail?</summary>
+            <div class="faq-answer">
+              <p>A driveway or parking spot where you're allowed to have work done (some apartment complexes and HOAs don't allow it, so please check first), an outdoor electrical outlet within 50 feet of the vehicle, and a working outdoor water spigot for exterior services.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What happens if it rains on my mobile appointment?</summary>
+            <div class="faq-answer">
+              <p>Exterior mobile services depend on the weather. If it's raining or below 40°F, we'll reschedule at no charge, or you can switch to drop-off.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can you detail my car at my apartment or work?</summary>
+            <div class="faq-answer">
+              <p>Yes, as long as the property allows it and there's an outlet within reach. Please check with your property manager first.</p>
             </div>
           </details>
 
@@ -258,7 +324,7 @@
           <details class="faq-item">
             <summary class="faq-question">Will I be charged extra if my vehicle is heavily soiled?</summary>
             <div class="faq-answer">
-              <p>In some cases, yes. Vehicles with excessive dirt, mud, or stains may incur an additional surcharge of $25 to $75 depending on the work required. This is always communicated to you at drop-off before we begin, never after.</p>
+              <p>In some cases, yes. Vehicles with excessive dirt, mud, or stains may incur an additional surcharge of $25 to $75 depending on the work required. This is always communicated to you before we begin, never after.</p>
             </div>
           </details>
 
@@ -296,6 +362,7 @@
           <a href="/interior-detailing/" class="svc-related-card"><span>Interior Detailing</span><span class="svc-related-price">From $80</span></a>
           <a href="/exterior-detailing/" class="svc-related-card"><span>Exterior Detailing</span><span class="svc-related-price">From $50</span></a>
           <a href="/full-detail/" class="svc-related-card"><span>Full Detail</span><span class="svc-related-price">From $115</span></a>
+          <a href="/mobile-detailing/" class="svc-related-card"><span>Mobile Detailing</span><span class="svc-related-price">+$40 travel</span></a>
         </div>
         <div class="cta-band reveal">
           <p>Question answered? <em>Let's book your detail.</em><small>We reply within 24 hours. Prefer to talk? Call (484) 719-1144.</small></p>
@@ -316,10 +383,10 @@
       <div class="f-cols">
         <div>
           <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
-          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
-        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
         <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
@@ -335,7 +402,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=3"></script>
-  <script src="/site.js?v=3"></script>
+  <script src="/script.js?v=4"></script>
+  <script src="/site.js?v=4"></script>
 </body>
 </html>

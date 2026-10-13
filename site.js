@@ -53,3 +53,42 @@
   // fonts change line breaks, so measure after they load
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(addButtons);
 })();
+
+// ─── ANNOUNCEMENT BAR: dismiss (remembered) + keep the fixed header below it ───
+(function () {
+  const bar = document.getElementById('announce');
+  const root = document.documentElement;
+  function offset() {
+    const b = bar && bar.isConnected ? Math.max(0, bar.getBoundingClientRect().bottom) : 0;
+    root.style.setProperty('--ann', b + 'px');
+  }
+  if (!bar) { offset(); return; }
+  bar.querySelector('.announce-close').addEventListener('click', function () {
+    try { localStorage.setItem('lvad-announce-mobile', 'dismissed'); } catch (e) { /* storage blocked: just hide for now */ }
+    bar.remove();
+    offset();
+  });
+  window.addEventListener('scroll', offset, { passive: true });
+  window.addEventListener('resize', offset);
+  // the bar's height changes when web fonts load or the text re-wraps
+  if (window.ResizeObserver) new ResizeObserver(offset).observe(bar);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(offset);
+  offset();
+})();
+
+// ─── BOOKING FORM: mobile address + utilities fields ───
+// Shown and required only when "Mobile (come to me)" is picked. Hidden fields
+// are disabled so they're neither required nor sent to Formspree.
+(function () {
+  const loc = document.getElementById('service-location');
+  const box = document.getElementById('mobile-fields');
+  if (!loc || !box) return;
+  const fields = box.querySelectorAll('input');
+  function sync() {
+    const mobile = loc.value.indexOf('Mobile') === 0;
+    box.hidden = !mobile;
+    fields.forEach(function (f) { f.disabled = !mobile; f.required = mobile; });
+  }
+  loc.addEventListener('change', sync);
+  sync();
+})();
