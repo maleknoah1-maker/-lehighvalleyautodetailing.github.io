@@ -22,8 +22,8 @@
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="site.css" />
 
   <!-- ══ AutomotiveBusiness structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -184,249 +184,180 @@
     gtag('config', 'G-XHWCRL0JG6');
   </script>
 </head>
-<body>
+<body class="v2">
 
-  <!-- ══ NAVIGATION ══ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="/" class="nav-logo" aria-label="Lehigh Valley Auto Detailing home">
-          <img src="images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="nav-logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="/services/">Services</a></li>
-          <li><a href="/#gallery">Gallery</a></li>
-          <li><a href="/#reviews">Reviews</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/faq/">FAQs</a></li>
-          <li><a href="/#contact" class="nav-book">Book Now</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <!-- ══ HEADER (floating glass bar) ══ -->
+  <header class="site-header" id="nav">
+    <div class="bar">
+      <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
+        <img src="images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
+      </a>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <a href="#contact" class="btn btn-silver btn-sm">Book Now</a>
+      <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
-
-  <!-- Mobile menu -->
+  </header>
   <nav class="mobile-menu" aria-label="Mobile navigation">
     <a href="/services/">Services &amp; Pricing</a>
-    <a href="/#gallery">Gallery</a>
-    <a href="/#reviews">Reviews</a>
-    <a href="/#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#about">About</a>
     <a href="/faq/">FAQs</a>
-    <a href="/#contact" class="nav-book">Book Now</a>
+    <a href="#contact" class="nav-book">Book Now</a>
   </nav>
 
   <main>
 
     <!-- ══ HERO ══ -->
-    <section id="hero" aria-label="Hero">
-      <div class="hero-bar hero-bar-top" aria-hidden="true"></div>
-      <div class="hero-bar hero-bar-bottom" aria-hidden="true"></div>
-      <div class="hero-slideshow" aria-hidden="true">
-        <img src="images/hero-rear-window.webp" srcset="images/hero-rear-window-800.webp 800w, images/hero-rear-window.webp 1500w" sizes="100vw" class="hero-slide is-active" alt="" fetchpriority="high" />
-        <img data-src="images/hero-front-end.webp" class="hero-slide" alt="" decoding="async" />
-        <img data-src="images/hero-driver-seat.webp" class="hero-slide" alt="" decoding="async" />
-        <img data-src="images/06-after-second-row.webp" class="hero-slide" alt="" decoding="async" />
-      </div>
-      <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-text-panel">
-          <a href="#reviews" class="hero-trust"><span class="hero-stars" aria-hidden="true">★★★★★</span><span>5.0 on Google</span><span class="hero-dot" aria-hidden="true">•</span><span>7 reviews</span></a>
-          <h1 class="hero-title">Auto Detailing in<br>Coopersburg, PA</h1>
-          <p class="hero-slogan">Interior and exterior detailing for the Lehigh Valley. The detail your vehicle deserves.</p>
-          <div class="hero-cta-row">
-            <a href="#contact" class="btn-primary btn-solid">Request a Time</a>
-            <a href="/services/" class="btn-primary">See Prices</a>
+    <section class="hero panel" aria-label="Introduction">
+      <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <a href="#reviews" class="glass-pill"><span class="stars">★★★★★</span> 5.0 on Google <span class="sep">·</span> 7 reviews</a>
+          <p class="eyebrow">Interior &amp; Exterior Detailing <span class="diamond" aria-hidden="true"></span> Coopersburg, PA</p>
+          <h1>Auto detailing in Coopersburg, PA, <em>done right.</em></h1>
+          <p class="lead">Interior and exterior detailing for the Lehigh Valley. Every price listed up front, no deposit, and you pay at pickup.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-silver">Request a Time</a>
+            <a href="/services/" class="btn btn-ghost">See Prices</a>
           </div>
-          <a href="tel:+14847191144" class="hero-phone" data-ga-label="hero_phone">(484) 719-1144</a>
+          <p class="hero-note">Or text a photo for a quick quote: <a href="sms:+14847191144" data-ga-label="hero_text">(484) 719-1144</a></p>
         </div>
-      </div>
-      <div class="hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <svg viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="1" width="12" height="20" rx="6" stroke="white" stroke-width="1.5"/>
-          <rect x="6" y="5" width="2" height="4" rx="1" fill="white"/>
-        </svg>
+        <figure class="hero-frame">
+          <span class="diamond" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span>
+          <img src="images/gloss-rear-glass.webp" srcset="images/gloss-rear-glass-480.webp 480w, images/gloss-rear-glass.webp 960w" sizes="(max-width: 960px) 80vw, 420px" alt="Rear glass of a silver Lexus after an exterior detail, reflecting the trees and sky" fetchpriority="high" width="960" height="1200" />
+          <figcaption>After · Full Exterior Detail</figcaption>
+        </figure>
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
+    <!-- ══ TRUST STRIP ══ -->
+    <ul class="trust wrap" aria-label="Why customers choose us">
+      <li>5.0 on Google</li><span class="diamond" aria-hidden="true"></span><li>No deposit</li><span class="diamond" aria-hidden="true"></span><li>Pay at pickup</li><span class="diamond" aria-hidden="true"></span><li>Prices listed up front</li>
+    </ul>
 
-    <!-- ══ HOW IT WORKS ══ -->
-    <section id="how-it-works" aria-labelledby="how-it-works-heading">
-      <div class="container">
-        <div class="how-header reveal">
-          <p class="label">Process</p>
-          <div class="section-divider"></div>
-          <h2 id="how-it-works-heading" class="section-heading">How Booking<br>Works.</h2>
-          <p class="section-subtext">Simple from booking to pickup.</p>
+    <!-- ══ SOUND FAMILIAR ══ -->
+    <section class="panel familiar" aria-labelledby="familiar-heading">
+      <div class="wrap narrow center">
+        <p class="eyebrow reveal">The Problem</p>
+        <h2 id="familiar-heading" class="reveal">Sound <em>familiar?</em></h2>
+        <ul class="pain-list">
+          <li class="reveal"><span class="x" aria-hidden="true">✕</span>Dog hair woven into every seat.</li>
+          <li class="reveal"><span class="x" aria-hidden="true">✕</span>Coffee stains you've stopped noticing.</li>
+          <li class="reveal"><span class="x" aria-hidden="true">✕</span>Winter salt ground into the floor mats.</li>
+          <li class="reveal"><span class="x" aria-hidden="true">✕</span>Paint that hasn't really shined in years.</li>
+        </ul>
+        <p class="familiar-fix reveal">That's exactly what we fix. <a href="/services/">See what each package covers →</a></p>
+      </div>
+    </section>
+
+    <!-- ══ SERVICES ══ -->
+    <section class="panel services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Services</p>
+          <h2 id="services-heading">Detailing packages <em>&amp; prices.</em></h2>
+          <p class="sub">Pick the level your car needs. Every service is spelled out, with no surprise charges.</p>
         </div>
+        <div class="s-grid">
+          <a href="/interior-detailing/" class="s-card reveal">
+            <div class="s-img"><img src="images/gloss-interior-480.webp" srcset="images/gloss-interior-480.webp 480w, images/gloss-interior.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
+            <div class="s-body">
+              <h3>Interior Detailing</h3>
+              <p>Steam, shampoo and extraction for the seats, carpets and every crevice.</p>
+              <div class="s-foot"><span class="s-price">From $80</span><span class="s-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+          <a href="/exterior-detailing/" class="s-card reveal">
+            <div class="s-img"><img src="images/gloss-headlight-480.webp" srcset="images/gloss-headlight-480.webp 480w, images/gloss-headlight.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
+            <div class="s-body">
+              <h3>Exterior Detailing</h3>
+              <p>Foam pre-wash, hand wash, bug and tar removal and a spray sealant.</p>
+              <div class="s-foot"><span class="s-price">From $50</span><span class="s-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+          <a href="/full-detail/" class="s-card s-card--featured reveal">
+            <span class="s-tag">Best value</span><div class="s-img"><img src="images/gloss-full-car-480.webp" srcset="images/gloss-full-car-480.webp 480w, images/gloss-full-car.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
+            <div class="s-body">
+              <h3>Full Detail</h3>
+              <p>Inside and out in one drop-off, priced below booking them separately.</p>
+              <div class="s-foot"><span class="s-price">From $115</span><span class="s-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+          <a href="/pet-hair-removal/" class="s-card reveal">
+            <div class="s-img"><img src="images/gloss-second-row-480.webp" srcset="images/gloss-second-row-480.webp 480w, images/gloss-second-row.webp 720w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
+            <div class="s-body">
+              <h3>Pet Hair Removal</h3>
+              <p>Add-on for dog and cat hair woven into carpet and upholstery.</p>
+              <div class="s-foot"><span class="s-price">$30 – $50</span><span class="s-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <div class="how-grid">
-          <div class="how-item reveal reveal-delay-1">
-            <div class="how-icon">
-              <svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- ══ HOW BOOKING WORKS ══ -->
+    <section class="panel how" aria-labelledby="how-heading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Process</p>
+          <h2 id="how-heading">How booking <em>works.</em></h2>
+          <p class="sub">Simple from booking to pickup.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step-icon"><svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/>
                 <path d="M3.5 9.5h17M8 3v4M16 3v4"/>
                 <path d="M9 14.75l2 2 4-4"/>
-              </svg>
-            </div>
-            <p class="how-num">01</p>
-            <h3 class="how-title">Book Your <br>Appointment</h3>
-            <p class="how-desc">Request a quote through the form below, or call or text us directly. We'll confirm a time that works for you.</p>
-          </div>
-          <div class="how-item reveal reveal-delay-2">
-            <div class="how-icon">
-              <svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              </svg></div>
+            <p class="step-num">01</p>
+            <h3>Book</h3>
+            <p>Request a time with the form below, or call or text. We confirm a time that works for you.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon"><svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="8" cy="16" r="4.5"/>
                 <circle cx="8" cy="16" r="1.25"/>
                 <path d="M11.2 12.8L20 4M17 7l2.5 2.5M14.5 9.5l2 2"/>
-              </svg>
-            </div>
-            <p class="how-num">02</p>
-            <h3 class="how-title">Drop Off <br>Your Vehicle</h3>
-            <p class="how-desc">Drop your car off with us in Coopersburg. We send the exact address when we confirm your appointment.</p>
-          </div>
-          <div class="how-item reveal reveal-delay-3">
-            <div class="how-icon">
-              <svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              </svg></div>
+            <p class="step-num">02</p>
+            <h3>Drop off</h3>
+            <p>Bring your car to us in Coopersburg. We send the exact address when we confirm.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon"><svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M10.5 4.5c.6 4.6 1.4 5.4 6 6-4.6.6-5.4 1.4-6 6-.6-4.6-1.4-5.4-6-6 4.6-.6 5.4-1.4 6-6z"/>
                 <path d="M18.5 2.75c.25 1.6.65 2 2.25 2.25-1.6.25-2 .65-2.25 2.25-.25-1.6-.65-2-2.25-2.25 1.6-.25 2-.65 2.25-2.25z"/>
                 <path d="M18 15.5c.2 1.3.5 1.6 1.8 1.8-1.3.2-1.6.5-1.8 1.8-.2-1.3-.5-1.6-1.8-1.8 1.3-.2 1.6-.5 1.8-1.8z"/>
-              </svg>
-            </div>
-            <p class="how-num">03</p>
-            <h3 class="how-title">We Detail <br>Your Car</h3>
-            <p class="how-desc">Professional grade equipment and meticulous attention to every inch, inside and out.</p>
-          </div>
-          <div class="how-item reveal reveal-delay-4">
-            <div class="how-icon">
-              <svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              </svg></div>
+            <p class="step-num">03</p>
+            <h3>We detail</h3>
+            <p>Professional-grade equipment and full attention to every inch, inside and out.</p>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon"><svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M6 11l1.4-3.9A2 2 0 0 1 9.3 5.8h5.4a2 2 0 0 1 1.9 1.3L18 11"/>
                 <rect x="3.75" y="11" width="16.5" height="6" rx="1.75"/>
                 <path d="M6 17v1.75a.75.75 0 0 0 .75.75h1.5a.75.75 0 0 0 .75-.75V17M15 17v1.75a.75.75 0 0 0 .75.75h1.5a.75.75 0 0 0 .75-.75V17"/>
                 <path d="M7 14h1.5M15.5 14H17"/>
-              </svg>
-            </div>
-            <p class="how-num">04</p>
-            <h3 class="how-title">Pick Up <br>&amp; Enjoy</h3>
-            <p class="how-desc">Drive away with a vehicle that looks, feels, and smells brand new.</p>
-          </div>
-        </div>
+              </svg></div>
+            <p class="step-num">04</p>
+            <h3>Pick up</h3>
+            <p>Pay at pickup and drive away in a car that looks, feels and smells brand new.</p>
+          </li>
+        </ol>
       </div>
     </section>
-
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
-    <!-- ══ ABOUT ══ -->
-    <section id="about" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="about-grid">
-
-          <div class="about-text">
-            <p class="label reveal">About Us</p>
-            <div class="section-divider reveal reveal-delay-1"></div>
-            <h2 id="about-heading" class="section-heading reveal reveal-delay-1">Lehigh Valley Car Detailing,<br>Done Right.</h2>
-            <div class="reveal reveal-delay-2">
-              <p>Lehigh Valley Auto Detailing is a <strong>home-based detailing service</strong> in Coopersburg, PA. You drop your vehicle off with us, and it gets our full attention, with no rushing and no shortcuts.</p>
-              <p>We specialize in <strong>complete vehicle detailing, inside and out</strong>, using professional grade equipment to reach every crevice, fiber, and surface. Whether it's a daily driver or a weekend vehicle you want kept pristine, we treat every job with the same level of care.</p>
-              <p>Serving <strong>Coopersburg, Allentown, Bethlehem, Center Valley, Emmaus, Quakertown</strong>, and the greater Lehigh Valley. Locally owned and operated.</p>
-            </div>
-            <div class="stats-grid reveal reveal-delay-3">
-              <div class="stat-item">
-                <div class="stat-number">5.0</div>
-                <div class="stat-label">Google Rating</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">7</div>
-                <div class="stat-label">Five-Star Reviews</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">$0</div>
-                <div class="stat-label">Deposit to Book</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Towns Served</div>
-              </div>
-            </div>
-          </div>
-
-          <figure class="about-photo reveal reveal-delay-2">
-            <img src="images/18-after-headlight.webp" srcset="images/18-after-headlight-360.webp 360w, images/18-after-headlight.webp 720w" sizes="(max-width: 960px) 90vw, 420px" alt="Lexus headlight and front bumper after an exterior detail, paint clean and glossy" loading="lazy" width="720" height="960" />
-          </figure>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
-    <!-- ══ PACKAGES PREVIEW ══ -->
-    <section id="packages" aria-labelledby="packages-heading">
-      <div class="container">
-        <div class="packages-header reveal">
-          <p class="label">Packages</p>
-          <div class="section-divider"></div>
-          <h2 id="packages-heading" class="section-heading">Detailing Packages<br>&amp; Prices.</h2>
-          <p class="section-subtext">Three ways to book. Every service is listed on the pricing page, with no surprise charges.</p>
-        </div>
-
-        <div class="packages-grid">
-          <a href="/interior-detailing/" class="package-card reveal reveal-delay-1">
-            <p class="package-kicker">3 Tiers</p>
-            <h3 class="package-title">Interior</h3>
-            <p class="package-desc">Vacuum and wipe-down up to full steam sanitation and extraction.</p>
-            <p class="package-price"><span>Starting at</span>$80</p>
-            <span class="package-link">See interior packages</span>
-          </a>
-          <a href="/exterior-detailing/" class="package-card reveal reveal-delay-2">
-            <p class="package-kicker">2 Tiers</p>
-            <h3 class="package-title">Exterior</h3>
-            <p class="package-desc">Foam pre-wash and hand wash up to trim protection and spray sealant.</p>
-            <p class="package-price"><span>Starting at</span>$50</p>
-            <span class="package-link">See exterior packages</span>
-          </a>
-          <a href="/full-detail/" class="package-card package-card-featured reveal reveal-delay-3">
-            <p class="package-kicker">Best Value</p>
-            <h3 class="package-title">Inside &amp; Out</h3>
-            <p class="package-desc">Interior and exterior together, priced below booking them separately.</p>
-            <p class="package-price"><span>Starting at</span>$115</p>
-            <span class="package-link">See combo packages</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-fade-divider" aria-hidden="true"></div>
 
     <!-- ══ GALLERY ══ -->
-    <section id="gallery" aria-labelledby="gallery-heading">
-
-      <!-- AnimatedGridPattern: numSquares=30 maxOpacity=0.1 duration=3 repeatDelay=1 -->
-      <!-- width=40 height=40 x=-1 y=-1 strokeDasharray=0                           -->
-      <svg id="gallery-grid-svg" aria-hidden="true">
-        <defs>
-          <pattern id="gallery-grid-pat" width="40" height="40" patternUnits="userSpaceOnUse" x="-1" y="-1">
-            <!-- path M.5 ${height}V.5H${width} = two lines: left edge + top edge of each cell -->
-            <path d="M.5 40V.5H40" fill="none" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#gallery-grid-pat)" />
-        <!-- animated squares injected here by JS, offset by x=-1 y=-1 matching component -->
-        <g id="gallery-squares" transform="translate(-1,-1)"></g>
-      </svg>
-
-      <div class="container">
-        <div class="gallery-header reveal">
-          <p class="label">Portfolio</p>
-          <div class="section-divider"></div>
-          <h2 id="gallery-heading" class="section-heading">Before &amp; After<br>Detailing Results.</h2>
-          <p class="section-subtext">Real results from real vehicles.</p>
+    <section id="gallery" class="panel gallery" aria-labelledby="gallery-heading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2 id="gallery-heading">Before &amp; after <em>detailing results.</em></h2>
+          <p class="sub">Real results from real vehicles.</p>
         </div>
-
         <div class="gallery-tabs reveal">
           <div class="pill-toggle" role="tablist" aria-label="Gallery category">
             <button class="pill is-active" type="button" role="tab" id="gtab-exterior" data-gallery-tab="exterior" aria-selected="true" aria-controls="gallery-exterior">Exterior</button>
@@ -612,146 +543,104 @@
             </button>
           </div>
         </div>
-
       </div>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
+    <!-- ══ ABOUT (scroll-lit statement) ══ -->
+    <section id="about" class="panel about" aria-labelledby="about-heading">
+      <div class="about-pin">
+        <div class="wrap narrow">
+          <p class="eyebrow">About</p>
+          <h2 id="about-heading" class="sr-only">About Lehigh Valley Auto Detailing</h2>
+          <p class="statement" data-scroll-words>Lehigh Valley Auto Detailing is a home-based detailing service in Coopersburg. You drop your vehicle off, and it gets our full attention. No rushing, no shortcuts, and every price listed up front.</p>
+          <ul class="stats">
+            <li><strong>5.0</strong><span>Google rating</span></li>
+            <li><strong>7</strong><span>Five-star reviews</span></li>
+            <li><strong>$0</strong><span>Deposit to book</span></li>
+            <li><strong>6</strong><span>Towns served</span></li>
+          </ul>
+          <p class="towns">Serving Coopersburg, Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ══ REVIEWS ══ -->
-    <!-- Copy review text exactly as written on Google; one .review-card per review. -->
-    <section id="reviews" aria-labelledby="reviews-heading">
-      <div class="container">
-        <div class="reviews-header reveal">
-          <div>
-            <p class="label">Reviews</p>
-            <div class="section-divider"></div>
-            <h2 id="reviews-heading" class="section-heading">What Customers<br>Say on Google.</h2>
-          </div>
-          <a class="reviews-summary" href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">
-            <span class="reviews-score">5.0</span>
-            <span class="reviews-summary-detail">
-              <span class="review-stars" aria-hidden="true">★★★★★</span>
-              <span>7 Google reviews</span>
-            </span>
-          </a>
+    <!-- Copy review text exactly as written on Google; one .r-card per review. -->
+    <section id="reviews" class="panel reviews" aria-labelledby="reviews-heading">
+      <div class="wrap reviews-head">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Reviews</p>
+          <h2 id="reviews-heading">What customers say <em>on Google.</em></h2>
         </div>
-
-        <div class="reviews-grid" id="reviews-grid">
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>Noah is so detail oriented and great at what he does. His team truly cares and he puts work into researching the products he uses to protect the vehicle. I can’t just go to any carwash. He always takes care of our cars! Worth the investment</p></blockquote>
-            <figcaption class="review-author">Amresse Farrow<span>Google review</span></figcaption>
+        <a class="score reveal" href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">
+          <strong>5.0</strong><span><span class="stars">★★★★★</span>7 Google reviews</span>
+        </a>
+      </div>
+      <div class="marquee" data-marquee>
+        <div class="marquee-track">
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>Noah is so detail oriented and great at what he does. His team truly cares and he puts work into researching the products he uses to protect the vehicle. I can’t just go to any carwash. He always takes care of our cars! Worth the investment</p></blockquote>
+            <figcaption>Amresse Farrow<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>Lehigh Valley Auto Detailing did an amazing job on our company Silverado. The truck gets put to work, and they brought it back looking better than I thought possible. Great attention to detail, great service, and a fantastic finished product. Highly recommend them!</p></blockquote>
-            <figcaption class="review-author">Aaron Russell<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>Lehigh Valley Auto Detailing did an amazing job on our company Silverado. The truck gets put to work, and they brought it back looking better than I thought possible. Great attention to detail, great service, and a fantastic finished product. Highly recommend them!</p></blockquote>
+            <figcaption>Aaron Russell<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>Amazing Job! He got out stains that have been in my seats for years! Such a hard worker and the prices are amazing!!! Coming back every time!</p></blockquote>
-            <figcaption class="review-author">Emily Hornyak<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>Amazing Job! He got out stains that have been in my seats for years! Such a hard worker and the prices are amazing!!! Coming back every time!</p></blockquote>
+            <figcaption>Emily Hornyak<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>I was able to schedule my appointment quickly and it came back incredibly clean, I’m very happy with the results.</p></blockquote>
-            <figcaption class="review-author">Colton Alder<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>I was able to schedule my appointment quickly and it came back incredibly clean, I’m very happy with the results.</p></blockquote>
+            <figcaption>Colton Alder<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>My car never looked soooooo good! Better than when I picked it up at the dealership! “DETAILED” is definitely the right word! 😛</p></blockquote>
-            <figcaption class="review-author">Laura Malek<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>My car never looked soooooo good! Better than when I picked it up at the dealership! “DETAILED” is definitely the right word! 😛</p></blockquote>
+            <figcaption>Laura Malek<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>Had no issues whatsoever, communication was very good and the results were even better. Overall definitely a reliable business.</p></blockquote>
-            <figcaption class="review-author">Jackson Burmeister<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>Had no issues whatsoever, communication was very good and the results were even better. Overall definitely a reliable business.</p></blockquote>
+            <figcaption>Jackson Burmeister<span>Google review</span></figcaption>
           </figure>
-          <figure class="review-card">
-            <div class="review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote class="review-text"><p>Very good job done cleaning. Very professional and fast as well.</p></blockquote>
-            <figcaption class="review-author">Aniruthan Hari<span>Google review</span></figcaption>
+          <figure class="r-card">
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote><p>Very good job done cleaning. Very professional and fast as well.</p></blockquote>
+            <figcaption>Aniruthan Hari<span>Google review</span></figcaption>
           </figure>
-        </div>
-
-        <div class="reviews-actions">
-          <button type="button" class="btn-primary reviews-more-btn" aria-controls="reviews-grid" aria-expanded="false">Show all 7 reviews</button>
-          <a class="reviews-google-link" href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Read them on Google</a>
         </div>
       </div>
+      <p class="center reviews-link"><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Read them all on Google →</a></p>
     </section>
 
-    <div class="section-fade-divider" aria-hidden="true"></div>
-
     <!-- ══ CONTACT ══ -->
-    <section id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="contact-grid">
-
-          <div class="contact-info">
-            <p class="label reveal">Contact</p>
-            <div class="section-divider reveal reveal-delay-1"></div>
-            <h2 id="contact-heading" class="section-heading reveal reveal-delay-1">Request Your<br>Detail.</h2>
-
-            <div class="contact-info-items reveal reveal-delay-2">
-              <div class="contact-info-item">
-                <div class="contact-info-label">Location</div>
-                <div class="contact-info-value">Coopersburg, PA</div>
-                <div class="contact-info-sub">Drop-off service. You bring your vehicle to us.</div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Service Area</div>
-                <div class="contact-info-value">Coopersburg, Allentown, Bethlehem,<br>Center Valley, Emmaus, Quakertown &amp; Greater Lehigh Valley</div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Hours</div>
-                <div class="contact-info-value">By appointment only</div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Email</div>
-                <div class="contact-info-value">
-                  <a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Phone</div>
-                <div class="contact-info-value">
-                  <a href="tel:+14847191144" data-ga-label="contact_phone">(484) 719-1144</a>
-                </div>
-                <div class="contact-info-sub">
-                  <a href="sms:+14847191144" class="contact-text-link" data-ga-label="contact_text">Text us a photo of your car for a fast quote</a>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Find Us on Google</div>
-                <div class="contact-info-value">
-                  <a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">View our Google Business Profile</a>
-                </div>
-              </div>
-              <div class="contact-info-item">
-                <div class="contact-info-label">Follow Us</div>
-                <div class="contact-info-value">
-                  <a href="https://instagram.com/lehighautodetailing" class="contact-social-link" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
-                      <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
-                      <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
-                    </svg>
-                    <span>@lehighautodetailing</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-                    <div class="form-thankyou" id="form-thankyou" style="display:none; text-align:center; padding:3rem 1rem;">
+    <section id="contact" class="panel contact" aria-labelledby="contact-heading">
+      <div class="wrap contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-heading">Request your <em>detail.</em></h2>
+          <p class="sub">Send a request and we'll confirm a time, usually within 24 hours. Prefer to talk? Call or text anytime.</p>
+          <dl class="info">
+            <div><dt>Phone</dt><dd><a href="tel:+14847191144" data-ga-label="contact_phone">(484) 719-1144</a><br><a class="small" href="sms:+14847191144" data-ga-label="contact_text">Text us a photo for a fast quote</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a></dd></div>
+            <div><dt>Location</dt><dd>Coopersburg, PA<br><span class="small">Drop-off service. Exact address sent when we confirm.</span></dd></div>
+            <div><dt>Hours</dt><dd>By appointment</dd></div>
+          </dl>
+        </div>
+        <div class="form-card">
+          <span class="diamond" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span>
+          <div class="form-thankyou" id="form-thankyou" style="display:none; text-align:center; padding:3rem 1rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:1.25rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <h3 style="font-size:1.5rem;margin-bottom:0.75rem;letter-spacing:0.05em;">Request Received</h3>
             <p style="color:var(--gray);max-width:360px;margin:0 auto 1.5rem;">Thanks! We'll be in touch shortly to confirm your appointment.</p>
             <a href="#" class="btn-submit" style="display:inline-block;text-decoration:none;">Back to Top</a>
           </div>
-          <form class="contact-form reveal reveal-delay-2" id="contact-form" action="https://formspree.io/f/mpqyjqlv" method="POST" aria-label="Quote request form">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/mpqyjqlv" method="POST" aria-label="Quote request form">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="form-row">
               <div class="form-group">
@@ -805,74 +694,42 @@
             <p class="form-reassurance">We reply within 24 hours.</p>
             <p class="form-legal">By submitting, you agree to our <a href="/service-policies/">Service Policies</a> and <a href="/privacy/">Privacy Policy</a>.</p>
           </form>
-
         </div>
-
       </div>
     </section>
 
   </main>
 
   <!-- ══ FOOTER ══ -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-col footer-col-brand">
-          <img src="images/lehigh-valley-auto-detailing-logo-wide.png" class="footer-logo" alt="Lehigh Valley Auto Detailing" />
-          <a href="https://instagram.com/lehighautodetailing" class="footer-social" target="_blank" rel="noopener" aria-label="Follow us on Instagram (@lehighautodetailing)">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
-              <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
-            </svg>
-            <span>@lehighautodetailing</span>
-          </a>
-          <p class="footer-copy">&copy; 2026 Lehigh Valley Auto Detailing. Coopersburg, PA.</p>
-          <p class="footer-services"><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a></p>
-          <p class="footer-legal"><a href="/service-policies/">Service Policies</a><span aria-hidden="true">&middot;</span><a href="/privacy/">Privacy Policy</a></p>
-        </div>
-
-        <div class="footer-col footer-col-map">
-          <div class="footer-map">
-            <div class="contact-map-frame">
-              <iframe
-                class="contact-map-iframe"
-                src="https://www.google.com/maps?q=Coopersburg,PA+18036&output=embed"
-                width="100%"
-                height="260"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Map showing the Coopersburg, PA service area"></iframe>
-            </div>
-            <p class="contact-map-note">Exact drop-off address provided upon booking confirmation.</p>
-          </div>
-        </div>
-
-        <div class="footer-col footer-col-payment">
-          <div class="payment-accepted">
-            <p class="payment-label">Payment Accepted</p>
-            <p class="payment-methods">Visa &middot; Mastercard &middot; American Express &middot; Discover &middot; Apple Pay &middot; Google Pay</p>
-            <p class="payment-secure">Secure payments powered by Stripe</p>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="f-cta">
+        <h2>Ready when <em>you are.</em></h2>
+        <div class="cta-row"><a href="#contact" class="btn btn-silver">Request a Time</a><a href="tel:+14847191144" class="btn btn-ghost" data-ga-label="footer_call">(484) 719-1144</a></div>
       </div>
+      <div class="f-cols">
+        <div>
+          <img src="images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
+          <p class="small">Interior &amp; exterior detailing in Coopersburg, PA.</p>
+          <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
+        </div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices</a></div>
+        <div><h3>Company</h3><a href="#about">About</a><a href="#reviews">Reviews</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Contact</h3><a href="tel:+14847191144">(484) 719-1144</a><a href="mailto:noah@lehighvalleyautodetailing.com">Email us</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
+      </div>
+      <p class="wordmark" aria-hidden="true">Lehigh Valley <em>Auto Detailing</em></p>
+      <p class="f-copy">&copy; 2026 Lehigh Valley Auto Detailing · Coopersburg, PA</p>
     </div>
   </footer>
 
   <!-- ══ STICKY MOBILE CTA (phones only) ══ -->
   <nav class="mobile-cta" aria-label="Quick contact">
-    <a href="tel:+14847191144" data-ga-label="sticky_call">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Call
-    </a>
-    <a href="sms:+14847191144" data-ga-label="sticky_text">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      Text
-    </a>
+    <a href="tel:+14847191144" data-ga-label="sticky_call">Call</a>
+    <a href="sms:+14847191144" data-ga-label="sticky_text">Text</a>
     <a href="#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
   <script src="script.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
