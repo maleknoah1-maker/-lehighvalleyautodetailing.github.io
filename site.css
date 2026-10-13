@@ -1290,3 +1290,5 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
 .panel.page-top { margin: 0 -10px; padding-top: 9.5rem; border-radius: 0 0 var(--radius) var(--radius); }
 @media (max-width: 640px) { .panel.page-top { margin: 0 -6px; padding-top: 7.5rem; } }
 .reviews-cta { margin-top: 2.75rem; }
+/* Exterior photo: favor the headlight and grille over the house */
+.s-card[href="/exterior-detailing/"] .s-img img { object-position: 50% 100%; }
