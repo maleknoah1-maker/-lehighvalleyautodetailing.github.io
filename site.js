@@ -53,27 +53,3 @@
   // fonts change line breaks, so measure after they load
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(addButtons);
 })();
-
-// ─── ABOUT: words light up as the pinned section scrolls past ───
-(function () {
-  const el = document.querySelector('[data-scroll-words]');
-  if (!el) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const words = el.textContent.trim().split(/\s+/);
-  el.innerHTML = words.map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
-  const spans = el.querySelectorAll('.w');
-  const section = el.closest('section');
-
-  function update() {
-    const r = section.getBoundingClientRect();
-    const total = section.offsetHeight - window.innerHeight;
-    // progress 0 → 1 while the section is pinned; finish a bit early
-    const p = Math.min(1, Math.max(0, -r.top / (total * 0.8)));
-    const lit = Math.round(p * spans.length);
-    spans.forEach(function (s, i) { s.classList.toggle('on', i < lit); });
-  }
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
