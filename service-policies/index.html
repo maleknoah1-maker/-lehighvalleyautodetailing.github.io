@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Service Policies | Lehigh Valley Auto Detailing</title>
-  <meta name="description" content="Booking, payment, cancellation, and vehicle care policies for Lehigh Valley Auto Detailing in Coopersburg, PA. No deposit, no cancellation fee, payment at pickup." />
+  <meta name="description" content="Booking, payment, cancellation, and vehicle care policies for Lehigh Valley Auto Detailing in Coopersburg, PA. No deposit, no cancellation fee, payment when the service is complete." />
   <meta property="og:title" content="Service Policies | Lehigh Valley Auto Detailing" />
-  <meta property="og:description" content="Booking, payment, cancellation, and vehicle care policies for Lehigh Valley Auto Detailing in Coopersburg, PA. No deposit, no cancellation fee, payment at pickup." />
+  <meta property="og:description" content="Booking, payment, cancellation, and vehicle care policies for Lehigh Valley Auto Detailing in Coopersburg, PA. No deposit, no cancellation fee, payment when the service is complete." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lehighvalleyautodetailing.com/service-policies/" />
   <meta property="og:site_name" content="Lehigh Valley Auto Detailing" />
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=3" />
+  <link rel="stylesheet" href="/site.css?v=4" />
 
   <script type="application/ld+json">
   {
@@ -50,6 +50,12 @@
   </script>
 </head>
 <body class="v2">
+  <!-- ══ ANNOUNCEMENT (dismissible; remembered in localStorage) ══ -->
+  <div class="announce" id="announce" role="region" aria-label="Announcement">
+    <p><span class="announce-new">New:</span> Mobile detailing is now available. We come to you anywhere in the Lehigh Valley. <a href="/mobile-detailing/">See mobile pricing →</a></p>
+    <button type="button" class="announce-close" aria-label="Dismiss announcement">×</button>
+  </div>
+  <script>try{if(localStorage.getItem('lvad-announce-mobile')==='dismissed'){var a=document.getElementById('announce');a.parentNode.removeChild(a);}}catch(e){}</script>
 
   <!-- ══ HEADER (floating glass bar) ══ -->
   <header class="site-header" id="nav">
@@ -81,7 +87,7 @@
           <p class="label">Before You Book</p>
           <div class="section-divider"></div>
           <h1 id="legal-heading" class="section-heading">Service <em>policies.</em></h1>
-          <p class="legal-updated">Last updated October 11, 2026</p>
+          <p class="legal-updated">Last updated October 13, 2026</p>
         </div>
 
         <div class="legal-body" style="margin-top:2.5rem">
@@ -98,13 +104,35 @@
           <p>We are based in Coopersburg, PA. You bring your vehicle to us, and the exact drop-off address is provided when your appointment is confirmed.</p>
           <p>There is no pickup deadline and no storage fee. We'll let you know when your vehicle is ready.</p>
 
+                    <h2>Mobile Service</h2>
+          <p>We also offer mobile detailing at your driveway. Mobile pricing is the package price plus a travel fee for your zone.</p>
+          <div class="svc-table-wrap">
+            <table class="svc-table mobile-zones">
+              <thead><tr><th>Zone</th><th>Area</th><th>Travel fee</th></tr></thead>
+              <tbody>
+                <tr><td>Zone 1</td><td>Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg)</td><td>+$40</td></tr>
+                <tr><td>Zone 2</td><td>15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton</td><td>+$60</td></tr>
+                <tr><td>Beyond 25 miles</td><td>Mobile is not available. Drop-off in Coopersburg is still available.</td><td>N/A</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>A second vehicle at the same address has no extra travel fee. Maintenance Wash &amp; Dry is not available as a standalone mobile booking. Pair it with any interior package (the Full Detail Refresh). Mobile service is available within 25 miles of Coopersburg. Outside that area, drop-off is still available.</p>
+          <p>For a mobile appointment, please have ready:</p>
+          <ul class="svc-list">
+            <li>A driveway or parking spot where you're allowed to have work done. Some apartment complexes and HOAs don't allow it, so please check first.</li>
+            <li>An outdoor electrical outlet within 50 feet of the vehicle.</li>
+            <li>A working outdoor water spigot (exterior services only).</li>
+            <li>Exterior mobile services depend on the weather. If it's raining or below 40°F, we'll reschedule at no charge, or you can switch to drop-off.</li>
+          </ul>
+          <p>If we arrive and can't access the vehicle, power, or water, we'll work with you to reschedule. See <a href="/mobile-detailing/">mobile detailing</a> for full details.</p>
+
           <h2>Pricing &amp; Payment</h2>
           <p>Package and add-on prices are listed on our <a href="/services/">Services page</a> and depend on vehicle size and the service you choose.</p>
-          <p>Vehicles with excessive dirt, mud, or stains may need extra work, which can add a surcharge of $25 to $75. Any surcharge is discussed with you at drop-off, before we begin, never after. Embedded pet hair is handled by the Pet Hair Removal add-on rather than a surcharge.</p>
-          <p><strong>Payment is due at pickup.</strong> We accept Visa, Mastercard, American Express, Discover, Apple Pay, and Google Pay. Card payments are processed securely by Stripe.</p>
+          <p>Vehicles with excessive dirt, mud, or stains may need extra work, which can add a surcharge of $25 to $75. Any surcharge is discussed with you before we begin, never after. Embedded pet hair is handled by the Pet Hair Removal add-on rather than a surcharge.</p>
+          <p><strong>Payment is due at pickup for drop-off, or when the service is complete for mobile.</strong> We accept Visa, Mastercard, American Express, Discover, Apple Pay, and Google Pay. Card payments are processed securely by Stripe.</p>
 
           <h2>Your Vehicle &amp; Belongings</h2>
-          <p>Please remove valuables and personal items before drop-off. We do not open or clean inside the glovebox, out of respect for your personal documents and privacy.</p>
+          <p>Please remove valuables and personal items before your appointment. We do not open or clean inside the glovebox, out of respect for your personal documents and privacy.</p>
           <p>We treat every vehicle with care. We are not responsible for pre-existing damage, such as scratches, chips, dents, or worn or failing interior materials. If we notice something like this, we'll point it out to you.</p>
 
           <h2>Results</h2>
@@ -135,10 +163,10 @@
       <div class="f-cols">
         <div>
           <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
-          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
-        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
+        <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
         <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
@@ -154,7 +182,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=3"></script>
-  <script src="/site.js?v=3"></script>
+  <script src="/script.js?v=4"></script>
+  <script src="/site.js?v=4"></script>
 </body>
 </html>

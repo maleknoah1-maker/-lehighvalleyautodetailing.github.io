@@ -1336,3 +1336,111 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
   .review-dialog { padding: 2rem 1.4rem 1.5rem; }
   .review-dialog p { font-size: 1.12rem; }
 }
+
+/* ══════════ ANNOUNCEMENT BAR ══════════ */
+.announce {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.6rem 3rem 0.6rem 1.25rem;
+  background: linear-gradient(90deg, #160d0c 0%, #1c1c1c 50%, #160d0c 100%);
+  border-bottom: 1px solid rgba(168,51,42,0.45);
+  text-align: center;
+}
+.announce p { font-size: 0.78rem; line-height: 1.5; color: var(--silver-2); }
+.announce-new {
+  margin-right: 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--crimson-2);
+}
+.announce a { color: var(--text); font-weight: 500; text-underline-offset: 3px; white-space: nowrap; }
+.announce-close {
+  position: absolute;
+  top: 50%; right: 0.75rem;
+  transform: translateY(-50%);
+  width: 30px; height: 30px;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.announce-close:hover { color: var(--text); border-color: var(--silver); }
+/* The fixed header and mobile menu sit below the bar while it's on screen (--ann set by site.js) */
+.site-header { top: calc(14px + var(--ann, 0px)); }
+.mobile-menu { top: calc(82px + var(--ann, 0px)); }
+@media (max-width: 640px) {
+  .announce { padding: 0.55rem 2.75rem 0.55rem 1rem; }
+  .announce p { font-size: 0.72rem; }
+  .site-header { top: calc(10px + var(--ann, 0px)); }
+  .mobile-menu { top: calc(70px + var(--ann, 0px)); }
+}
+
+/* ══════════ MOBILE DETAILING ══════════ */
+/* Fifth service card spans the row, image beside text */
+.s-card--wide { grid-column: 1 / -1; flex-direction: row; }
+.s-card--wide .s-img { flex: 0 0 34%; }
+.s-card--wide .s-img img { height: 250px; aspect-ratio: auto; object-position: 50% 60%; }
+.s-card--wide .s-body { justify-content: center; padding: 2rem 2.25rem; }
+.s-card--wide .s-body h3 { font-size: 2.1rem; }
+.s-card--wide .s-body p { font-size: 0.92rem; max-width: 520px; }
+.s-card--wide .s-tag { left: 12px; right: auto; }
+
+.svc-mode-note {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.6rem;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.svc-mode-note .diamond { align-self: center; }
+.svc-mode-note a { color: var(--text); text-underline-offset: 3px; }
+
+.mobile-zones td:last-child, .mobile-examples td { white-space: nowrap; }
+.mobile-zones td:nth-child(2) { white-space: normal; color: var(--silver-2); }
+.mobile-examples td { color: var(--silver-2) !important; font-weight: 400 !important; }
+.mobile-examples td:first-child { color: var(--text) !important; white-space: normal; }
+.mobile-examples td:not(:first-child) { font-family: var(--serif); font-size: 1.15rem; font-weight: 600 !important; color: var(--text) !important; }
+.mobile-dropoff { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+
+/* Booking form: mobile fields */
+.mobile-fields { margin-bottom: 1.1rem; padding: 1rem 1.1rem 0.4rem; border: 1px dashed var(--line-strong); border-radius: 12px; }
+.mobile-fields[hidden] { display: none; }
+.field-hint { margin-top: 0.4rem; font-size: 0.74rem; color: var(--muted); }
+.field-hint a { color: var(--silver); }
+.check { display: flex; align-items: flex-start; gap: 0.65rem; margin-bottom: 0.8rem; font-size: 0.84rem; line-height: 1.5; color: var(--silver-2); cursor: pointer; }
+.check input { flex-shrink: 0; width: 18px; height: 18px; margin-top: 0.15rem; accent-color: var(--silver); }
+
+@media (max-width: 1060px) {
+  .s-card--wide .s-img { flex-basis: 45%; }
+}
+@media (max-width: 640px) {
+  .s-card--wide { flex-direction: column; grid-column: auto; }
+  .s-card--wide .s-img { flex-basis: auto; }
+  .s-card--wide .s-img img { aspect-ratio: 1 / 1; min-height: 0; height: auto; }
+  .s-card--wide .s-body { padding: 1.4rem 1.4rem 1.5rem; }
+  .s-card--wide .s-body h3 { font-size: 1.7rem; }
+  .mobile-zones th, .mobile-zones td, .mobile-examples th, .mobile-examples td { padding: 0.7rem 0.6rem; font-size: 0.8rem; }
+  .mobile-examples td:not(:first-child) { font-size: 1rem; }
+}
+
+/* Hero label: each phrase stays whole; on phones they stack */
+.hero-copy .eyebrow > span:not(.diamond) { white-space: nowrap; }
+@media (max-width: 640px) {
+  .hero-copy .eyebrow > span:not(.diamond) { display: block; }
+}
+.svc-table-wrap + .svc-list, .mobile-zones + .svc-list { margin-top: 1.5rem; }
+.section-heading + .svc-list { margin-top: 1.75rem; }
+.mobile-zones th, .mobile-examples th { white-space: nowrap; }
+.legal-body .svc-table-wrap { margin: 1rem 0 1.25rem; }
+.legal-body ul + p { margin-top: 1rem; }
