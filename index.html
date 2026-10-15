@@ -27,7 +27,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="site.css?v=4" />
+  <link rel="preload" as="image" href="images/hero-rear-window-poster.webp" fetchpriority="high" />
+  <link rel="stylesheet" href="site.css?v=5" />
 
   <!-- ══ AutomotiveBusiness structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -235,8 +236,17 @@
         </div>
         <figure class="hero-frame">
           <span class="diamond" aria-hidden="true"></span><span class="diamond" aria-hidden="true"></span>
-          <img src="images/gloss-rear-glass.webp" srcset="images/gloss-rear-glass-480.webp 480w, images/gloss-rear-glass.webp 960w" sizes="(max-width: 960px) 80vw, 420px" alt="Rear glass of a silver Lexus after an exterior detail, reflecting the trees and sky" fetchpriority="high" width="960" height="1200" />
-          <figcaption>After · Full Exterior Detail</figcaption>
+          <div class="hero-rot" data-hero-rotator>
+            <video class="hero-rot-slide is-active" data-caption="After · Rear Window, Exterior Detail" poster="images/hero-rear-window-poster.webp" muted playsinline autoplay preload="auto" aria-label="Video of the rear window and paint after an exterior detail, glossy enough to reflect the trees">
+              <source src="images/hero-rear-window.webm" type="video/webm" />
+              <source src="images/hero-rear-window.mp4" type="video/mp4" />
+            </video>
+            <img class="hero-rot-slide" data-caption="After · Interior Detail" data-src="images/gloss-interior.webp" data-srcset="images/gloss-interior-480.webp 480w, images/gloss-interior.webp 960w" sizes="(max-width: 960px) 80vw, 420px" alt="Lexus driver seat and dash after an interior detail, leather and trim spotless" width="960" height="1200" />
+            <img class="hero-rot-slide" data-caption="After · Full Exterior Detail" data-src="images/gloss-rear-glass.webp" data-srcset="images/gloss-rear-glass-480.webp 480w, images/gloss-rear-glass.webp 960w" sizes="(max-width: 960px) 80vw, 420px" alt="Rear glass of a silver Lexus after an exterior detail, reflecting the trees and sky" width="960" height="1200" />
+            <img class="hero-rot-slide" data-caption="After · Full Detail" data-src="images/gloss-front-end.webp" data-srcset="images/gloss-front-end-480.webp 480w, images/gloss-front-end.webp 960w" sizes="(max-width: 960px) 80vw, 420px" alt="Silver Lexus front end after a full detail, glossy paint and headlight" width="960" height="1200" />
+            <img class="hero-rot-slide" data-caption="After · Interior Detail" data-src="images/gloss-second-row.webp" data-srcset="images/gloss-second-row-480.webp 480w, images/gloss-second-row.webp 720w" sizes="(max-width: 960px) 80vw, 420px" alt="Minivan second-row leather seats after an interior detail, cleaned and conditioned" width="960" height="1200" />
+          </div>
+          <figcaption aria-live="polite">After · Rear Window, Exterior Detail</figcaption>
         </figure>
       </div>
     </section>
@@ -270,6 +280,14 @@
           <p class="sub">Pick the level your car needs. Every service is spelled out, with no surprise charges.</p>
         </div>
         <div class="s-grid">
+          <a href="/full-detail/" class="s-card s-card--featured reveal">
+            <span class="s-tag">Best value</span><div class="s-img"><img src="images/gloss-full-car-480.webp" srcset="images/gloss-full-car-480.webp 480w, images/gloss-full-car.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
+            <div class="s-body">
+              <h3>Full Detail</h3>
+              <p>Inside and out in one visit, priced below booking them separately.</p>
+              <div class="s-foot"><span class="s-price">From $115</span><span class="s-arrow" aria-hidden="true">→</span></div>
+            </div>
+          </a>
           <a href="/interior-detailing/" class="s-card reveal">
             <div class="s-img"><img src="images/gloss-interior-480.webp" srcset="images/gloss-interior-480.webp 480w, images/gloss-interior.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
             <div class="s-body">
@@ -284,14 +302,6 @@
               <h3>Exterior Detailing</h3>
               <p>Foam pre-wash, hand wash, bug and tar removal and a spray sealant.</p>
               <div class="s-foot"><span class="s-price">From $50</span><span class="s-arrow" aria-hidden="true">→</span></div>
-            </div>
-          </a>
-          <a href="/full-detail/" class="s-card s-card--featured reveal">
-            <span class="s-tag">Best value</span><div class="s-img"><img src="images/gloss-full-car-480.webp" srcset="images/gloss-full-car-480.webp 480w, images/gloss-full-car.webp 960w" sizes="(max-width: 640px) 78vw, 280px" alt="" loading="lazy" width="480" height="600" /></div>
-            <div class="s-body">
-              <h3>Full Detail</h3>
-              <p>Inside and out in one visit, priced below booking them separately.</p>
-              <div class="s-foot"><span class="s-price">From $115</span><span class="s-arrow" aria-hidden="true">→</span></div>
             </div>
           </a>
           <a href="/pet-hair-removal/" class="s-card reveal">
@@ -390,7 +400,23 @@
 
         <div class="gallery-carousel reveal reveal-delay-1" id="gallery-exterior" data-gallery="exterior" role="tabpanel" aria-labelledby="gtab-exterior" hidden>
           <div class="gallery-frame">
-            <div class="gallery-slide is-active">
+            <div class="gallery-slide gallery-slide-video is-active">
+              <div class="gallery-half">
+                <video poster="images/rear-window-before-poster.webp" muted loop playsinline preload="none" aria-label="Video walkaround of the dusty rear window before detailing">
+                  <source src="images/rear-window-before.webm" type="video/webm" />
+                  <source src="images/rear-window-before.mp4" type="video/mp4" />
+                </video>
+                <span class="gallery-badge badge-before">Before</span>
+              </div>
+              <div class="gallery-half">
+                <video poster="images/rear-window-after-poster.webp" muted loop playsinline preload="none" aria-label="Video walkaround of the clean rear window after detailing">
+                  <source src="images/rear-window-after.webm" type="video/webm" />
+                  <source src="images/rear-window-after.mp4" type="video/mp4" />
+                </video>
+                <span class="gallery-badge badge-after">After</span>
+              </div>
+            </div>
+            <div class="gallery-slide">
               <div class="gallery-half">
                 <img src="images/13-before-exterior-front.webp" srcset="images/13-before-exterior-front-360.webp?v=2 360w, images/13-before-exterior-front.webp 720w" sizes="(max-width: 640px) 50vw, 460px" alt="Silver Lexus RX before detailing — paint dull and dusty in daylight" width="720" height="960" />
                 <span class="gallery-badge badge-before">Before</span>
@@ -420,25 +446,13 @@
                 <span class="gallery-badge badge-after">After</span>
               </div>
             </div>
-            <div class="gallery-slide gallery-slide-video">
-              <div class="gallery-half">
-                <video poster="images/rear-window-before-poster.webp" muted loop playsinline preload="none" aria-label="Video walkaround of the dusty rear window before detailing">
-                  <source src="images/rear-window-before.webm" type="video/webm" />
-                  <source src="images/rear-window-before.mp4" type="video/mp4" />
-                </video>
-                <span class="gallery-badge badge-before">Before</span>
-              </div>
-              <div class="gallery-half">
-                <video poster="images/rear-window-after-poster.webp" muted loop playsinline preload="none" aria-label="Video walkaround of the clean rear window after detailing">
-                  <source src="images/rear-window-after.webm" type="video/webm" />
-                  <source src="images/rear-window-after.mp4" type="video/mp4" />
-                </video>
-                <span class="gallery-badge badge-after">After</span>
-              </div>
-            </div>
           </div>
           <div class="gallery-thumbs" role="group" aria-label="Choose an exterior before and after">
-            <button class="gallery-thumb is-active" type="button" aria-pressed="true" aria-label="Show front three-quarter before and after">
+            <button class="gallery-thumb is-active" type="button" aria-pressed="true" aria-label="Show rear window before and after video">
+              <img src="images/rear-window-after-poster.webp" alt="" loading="lazy" />
+              <span class="gallery-thumb-play" aria-hidden="true"></span>
+            </button>
+            <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Show front three-quarter before and after">
               <img src="images/14-after-exterior-front-thumb.webp" alt="" loading="lazy" />
             </button>
             <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Show headlight before and after">
@@ -446,10 +460,6 @@
             </button>
             <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Show rear window before and after">
               <img src="images/20-after-rear-window-thumb.webp" alt="" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" aria-pressed="false" aria-label="Show rear window before and after video">
-              <img src="images/rear-window-after-poster.webp" alt="" loading="lazy" />
-              <span class="gallery-thumb-play" aria-hidden="true"></span>
             </button>
           </div>
         </div>
@@ -804,6 +814,6 @@
   </nav>
 
   <script src="script.js?v=4"></script>
-  <script src="site.js?v=4"></script>
+  <script src="site.js?v=5"></script>
 </body>
 </html>
