@@ -660,7 +660,6 @@ h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); }
 .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; align-items: start; }
 .contact-info h2 { margin-top: 1.1rem; }
 .contact-info .sub { margin-top: 1rem; }
-.contact-book { margin-top: 1.4rem; }
 .info { margin-top: 2.5rem; display: grid; gap: 1.4rem; }
 .info dt { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); }
 .info dd { margin-top: 0.3rem; font-size: 0.95rem; }
