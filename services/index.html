@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=8" />
+  <link rel="stylesheet" href="/site.css?v=9" />
 
   <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -208,6 +208,63 @@
     gtag('js', new Date());
     gtag('config', 'G-XHWCRL0JG6');
   </script>
+  <!-- ══ FAQ structured data ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does car detailing cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interior packages start at $80, exterior packages at $50, and full details (inside and out) at $115. Every price depends on vehicle size: Car / Sedan, SUV / Truck, or Large SUV / Van."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a full detail cheaper than booking interior and exterior separately?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each Full Detail combo costs less than its interior and exterior packages booked separately. You save $15 to $25 on the Refresh, $30 to $40 on the Complete, and $40 to $55 on the Ultimate, depending on vehicle size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer mobile detailing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every package is available at your driveway for the same price plus a travel fee: $40 in most of the Lehigh Valley, or $60 for 15 to 25 miles from Coopersburg. See mobile pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to pay a deposit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no deposit and no cancellation fee. Payment is due at pickup for drop-off, or when the service is complete for mobile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there an extra charge for a very dirty car?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heavily soiled vehicles may have an added charge of $25 to $75. We always tell you before we begin, never after. Pet hair is a separate add-on ($30 to $50), not a surcharge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which package should I choose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text a photo of your vehicle to (484) 719-1144 and we'll recommend the right one. Our most popular package is the Full Detail Complete."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="v2">
   <!-- ══ ANNOUNCEMENT (dismissible; remembered in localStorage) ══ -->
@@ -223,7 +280,7 @@
       <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
         <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
       </a>
-      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/blog/">Blog</a></li></ul></nav>
       <a href="/#contact" class="btn btn-silver btn-sm">Book Now</a>
       <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -234,6 +291,7 @@
     <a href="/#reviews">Reviews</a>
     <a href="/#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="/blog/">Blog</a>
     <a href="tel:+14847191144">Call (484) 719-1144</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
@@ -297,6 +355,7 @@
                 <li>Complete Basic Interior Clean</li>
                 <li>Complete Maintenance Wash &amp; Dry</li>
               </ul>
+              <p class="card-save">Save $15 to $25 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
@@ -324,6 +383,7 @@
                 <li>Complete Standard Interior Detail</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <p class="card-save">Save $30 to $40 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
@@ -350,6 +410,7 @@
                 <li>Complete Deep Interior Restoration</li>
                 <li>Complete Full Exterior Detail</li>
               </ul>
+              <p class="card-save">Save $40 to $55 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
@@ -709,6 +770,42 @@
       </div>
     </section>
 
+    <!-- ══ FAQ ══ -->
+    <section class="svc-section panel" aria-labelledby="page-faq-heading">
+      <div class="container svc-narrow">
+        <p class="label">Questions</p>
+        <div class="section-divider"></div>
+        <h2 id="page-faq-heading" class="section-heading">Pricing <em>questions.</em></h2>
+        <div class="faq-list svc-faq">
+          <details class="faq-item">
+            <summary class="faq-question">How much does car detailing cost?</summary>
+            <div class="faq-answer"><p>Interior packages start at $80, exterior packages at $50, and full details (inside and out) at $115. Every price depends on vehicle size: Car / Sedan, SUV / Truck, or Large SUV / Van.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is a full detail cheaper than booking interior and exterior separately?</summary>
+            <div class="faq-answer"><p>Yes. Each Full Detail combo costs less than its interior and exterior packages booked separately. You save $15 to $25 on the Refresh, $30 to $40 on the Complete, and $40 to $55 on the Ultimate, depending on vehicle size.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you offer mobile detailing?</summary>
+            <div class="faq-answer"><p>Yes. Every package is available at your driveway for the same price plus a travel fee: $40 in most of the Lehigh Valley, or $60 for 15 to 25 miles from Coopersburg. <a href="/mobile-detailing/">See mobile pricing</a>.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do I have to pay a deposit?</summary>
+            <div class="faq-answer"><p>No. There is no deposit and no cancellation fee. Payment is due at pickup for drop-off, or when the service is complete for mobile.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is there an extra charge for a very dirty car?</summary>
+            <div class="faq-answer"><p>Heavily soiled vehicles may have an added charge of $25 to $75. We always tell you before we begin, never after. Pet hair is a separate add-on ($30 to $50), not a surcharge.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which package should I choose?</summary>
+            <div class="faq-answer"><p>Text a photo of your vehicle to <a href="sms:+14847191144" data-ga-label="services_faq_text">(484) 719-1144</a> and we'll recommend the right one. Our most popular package is the Full Detail Complete.</p></div>
+          </details>
+        </div>
+        <p class="svc-pricing-note">More answers on the <a href="/faq/">FAQ page</a>.</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- ══ FOOTER ══ -->
@@ -725,7 +822,7 @@
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
         <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
-        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/blog/">Blog</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
       <div class="f-map">

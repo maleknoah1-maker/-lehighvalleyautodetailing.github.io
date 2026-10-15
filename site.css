@@ -1498,3 +1498,22 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
   .f-map { grid-template-columns: 1fr; }
   .f-map-frame iframe { height: 260px; }
 }
+
+/* ─── BLOG ─── */
+.blog-hero .svc-intro { max-width: 680px; }
+.blog-meta { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.blog-body > p, .blog-body .svc-list { line-height: 1.8; }
+.blog-body > p { margin-bottom: 1.1rem; color: #d6d6d6; }
+.blog-body h2.svc-h3:first-of-type { margin-top: 1.5rem; }
+.blog-body .svc-table-wrap { margin: 1rem 0 1.5rem; }
+.blog-list { display: grid; gap: 1rem; }
+.blog-card {
+  display: grid; gap: 0.5rem; padding: 1.6rem 1.75rem;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--text); text-decoration: none; transition: border-color 0.2s, transform 0.2s;
+}
+.blog-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.blog-card-title { font-family: var(--serif); font-size: 1.55rem; font-weight: 600; line-height: 1.2; }
+.blog-card-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+.blog-card-more { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver); margin-top: 0.25rem; }
+.card-save { margin: 0.9rem 0 1.2rem; padding-top: 0.8rem; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--gold); letter-spacing: 0.02em; }

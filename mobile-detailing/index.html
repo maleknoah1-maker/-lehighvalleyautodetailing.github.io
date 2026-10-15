@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=8" />
+  <link rel="stylesheet" href="/site.css?v=9" />
 
   <!-- ══ LocalBusiness + Service + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -165,6 +165,63 @@
     gtag('js', new Date());
     gtag('config', 'G-XHWCRL0JG6');
   </script>
+  <!-- ══ FAQ structured data ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much is the mobile travel fee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mobile service is the package price plus a travel fee. Zone 1 is +$40: Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg). Zone 2 is +$60: 15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton. A second vehicle at the same address has no extra travel fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to have ready for a mobile detail?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A driveway or parking spot where you're allowed to have work done (some apartment complexes and HOAs don't allow it, so please check first), an outdoor electrical outlet within 50 feet of the vehicle, and a working outdoor water spigot for exterior services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if it rains on my mobile appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Exterior mobile services depend on the weather. If it's raining or below 40°F, we'll reschedule at no charge, or you can switch to drop-off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you detail my car at my apartment or work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, as long as the property allows it and there's an outlet within reach. Please check with your property manager first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you go farther than 25 miles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mobile service is available within 25 miles of Coopersburg. Outside that area, drop-off in Coopersburg is still available."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is mobile detailing the same quality as drop-off?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Same packages, same equipment and the same prices. The only difference is the travel fee."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="v2">
   <!-- ══ ANNOUNCEMENT (dismissible; remembered in localStorage) ══ -->
@@ -180,7 +237,7 @@
       <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
         <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
       </a>
-      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/" aria-current="page">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/blog/">Blog</a></li></ul></nav>
       <a href="/#contact" class="btn btn-silver btn-sm">Book Now</a>
       <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -191,6 +248,7 @@
     <a href="/#reviews">Reviews</a>
     <a href="/#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="/blog/">Blog</a>
     <a href="tel:+14847191144">Call (484) 719-1144</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
@@ -299,6 +357,42 @@
       </div>
     </section>
 
+    <!-- ══ FAQ ══ -->
+    <section class="svc-section panel" aria-labelledby="page-faq-heading">
+      <div class="container svc-narrow">
+        <p class="label">Questions</p>
+        <div class="section-divider"></div>
+        <h2 id="page-faq-heading" class="section-heading">Mobile <em>FAQs.</em></h2>
+        <div class="faq-list svc-faq">
+          <details class="faq-item">
+            <summary class="faq-question">How much is the mobile travel fee?</summary>
+            <div class="faq-answer"><p>Mobile service is the package price plus a travel fee. Zone 1 is +$40: Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg). Zone 2 is +$60: 15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton. A second vehicle at the same address has no extra travel fee.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">What do I need to have ready for a mobile detail?</summary>
+            <div class="faq-answer"><p>A driveway or parking spot where you're allowed to have work done (some apartment complexes and HOAs don't allow it, so please check first), an outdoor electrical outlet within 50 feet of the vehicle, and a working outdoor water spigot for exterior services.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">What happens if it rains on my mobile appointment?</summary>
+            <div class="faq-answer"><p>Exterior mobile services depend on the weather. If it's raining or below 40°F, we'll reschedule at no charge, or you can switch to drop-off.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can you detail my car at my apartment or work?</summary>
+            <div class="faq-answer"><p>Yes, as long as the property allows it and there's an outlet within reach. Please check with your property manager first.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you go farther than 25 miles?</summary>
+            <div class="faq-answer"><p>Mobile service is available within 25 miles of Coopersburg. Outside that area, drop-off in Coopersburg is still available.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is mobile detailing the same quality as drop-off?</summary>
+            <div class="faq-answer"><p>Yes. Same packages, same equipment and the same prices. The only difference is the travel fee.</p></div>
+          </details>
+        </div>
+        <p class="svc-pricing-note">More answers on the <a href="/faq/">FAQ page</a>.</p>
+      </div>
+    </section>
+
     <!-- ══ CTA + RELATED ══ -->
     <section class="svc-section svc-cta-band panel" aria-labelledby="svc-cta-heading">
       <div class="container">
@@ -335,7 +429,7 @@
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
         <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
-        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/blog/">Blog</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
       <div class="f-map">
