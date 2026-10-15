@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=7" />
+  <link rel="stylesheet" href="/site.css?v=11" />
 
   <script type="application/ld+json">
   {
@@ -50,6 +50,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Owner's own visits: open any page with ?notrack=1 once per browser to stop counting it (?notrack=0 turns it back on)
+    try { var q = location.search; if (/[?&]notrack=1/.test(q)) localStorage.setItem('lvad-notrack', '1'); if (/[?&]notrack=0/.test(q)) localStorage.removeItem('lvad-notrack'); if (localStorage.getItem('lvad-notrack') === '1') window['ga-disable-G-XHWCRL0JG6'] = true; } catch (e) {}
     gtag('config', 'G-XHWCRL0JG6');
   </script>
 </head>
@@ -67,7 +69,7 @@
       <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
         <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
       </a>
-      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="/#gallery">Gallery</a></li><li><a href="/#reviews">Reviews</a></li><li><a href="/#about">About</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/blog/">Blog</a></li></ul></nav>
       <a href="/#contact" class="btn btn-silver btn-sm">Book Now</a>
       <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -78,6 +80,7 @@
     <a href="/#reviews">Reviews</a>
     <a href="/#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="/blog/">Blog</a>
     <a href="tel:+14847191144">Call (484) 719-1144</a>
     <a href="/#contact" class="nav-book">Book Now</a>
   </nav>
@@ -91,14 +94,14 @@
           <p class="label">Before You Book</p>
           <div class="section-divider"></div>
           <h1 id="legal-heading" class="section-heading">Service <em>policies.</em></h1>
-          <p class="legal-updated">Last updated October 13, 2026</p>
+          <p class="legal-updated">Last updated October 15, 2026</p>
         </div>
 
         <div class="legal-body" style="margin-top:2.5rem">
           <p class="legal-intro">Straightforward terms so you know exactly what to expect when you book with us. If anything here is unclear, call or text <a href="tel:+14847191144">(484) 719-1144</a>.</p>
 
           <h2>Booking &amp; Appointments</h2>
-          <p>All services are by appointment only. You can request a time through our <a href="/#contact">booking form</a>, by phone, or by text, and we'll confirm a time with you directly.</p>
+          <p>All services are by appointment only. You can request a time through our <a href="/#contact">booking form</a>, by phone, by text, or <a href="https://book.squareup.com/appointments/x8sen4eid4ixn5/location/LE15S0XA26EV7" target="_blank" rel="noopener" data-ga-label="book_online">online</a>, and we'll confirm a time with you directly.</p>
           <p><strong>No deposit is required</strong> to book.</p>
 
           <h2>Cancellations &amp; Rescheduling</h2>
@@ -114,8 +117,8 @@
             <table class="svc-table mobile-zones">
               <thead><tr><th>Zone</th><th>Area</th><th>Travel fee</th></tr></thead>
               <tbody>
-                <tr><td>Zone 1</td><td>Coopersburg, Center Valley, Quakertown, Emmaus, Allentown and Bethlehem (about 15 miles from Coopersburg)</td><td>+$40</td></tr>
-                <tr><td>Zone 2</td><td>15 to 25 miles from Coopersburg, for example Easton, Nazareth and Northampton</td><td>+$60</td></tr>
+                <tr><td>Zone 1</td><td>Coopersburg, Center Valley, Hellertown, Quakertown, Fountain Hill, Emmaus, Bethlehem, Allentown, Wescosville, Pennsburg, Macungie, Perkasie, Catasauqua, Whitehall and Trexlertown (within about 15 miles of Coopersburg)</td><td>+$40</td></tr>
+                <tr><td>Zone 2</td><td>15 to 25 miles from Coopersburg, including Breinigsville, Coplay, Nazareth, Northampton and Easton</td><td>+$60</td></tr>
                 <tr><td>Beyond 25 miles</td><td>Mobile is not available. Drop-off in Coopersburg is still available.</td><td>N/A</td></tr>
               </tbody>
             </table>
@@ -167,11 +170,11 @@
       <div class="f-cols">
         <div>
           <img src="/images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
-          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Coopersburg, Center Valley, Hellertown, Quakertown, Fountain Hill, Emmaus, Bethlehem, Allentown, Wescosville, Pennsburg, Macungie, Perkasie, Catasauqua, Whitehall, Trexlertown, Breinigsville, Coplay, Nazareth, Northampton and Easton.</p>
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
         <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices &amp; Add-Ons</a></div>
-        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/blog/">Blog</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
       <div class="f-map">
@@ -200,7 +203,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=4"></script>
+  <script src="/script.js?v=6"></script>
   <script src="/site.js?v=5"></script>
 </body>
 </html>

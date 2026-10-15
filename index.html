@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/hero-rear-window-poster.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="site.css?v=7" />
+  <link rel="stylesheet" href="site.css?v=11" />
 
   <!-- ══ AutomotiveBusiness structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -62,15 +62,19 @@
       },
       {
         "@type": "City",
-        "name": "Allentown"
-      },
-      {
-        "@type": "City",
-        "name": "Bethlehem"
-      },
-      {
-        "@type": "City",
         "name": "Center Valley"
+      },
+      {
+        "@type": "City",
+        "name": "Hellertown"
+      },
+      {
+        "@type": "City",
+        "name": "Quakertown"
+      },
+      {
+        "@type": "City",
+        "name": "Fountain Hill"
       },
       {
         "@type": "City",
@@ -78,7 +82,59 @@
       },
       {
         "@type": "City",
-        "name": "Quakertown"
+        "name": "Bethlehem"
+      },
+      {
+        "@type": "City",
+        "name": "Allentown"
+      },
+      {
+        "@type": "City",
+        "name": "Wescosville"
+      },
+      {
+        "@type": "City",
+        "name": "Pennsburg"
+      },
+      {
+        "@type": "City",
+        "name": "Macungie"
+      },
+      {
+        "@type": "City",
+        "name": "Perkasie"
+      },
+      {
+        "@type": "City",
+        "name": "Catasauqua"
+      },
+      {
+        "@type": "City",
+        "name": "Whitehall Township"
+      },
+      {
+        "@type": "City",
+        "name": "Trexlertown"
+      },
+      {
+        "@type": "City",
+        "name": "Breinigsville"
+      },
+      {
+        "@type": "City",
+        "name": "Coplay"
+      },
+      {
+        "@type": "City",
+        "name": "Nazareth"
+      },
+      {
+        "@type": "City",
+        "name": "Northampton"
+      },
+      {
+        "@type": "City",
+        "name": "Easton"
       }
     ],
     "hasOfferCatalog": {
@@ -186,7 +242,64 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Owner's own visits: open any page with ?notrack=1 once per browser to stop counting it (?notrack=0 turns it back on)
+    try { var q = location.search; if (/[?&]notrack=1/.test(q)) localStorage.setItem('lvad-notrack', '1'); if (/[?&]notrack=0/.test(q)) localStorage.removeItem('lvad-notrack'); if (localStorage.getItem('lvad-notrack') === '1') window['ga-disable-G-XHWCRL0JG6'] = true; } catch (e) {}
     gtag('config', 'G-XHWCRL0JG6');
+  </script>
+  <!-- ══ WebSite structured data ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Lehigh Valley Auto Detailing",
+    "url": "https://lehighvalleyautodetailing.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lehigh Valley Auto Detailing",
+      "url": "https://lehighvalleyautodetailing.com/"
+    }
+  }
+  </script>
+  <!-- ══ FAQ structured data ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you come to me, or do I bring my car to you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. You can bring your car to us in Coopersburg, PA (we send the exact drop-off address when we confirm), or book mobile and we'll come to your driveway. Mobile service adds a travel fee of $40 in most of the Lehigh Valley. See full mobile pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a detail cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing depends on your vehicle size and the level of service you choose. Full pricing for Interior, Exterior, and Combo packages is listed on our Services page. If you're not sure which tier fits your car, reach out and we'll help you figure it out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I be charged extra if my vehicle is heavily soiled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In some cases, yes. Vehicles with excessive dirt, mud, or stains may incur an additional surcharge of $25 to $75 depending on the work required. This is always communicated to you before we begin, never after."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you remove pet hair?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, as an add-on. Every interior package includes a standard vacuum, which picks up loose hair on the surface. Hair that's woven into carpet and upholstery takes specialized tools and extra time, so full pet hair removal is a separate add-on ($30 to $50 depending on how much there is). Just mention it when you book."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body class="v2">
@@ -203,7 +316,7 @@
       <a href="/" class="brand" aria-label="Lehigh Valley Auto Detailing home">
         <img src="images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" width="433" height="77" />
       </a>
-      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#about">About</a></li><li><a href="/faq/">FAQs</a></li></ul></nav>
+      <nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/services/">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#about">About</a></li><li><a href="/faq/">FAQs</a></li><li><a href="/blog/">Blog</a></li></ul></nav>
       <a href="#contact" class="btn btn-silver btn-sm">Book Now</a>
       <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -214,6 +327,7 @@
     <a href="#reviews">Reviews</a>
     <a href="#about">About</a>
     <a href="/faq/">FAQs</a>
+    <a href="/blog/">Blog</a>
     <a href="#contact" class="nav-book">Book Now</a>
   </nav>
 
@@ -345,7 +459,7 @@
               </svg></div>
             <p class="step-num">01</p>
             <h3>Book</h3>
-            <p>Request a time with the form below, or call or text. We confirm a time that works for you.</p>
+            <p>Request a time with the form below, call or text, or <a href="https://book.squareup.com/appointments/x8sen4eid4ixn5/location/LE15S0XA26EV7" target="_blank" rel="noopener" data-ga-label="book_online">book online</a>. We confirm a time that works for you.</p>
           </li>
           <li class="step reveal">
             <div class="step-icon"><svg class="how-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -777,6 +891,11 @@
             <button type="submit" class="btn-submit">Request a Time</button>
             <p class="form-reassurance">We reply within 24 hours.</p>
             <p class="form-legal">By submitting, you agree to our <a href="/service-policies/">Service Policies</a> and <a href="/privacy/">Privacy Policy</a>.</p>
+            <div class="form-alt">
+              <span class="form-alt-or">or</span>
+              <a href="https://book.squareup.com/appointments/x8sen4eid4ixn5/location/LE15S0XA26EV7" target="_blank" rel="noopener" class="btn btn-ghost form-alt-btn" data-ga-label="book_online_contact">Pick a Time Online</a>
+              <span class="form-alt-note">See open times and book yourself on our booking page.</span>
+            </div>
           </form>
         </div>
       </div>
@@ -794,11 +913,11 @@
       <div class="f-cols">
         <div>
           <img src="images/lehigh-valley-auto-detailing-logo-wide.png" alt="Lehigh Valley Auto Detailing" class="f-logo" width="433" height="77" loading="lazy" />
-          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Allentown, Bethlehem, Center Valley, Emmaus and Quakertown.</p>
+          <p class="small">Interior &amp; exterior auto detailing in Coopersburg, PA, with mobile service across the Lehigh Valley. Serving Coopersburg, Center Valley, Hellertown, Quakertown, Fountain Hill, Emmaus, Bethlehem, Allentown, Wescosville, Pennsburg, Macungie, Perkasie, Catasauqua, Whitehall, Trexlertown, Breinigsville, Coplay, Nazareth, Northampton and Easton.</p>
           <a href="https://instagram.com/lehighautodetailing" target="_blank" rel="noopener" class="small">@lehighautodetailing</a>
         </div>
         <div><h3>Services</h3><a href="/interior-detailing/">Interior Detailing</a><a href="/exterior-detailing/">Exterior Detailing</a><a href="/full-detail/">Full Detail</a><a href="/pet-hair-removal/">Pet Hair Removal</a><a href="/mobile-detailing/">Mobile Detailing</a><a href="/services/">All Prices</a></div>
-        <div><h3>Company</h3><a href="#about">About</a><a href="#reviews">Reviews</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
+        <div><h3>Company</h3><a href="#about">About</a><a href="#reviews">Reviews</a><a href="/faq/">FAQs</a><a href="/blog/">Blog</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144">(484) 719-1144</a><a href="mailto:noah@lehighvalleyautodetailing.com">Email us</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
       <div class="f-map">
@@ -827,7 +946,7 @@
     <a href="#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=6"></script>
   <script src="site.js?v=5"></script>
 </body>
 </html>
