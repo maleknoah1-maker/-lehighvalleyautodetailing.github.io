@@ -422,4 +422,5 @@ window.addEventListener('scroll', () => {
 
   bindTracking('a[href^="tel:"]', 'phone_click', 'phone');
   bindTracking('a[href^="sms:"]', 'text_click', 'text');
+  bindTracking('a[href*="book.squareup.com"]', 'booking_click', 'book_online');
 })();
