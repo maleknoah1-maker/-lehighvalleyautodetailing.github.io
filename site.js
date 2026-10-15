@@ -92,3 +92,49 @@
   loc.addEventListener('change', sync);
   sync();
 })();
+
+// ─── HERO ROTATOR: plays the after video once, then rotates through photos ───
+// Photos load (data-src) only after the page has loaded. If the video can't
+// autoplay, it shows its poster for the normal photo duration instead.
+(function () {
+  const box = document.querySelector('[data-hero-rotator]');
+  if (!box) return;
+  const slides = Array.from(box.querySelectorAll('.hero-rot-slide'));
+  const cap = box.closest('figure').querySelector('figcaption');
+  const video = box.querySelector('video');
+  const PHOTO_MS = 4500;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0, timer = null;
+
+  function load(el) {
+    if (el.dataset.src) { if (el.dataset.srcset) el.srcset = el.dataset.srcset; el.src = el.dataset.src; delete el.dataset.src; }
+  }
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    if (cap) cap.textContent = slides[i].dataset.caption || '';
+    const cur = slides[i];
+    clearTimeout(timer);
+    if (cur === video) {
+      video.currentTime = 0;
+      const p = video.play();
+      const fallback = () => { timer = setTimeout(() => show(i + 1), PHOTO_MS); };
+      if (p && p.catch) p.catch(fallback); else fallback();
+    } else {
+      if (video) video.pause();
+      load(slides[(i + 1) % slides.length]);       // warm up the next photo
+      timer = setTimeout(() => show(i + 1), PHOTO_MS);
+    }
+  }
+  if (reduce) { if (video) { video.removeAttribute('autoplay'); video.pause(); } return; }
+  if (video) video.addEventListener('ended', () => show(i + 1));
+  window.addEventListener('load', () => slides.forEach(load));
+  // pause while the hero is off screen to save battery and data
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { if (!timer && slides[i] !== video) timer = setTimeout(() => show(i + 1), PHOTO_MS); if (slides[i] === video) video.play().catch(() => {}); }
+      else { clearTimeout(timer); timer = null; if (video) video.pause(); }
+    })).observe(box);
+  }
+  show(0);
+})();

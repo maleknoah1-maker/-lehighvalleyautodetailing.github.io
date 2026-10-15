@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=4" />
+  <link rel="stylesheet" href="/site.css?v=5" />
 
   <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -259,14 +259,109 @@
         <div class="services-header reveal">
           <p class="eyebrow">Choose a category</p>
           <div class="pill-toggle" role="tablist" aria-label="Service category">
-            <button class="pill is-active" type="button" role="tab" id="pill-interior" data-tab="interior" aria-selected="true" aria-controls="panel-interior">Interior</button>
+            <button class="pill is-active" type="button" role="tab" id="pill-combo" data-tab="combo" aria-selected="true" aria-controls="panel-combo">Combo</button>
+            <button class="pill" type="button" role="tab" id="pill-interior" data-tab="interior" aria-selected="false" aria-controls="panel-interior">Interior</button>
             <button class="pill" type="button" role="tab" id="pill-exterior" data-tab="exterior" aria-selected="false" aria-controls="panel-exterior">Exterior</button>
-            <button class="pill" type="button" role="tab" id="pill-combo" data-tab="combo" aria-selected="false" aria-controls="panel-combo">Combo</button>
           </div>
         </div>
 
+        <!-- ── COMBO PANEL ── -->
+        <div class="pricing-panel" id="panel-combo" data-panel="combo" role="tabpanel" aria-labelledby="pill-combo">
+          <div class="panel-head">
+            <h2 class="section-heading">Combo detailing <em>packages.</em></h2>
+            <p class="section-subtext">Interior and exterior together — the best value. Every service is spelled out — you see exactly what you're getting.</p>
+          </div>
+
+          <div class="pricing-cards">
+
+            <!-- REFRESH -->
+            <div class="pricing-card" data-glow>
+              <p class="card-tier">Tier 01</p>
+              <h3 class="card-title">Full Detail<br>Refresh</h3>
+              <div class="card-pricing">
+                <div class="price-row">
+                  <span class="price-vehicle">Car / Sedan</span>
+                  <span class="price-amount">$115</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">SUV / Truck</span>
+                  <span class="price-amount">$140</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">Large SUV / Van</span>
+                  <span class="price-amount">$165</span>
+                </div>
+              </div>
+              <p class="card-includes">What's Included</p>
+              <ul class="card-features">
+                <li>Complete Basic Interior Clean</li>
+                <li>Complete Maintenance Wash &amp; Dry</li>
+              </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
+            </div>
+
+            <!-- COMPLETE -->
+            <div class="pricing-card featured" data-glow>
+              <div class="badge-popular">Most Popular</div>
+              <p class="card-tier">Tier 02</p>
+              <h3 class="card-title">Full Detail<br>Complete</h3>
+              <div class="card-pricing">
+                <div class="price-row">
+                  <span class="price-vehicle">Car / Sedan</span>
+                  <span class="price-amount">$220</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">SUV / Truck</span>
+                  <span class="price-amount">$260</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">Large SUV / Van</span>
+                  <span class="price-amount">$300</span>
+                </div>
+              </div>
+              <p class="card-includes">What's Included</p>
+              <ul class="card-features">
+                <li>Complete Standard Interior Detail</li>
+                <li>Complete Full Exterior Detail</li>
+              </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
+            </div>
+
+            <!-- ULTIMATE -->
+            <div class="pricing-card" data-glow>
+              <p class="card-tier">Tier 03</p>
+              <h3 class="card-title">Full Detail<br>Ultimate</h3>
+              <div class="card-pricing">
+                <div class="price-row">
+                  <span class="price-vehicle">Car / Sedan</span>
+                  <span class="price-amount">$285</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">SUV / Truck</span>
+                  <span class="price-amount">$340</span>
+                </div>
+                <div class="price-row">
+                  <span class="price-vehicle">Large SUV / Van</span>
+                  <span class="price-amount">$385</span>
+                </div>
+              </div>
+              <p class="card-includes">What's Included</p>
+              <ul class="card-features">
+                <li>Complete Deep Interior Restoration</li>
+                <li>Complete Full Exterior Detail</li>
+              </ul>
+              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
+            </div>
+
+          </div>
+
+          <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
+          <p class="panel-more"><a href="/full-detail/">More about full details &rarr;</a></p>
+        </div>
+
+
         <!-- ── INTERIOR PANEL ── -->
-        <div class="pricing-panel" id="panel-interior" data-panel="interior" role="tabpanel" aria-labelledby="pill-interior">
+        <div class="pricing-panel" id="panel-interior" data-panel="interior" role="tabpanel" aria-labelledby="pill-interior" hidden>
           <div class="panel-head reveal">
             <h2 class="section-heading">Interior detailing <em>packages.</em></h2>
             <p class="section-subtext">Every service is spelled out — you see exactly what you're getting.</p>
@@ -460,100 +555,6 @@
           <p class="panel-more"><a href="/exterior-detailing/">More about exterior detailing &rarr;</a></p>
         </div>
 
-        <!-- ── COMBO PANEL ── -->
-        <div class="pricing-panel" id="panel-combo" data-panel="combo" role="tabpanel" aria-labelledby="pill-combo" hidden>
-          <div class="panel-head">
-            <h2 class="section-heading">Combo detailing <em>packages.</em></h2>
-            <p class="section-subtext">Interior and exterior together — the best value. Every service is spelled out — you see exactly what you're getting.</p>
-          </div>
-
-          <div class="pricing-cards">
-
-            <!-- REFRESH -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 01</p>
-              <h3 class="card-title">Full Detail<br>Refresh</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$115</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$140</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$165</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Basic Interior Clean</li>
-                <li>Complete Maintenance Wash &amp; Dry</li>
-              </ul>
-              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
-            </div>
-
-            <!-- COMPLETE -->
-            <div class="pricing-card featured" data-glow>
-              <div class="badge-popular">Most Popular</div>
-              <p class="card-tier">Tier 02</p>
-              <h3 class="card-title">Full Detail<br>Complete</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$220</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$260</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$300</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Standard Interior Detail</li>
-                <li>Complete Full Exterior Detail</li>
-              </ul>
-              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
-            </div>
-
-            <!-- ULTIMATE -->
-            <div class="pricing-card" data-glow>
-              <p class="card-tier">Tier 03</p>
-              <h3 class="card-title">Full Detail<br>Ultimate</h3>
-              <div class="card-pricing">
-                <div class="price-row">
-                  <span class="price-vehicle">Car / Sedan</span>
-                  <span class="price-amount">$285</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">SUV / Truck</span>
-                  <span class="price-amount">$340</span>
-                </div>
-                <div class="price-row">
-                  <span class="price-vehicle">Large SUV / Van</span>
-                  <span class="price-amount">$385</span>
-                </div>
-              </div>
-              <p class="card-includes">What's Included</p>
-              <ul class="card-features">
-                <li>Complete Deep Interior Restoration</li>
-                <li>Complete Full Exterior Detail</li>
-              </ul>
-              <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
-            </div>
-
-          </div>
-
-          <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
-          <p class="panel-more"><a href="/full-detail/">More about full details &rarr;</a></p>
-        </div>
-
       </div>
     </section>
 
@@ -727,6 +728,20 @@
         <div><h3>Company</h3><a href="/#about">About</a><a href="/#reviews">Reviews</a><a href="/#gallery">Before &amp; After</a><a href="/faq/">FAQs</a><a href="/service-policies/">Service Policies</a><a href="/privacy/">Privacy Policy</a></div>
         <div><h3>Contact</h3><a href="tel:+14847191144" data-ga-label="footer_phone">(484) 719-1144</a><a href="sms:+14847191144" data-ga-label="footer_text">Text a photo for a quote</a><a href="mailto:noah@lehighvalleyautodetailing.com">noah@lehighvalleyautodetailing.com</a><a href="https://www.google.com/maps?cid=6334011887982355620" target="_blank" rel="noopener">Google Business Profile</a><p class="small">Visa · Mastercard · Amex · Discover · Apple Pay · Google Pay</p></div>
       </div>
+      <div class="f-map">
+        <div class="f-map-frame">
+          <iframe src="https://www.google.com/maps?q=Lehigh+Valley+Auto+Detailing,+Coopersburg,+PA+18036&amp;output=embed" title="Lehigh Valley Auto Detailing on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="f-map-info">
+          <h3>Find us on <em>Google.</em></h3>
+          <p>Based in Coopersburg, PA, serving the Lehigh Valley. Drop-off address sent when we confirm, or book mobile and we'll come to you.</p>
+          <div class="f-map-stars"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 on Google · 8 reviews</div>
+          <div class="cta-row">
+            <a href="https://www.google.com/maps?cid=6334011887982355620" class="btn btn-silver btn-sm" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a href="https://www.google.com/maps?cid=6334011887982355620" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Read Our Reviews</a>
+          </div>
+        </div>
+      </div>
       <p class="wordmark" aria-hidden="true">Lehigh Valley <em>Auto Detailing</em></p>
       <p class="f-copy">&copy; 2026 Lehigh Valley Auto Detailing · Coopersburg, PA</p>
     </div>
@@ -740,6 +755,6 @@
   </nav>
 
   <script src="/script.js?v=4"></script>
-  <script src="/site.js?v=4"></script>
+  <script src="/site.js?v=5"></script>
 </body>
 </html>
