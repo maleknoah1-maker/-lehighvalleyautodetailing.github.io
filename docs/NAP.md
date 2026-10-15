@@ -17,7 +17,7 @@ Last updated: October 15, 2026
 | Website | https://lehighvalleyautodetailing.com/ |
 | Online booking (secondary option) | https://book.squareup.com/appointments/x8sen4eid4ixn5/location/LE15S0XA26EV7 |
 | Primary category | Car detailing service |
-| Hours | By appointment. Google Business Profile hours: TODO, copy them here so every listing matches |
+| Hours | By appointment. Google Business Profile hours: Mon to Fri 9:00 AM to 9:00 PM, Sat open 24 hours, Sun open 24 hours |
 
 ## Short description (copy as-is)
 
