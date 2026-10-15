@@ -156,6 +156,11 @@ window.addEventListener('scroll', () => {
     pill.addEventListener('click', function () { activate(pill.dataset.tab); });
   });
 
+  // Starting-price links in the services hero open the matching tab
+  document.querySelectorAll('[data-jump]').forEach(function (link) {
+    link.addEventListener('click', function () { activate(link.dataset.jump); });
+  });
+
   // Deep links from the homepage package cards: /services#exterior etc.
   const fromHash = location.hash.slice(1);
   if (Array.prototype.some.call(pills, function (p) { return p.dataset.tab === fromHash; })) {

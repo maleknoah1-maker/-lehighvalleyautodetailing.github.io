@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=9" />
+  <link rel="stylesheet" href="/site.css?v=10" />
 
   <!-- ══ AutomotiveBusiness + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -206,6 +206,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Owner's own visits: open any page with ?notrack=1 once per browser to stop counting it (?notrack=0 turns it back on)
+    try { var q = location.search; if (/[?&]notrack=1/.test(q)) localStorage.setItem('lvad-notrack', '1'); if (/[?&]notrack=0/.test(q)) localStorage.removeItem('lvad-notrack'); if (localStorage.getItem('lvad-notrack') === '1') window['ga-disable-G-XHWCRL0JG6'] = true; } catch (e) {}
     gtag('config', 'G-XHWCRL0JG6');
   </script>
   <!-- ══ FAQ structured data ══ -->
@@ -299,14 +301,18 @@
   <main>
 
     <!-- ══ PAGE HERO ══ -->
-    <section class="page-hero" aria-labelledby="page-heading">
+    <section class="page-hero page-hero--compact" aria-labelledby="page-heading">
       <div class="lights" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="wrap">
         <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Services &amp; Pricing</span></nav>
-        <p class="eyebrow">Packages &amp; Pricing</p>
         <h1 id="page-heading" class="section-heading">Detailing packages <em>&amp; prices.</em></h1>
-        <p class="lead sub">Interior, exterior and full detail packages in Coopersburg, PA, priced by vehicle size. Drop off in Coopersburg or book mobile at your driveway. Every service is spelled out, with no surprise charges. No deposit, and you pay when the service is complete.</p>
-        <div class="cta-row"><a href="/#contact" class="btn btn-silver">Request a Time</a><a href="sms:+14847191144" class="btn btn-ghost" data-ga-label="services_text">Text a Photo for a Quote</a></div>
+        <p class="lead sub">Priced by vehicle size. No deposit, and you pay when it's done. Drop off in Coopersburg or book mobile at your driveway.</p>
+        <ul class="price-strip" aria-label="Starting prices">
+          <li><a href="#services" data-jump="combo"><span>Full Detail</span><strong>from $115</strong></a></li>
+          <li><a href="#services" data-jump="interior"><span>Interior</span><strong>from $80</strong></a></li>
+          <li><a href="#services" data-jump="exterior"><span>Exterior</span><strong>from $50</strong></a></li>
+          <li><a href="#mobile"><span>Mobile</span><strong>+$40 travel</strong></a></li>
+        </ul>
         <a href="/#reviews" class="trust-line"><span class="stars">★★★★★</span> 5.0 on Google · 8 reviews</a>
       </div>
     </section>
@@ -351,9 +357,18 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Inside</p>
               <ul class="card-features">
-                <li>Complete Basic Interior Clean</li>
-                <li>Complete Maintenance Wash &amp; Dry</li>
+                <li>Full vacuum of seats, carpets and trunk</li>
+                <li>Dash, console and door panels wiped and cleaned</li>
+                <li>Interior windows cleaned</li>
+              </ul>
+              <p class="card-group">Outside</p>
+              <ul class="card-features">
+                <li>Foam pre-wash and hand wash</li>
+                <li>Wheels and tires cleaned</li>
+                <li>Hand dry and exterior windows</li>
+                <li>Tire dressing</li>
               </ul>
               <p class="card-save">Save $15 to $25 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
@@ -379,9 +394,19 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Everything in Refresh, plus inside</p>
               <ul class="card-features">
-                <li>Complete Standard Interior Detail</li>
-                <li>Complete Full Exterior Detail</li>
+                <li>Carpet and cloth seat shampoo with extraction</li>
+                <li>Steam clean crevices, vents and tight areas</li>
+                <li>Leather surfaces wiped and cleaned</li>
+                <li>Door jambs cleaned</li>
+                <li>UV protectant on dash and trim</li>
+              </ul>
+              <p class="card-group">Plus outside</p>
+              <ul class="card-features">
+                <li>Exterior trim dressed and protected</li>
+                <li>Bug and tar removal</li>
+                <li>Spray sealant (3 to 6 months of protection)</li>
               </ul>
               <p class="card-save">Save $30 to $40 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
@@ -406,14 +431,37 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Everything in Complete, plus inside</p>
               <ul class="card-features">
-                <li>Complete Deep Interior Restoration</li>
-                <li>Complete Full Exterior Detail</li>
+                <li>Multiple extraction passes on all fabric</li>
+                <li>Full steam sanitation of all surfaces</li>
+                <li>Seatbelts steamed and cleaned</li>
+                <li>Full trunk and cargo area, including the spare tire well</li>
+                <li>All compartments detailed (console, door pockets)</li>
+              </ul>
+              <p class="card-group">Outside</p>
+              <ul class="card-features">
+                <li>Full Exterior Detail, same as Complete</li>
               </ul>
               <p class="card-save">Save $40 to $55 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
+          </div>
+
+          <div class="panel-results">
+            <p class="card-includes">Real results</p>
+            <div class="panel-results-grid">
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/13-before-exterior-front.webp" srcset="/images/13-before-exterior-front-360.webp?v=2 360w, /images/13-before-exterior-front.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Silver Lexus RX before exterior detailing, paint dull and dusty" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/14-after-exterior-front.webp" srcset="/images/14-after-exterior-front-360.webp?v=2 360w, /images/14-after-exterior-front.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Silver Lexus RX after exterior detailing, hood reflecting the house behind it" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/21-before-driver-seat.webp" srcset="/images/21-before-driver-seat-360.webp?v=2 360w, /images/21-before-driver-seat.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Driver seat and footwell before interior detailing, dusty trim and dirty floor mat" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/22-after-driver-seat.webp" srcset="/images/22-after-driver-seat-360.webp?v=2 360w, /images/22-after-driver-seat.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Driver seat and dash after interior detailing, leather and trim clean, mat vacuumed" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+            </div>
+            <p class="svc-photo-note">Real before and after photos from our work. <a href="/#gallery">See the full gallery</a></p>
           </div>
 
           <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
@@ -610,6 +658,36 @@
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
             </div>
 
+          </div>
+
+          <div class="panel-results">
+            <p class="card-includes">Real results</p>
+            <div class="panel-results-grid">
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/05-before-second-row.webp" srcset="/images/05-before-second-row-360.webp?v=2 360w, /images/05-before-second-row.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Second-row seats and floor before detailing, stained carpet and debris" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/06-after-second-row.webp" srcset="/images/06-after-second-row-360.webp?v=2 360w, /images/06-after-second-row.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Second-row leather seats and floor mats after detailing, cleaned and conditioned" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/07-before-backseat-floor.webp" srcset="/images/07-before-backseat-floor-360.webp?v=2 360w, /images/07-before-backseat-floor.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Backseat floor before interior detailing, leaves and debris on the carpet" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/08-after-backseat-floor.webp" srcset="/images/08-after-backseat-floor-360.webp?v=2 360w, /images/08-after-backseat-floor.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Backseat floor after interior detailing, carpet and mats clean" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+            </div>
+            <p class="svc-photo-note">Real before and after photos from our work. <a href="/#gallery">See the full gallery</a></p>
+          </div>
+
+          <div class="panel-results">
+            <p class="card-includes">Real results</p>
+            <div class="panel-results-grid">
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/19-before-rear-window.webp" srcset="/images/19-before-rear-window-360.webp?v=2 360w, /images/19-before-rear-window.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Lexus rear window before detailing, streaked with dust and water spots" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/20-after-rear-window.webp" srcset="/images/20-after-rear-window-360.webp?v=2 360w, /images/20-after-rear-window.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Lexus rear window after detailing, clear glass reflecting the trees" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+              <div class="svc-pair">
+                <div class="gallery-half"><img src="/images/17-before-headlight.webp" srcset="/images/17-before-headlight-360.webp?v=2 360w, /images/17-before-headlight.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Lexus headlight and bumper before detailing, bug spots and grime on the paint" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-before">Before</span></div>
+                <div class="gallery-half"><img src="/images/18-after-headlight.webp" srcset="/images/18-after-headlight-360.webp?v=2 360w, /images/18-after-headlight.webp 720w" sizes="(max-width: 640px) 50vw, 280px" alt="Lexus headlight and bumper after detailing, bugs removed and paint glossy" loading="lazy" width="720" height="960" /><span class="gallery-badge badge-after">After</span></div>
+              </div>
+            </div>
+            <p class="svc-photo-note">Real before and after photos from our work. <a href="/#gallery">See the full gallery</a></p>
           </div>
 
           <p class="panel-cta">Not sure which tier? <a href="sms:+14847191144" data-ga-label="services_text_tier">Text a photo</a> and we'll tell you.</p>
@@ -851,7 +929,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=5"></script>
+  <script src="/script.js?v=6"></script>
   <script src="/site.js?v=5"></script>
 </body>
 </html>

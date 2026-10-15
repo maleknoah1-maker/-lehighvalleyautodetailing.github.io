@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=9" />
+  <link rel="stylesheet" href="/site.css?v=10" />
 
   <!-- ══ Service + breadcrumb + FAQ structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -148,6 +148,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Owner's own visits: open any page with ?notrack=1 once per browser to stop counting it (?notrack=0 turns it back on)
+    try { var q = location.search; if (/[?&]notrack=1/.test(q)) localStorage.setItem('lvad-notrack', '1'); if (/[?&]notrack=0/.test(q)) localStorage.removeItem('lvad-notrack'); if (localStorage.getItem('lvad-notrack') === '1') window['ga-disable-G-XHWCRL0JG6'] = true; } catch (e) {}
     gtag('config', 'G-XHWCRL0JG6');
   </script>
 </head>
@@ -286,9 +288,18 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Inside</p>
               <ul class="card-features">
-                <li>Complete Basic Interior Clean</li>
-                <li>Complete Maintenance Wash &amp; Dry</li>
+                <li>Full vacuum of seats, carpets and trunk</li>
+                <li>Dash, console and door panels wiped and cleaned</li>
+                <li>Interior windows cleaned</li>
+              </ul>
+              <p class="card-group">Outside</p>
+              <ul class="card-features">
+                <li>Foam pre-wash and hand wash</li>
+                <li>Wheels and tires cleaned</li>
+                <li>Hand dry and exterior windows</li>
+                <li>Tire dressing</li>
               </ul>
               <p class="card-save">Save $15 to $25 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
@@ -314,9 +325,19 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Everything in Refresh, plus inside</p>
               <ul class="card-features">
-                <li>Complete Standard Interior Detail</li>
-                <li>Complete Full Exterior Detail</li>
+                <li>Carpet and cloth seat shampoo with extraction</li>
+                <li>Steam clean crevices, vents and tight areas</li>
+                <li>Leather surfaces wiped and cleaned</li>
+                <li>Door jambs cleaned</li>
+                <li>UV protectant on dash and trim</li>
+              </ul>
+              <p class="card-group">Plus outside</p>
+              <ul class="card-features">
+                <li>Exterior trim dressed and protected</li>
+                <li>Bug and tar removal</li>
+                <li>Spray sealant (3 to 6 months of protection)</li>
               </ul>
               <p class="card-save">Save $30 to $40 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
@@ -341,9 +362,17 @@
                 </div>
               </div>
               <p class="card-includes">What's Included</p>
+              <p class="card-group">Everything in Complete, plus inside</p>
               <ul class="card-features">
-                <li>Complete Deep Interior Restoration</li>
-                <li>Complete Full Exterior Detail</li>
+                <li>Multiple extraction passes on all fabric</li>
+                <li>Full steam sanitation of all surfaces</li>
+                <li>Seatbelts steamed and cleaned</li>
+                <li>Full trunk and cargo area, including the spare tire well</li>
+                <li>All compartments detailed (console, door pockets)</li>
+              </ul>
+              <p class="card-group">Outside</p>
+              <ul class="card-features">
+                <li>Full Exterior Detail, same as Complete</li>
               </ul>
               <p class="card-save">Save $40 to $55 vs. booking inside and outside separately</p>
               <a href="/#contact" class="btn btn-ghost card-cta">Request This Package</a>
@@ -448,7 +477,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=5"></script>
+  <script src="/script.js?v=6"></script>
   <script src="/site.js?v=5"></script>
 </body>
 </html>

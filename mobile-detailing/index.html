@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css?v=9" />
+  <link rel="stylesheet" href="/site.css?v=10" />
 
   <!-- ══ LocalBusiness + Service + breadcrumb structured data (JSON-LD) ══ -->
   <script type="application/ld+json">
@@ -163,6 +163,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Owner's own visits: open any page with ?notrack=1 once per browser to stop counting it (?notrack=0 turns it back on)
+    try { var q = location.search; if (/[?&]notrack=1/.test(q)) localStorage.setItem('lvad-notrack', '1'); if (/[?&]notrack=0/.test(q)) localStorage.removeItem('lvad-notrack'); if (localStorage.getItem('lvad-notrack') === '1') window['ga-disable-G-XHWCRL0JG6'] = true; } catch (e) {}
     gtag('config', 'G-XHWCRL0JG6');
   </script>
   <!-- ══ FAQ structured data ══ -->
@@ -458,7 +460,7 @@
     <a href="/#contact" class="mobile-cta-book">Request a Time</a>
   </nav>
 
-  <script src="/script.js?v=5"></script>
+  <script src="/script.js?v=6"></script>
   <script src="/site.js?v=5"></script>
 </body>
 </html>
