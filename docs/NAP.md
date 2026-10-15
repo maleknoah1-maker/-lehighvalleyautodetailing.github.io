@@ -75,7 +75,7 @@ Policies: no deposit, no cancellation fee, payment due at pickup (drop-off) or w
 
 | Platform | Link | Status |
 |---|---|---|
-| Google Business Profile | https://www.google.com/maps?cid=6334011887982355620 | Live. Service area needs the 20 towns above |
+| Google Business Profile | https://www.google.com/maps?cid=6334011887982355620 | Live. Service area set to the 20 towns above (Oct 15, 2026) |
 | Instagram | https://instagram.com/lehighautodetailing | Live |
 | Square Appointments | (booking link above) | Live |
 | Facebook | TODO | |
