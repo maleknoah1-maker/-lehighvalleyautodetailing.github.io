@@ -1542,3 +1542,7 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
   .panel-results-grid { grid-template-columns: 1fr; }
 }
 #services.panel { padding-top: 2.75rem; }
+.form-alt { display: grid; justify-items: center; gap: 0.7rem; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--line); text-align: center; }
+.form-alt-or { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+.form-alt-btn { width: 100%; justify-content: center; }
+.form-alt-note { font-size: 0.78rem; color: var(--muted); }
