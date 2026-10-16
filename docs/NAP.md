@@ -71,6 +71,27 @@ Mobile service: within 25 miles of Coopersburg. Beyond 25 miles, drop-off only.
 
 Policies: no deposit, no cancellation fee, payment due at pickup (drop-off) or when the service is complete (mobile). Heavily soiled surcharge $25 to $75, always discussed before work starts.
 
+## Maintenance Plan payment links (Stripe, live)
+
+Text the matching link to the customer after their first Full Detail. Billed monthly on their signup date.
+
+| # | Plan | Size | Price | Link |
+|---|---|---|---|---|
+| 1 | Monthly, Drop-off | Car / Sedan | $99/mo | https://buy.stripe.com/fZu14n4Klgvo2OX9gV1wY01 |
+| 2 | Monthly, Drop-off | SUV / Truck | $119/mo | https://buy.stripe.com/4gM6oH0u51AufBJbp31wY02 |
+| 3 | Monthly, Drop-off | Large SUV / Van | $139/mo | https://buy.stripe.com/4gM8wP5Op4MG89h8cR1wY03 |
+| 4 | Every 2 Weeks, Drop-off | Car / Sedan | $189/mo | https://buy.stripe.com/dRmeVd2Cd6UO75dct71wY04 |
+| 5 | Every 2 Weeks, Drop-off | SUV / Truck | $229/mo | https://buy.stripe.com/00w8wP90B3ICexF3WB1wY05 |
+| 6 | Every 2 Weeks, Drop-off | Large SUV / Van | $269/mo | https://buy.stripe.com/28EdR97Wx7YS1KT50F1wY06 |
+| 7 | Monthly, Mobile Zone 1 | Car / Sedan | $119/mo | https://buy.stripe.com/bJe7sLekV7YScpxgJn1wY07 |
+| 8 | Monthly, Mobile Zone 1 | SUV / Truck | $139/mo | https://buy.stripe.com/14A6oHfoZcf83T1fFj1wY08 |
+| 9 | Monthly, Mobile Zone 1 | Large SUV / Van | $159/mo | https://buy.stripe.com/6oU4gz90B4MG4X5fFj1wY09 |
+| 10 | Every 2 Weeks, Mobile Zone 1 | Car / Sedan | $229/mo | https://buy.stripe.com/3cIfZh0u5cf8bltfFj1wY0a |
+| 11 | Every 2 Weeks, Mobile Zone 1 | SUV / Truck | $269/mo | https://buy.stripe.com/4gM4gz90B6UO0GPct71wY0b |
+| 12 | Every 2 Weeks, Mobile Zone 1 | Large SUV / Van | $309/mo | https://buy.stripe.com/14AfZha4F92WgFNct71wY0c |
+
+Customer portal (customers manage card, receipts, cancel): https://billing.stripe.com/p/login/fZufZha4F0wq6199gV1wY00
+
 ## Profiles and listings
 
 | Platform | Link | Status |
