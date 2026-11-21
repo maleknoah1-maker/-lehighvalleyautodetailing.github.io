@@ -1178,7 +1178,7 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
 .svc-photo-note { font-size: 0.7rem; color: var(--muted); text-align: right; }
 .svc-narrow { max-width: 860px; }
 .svc-lead { margin-top: 1.4rem; font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--silver-2); }
-.svc-section p:not(.label):not(.svc-tier-name):not(.svc-lead):not(.cta-band p) { font-size: 0.92rem; font-weight: 300; line-height: 1.8; color: var(--muted); }
+.svc-section p:not(.label):not(.svc-tier-name):not(.svc-lead):not(.cta-band p):not(.card-includes):not(.card-save):not(.card-tier) { font-size: 0.92rem; font-weight: 300; line-height: 1.8; color: var(--muted); }
 .svc-section a:not(.btn-primary):not(.btn):not(.svc-related-card) { color: var(--text); text-underline-offset: 2px; }
 .svc-tiers { display: grid; gap: 0.9rem; margin-top: 2.25rem; }
 .svc-tier {
@@ -1546,3 +1546,14 @@ h1.section-heading { font-size: clamp(2.6rem, 5.6vw, 4.6rem); }
 .form-alt-or { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
 .form-alt-btn { width: 100%; justify-content: center; }
 .form-alt-note { font-size: 0.78rem; color: var(--muted); }
+
+/* ─── MAINTENANCE PLAN ─── */
+.plan-steps { margin: 1.75rem 0 0; padding-left: 1.3rem; display: grid; gap: 1rem; }
+.plan-steps li { font-size: 0.95rem; line-height: 1.75; color: var(--muted); padding-left: 0.3rem; }
+.plan-steps li::marker { color: var(--crimson); font-family: var(--serif); font-weight: 600; }
+.plan-steps strong { color: var(--text); font-weight: 500; }
+.price-amount small { font-family: var(--sans); font-size: 0.7rem; font-weight: 400; color: var(--muted); margin-left: 2px; }
+.plan-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 420px; }
+@media (max-width: 640px) { .plan-strip { grid-template-columns: 1fr 1fr; } }
+.svc-section .pricing-card p.card-includes { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.26em; line-height: 1.6; color: var(--silver); }
+.svc-section .pricing-card p.card-save { font-size: 0.78rem; line-height: 1.6; color: var(--gold); }
