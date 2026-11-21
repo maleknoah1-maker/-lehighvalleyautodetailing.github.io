@@ -96,26 +96,37 @@
   position: absolute;
   top: var(--santa-top, 90px);
   left: 0;
-  width: 300px;
+  width: 330px;
   z-index: 0;
   pointer-events: none;
-  color: #e6f4ff;
-  opacity: 0.85;
-  transform: translateX(-340px);
+  transform: translateX(-360px);
   animation: santa-fly 24s linear 2s infinite;
+  filter: drop-shadow(0 0 4px rgba(230, 244, 255, 0.35));
 }
 .santa-bob { animation: santa-bob 2.4s ease-in-out infinite; }
 .santa svg { display: block; width: 100%; height: auto; overflow: visible; }
-.santa svg * { fill: currentColor; }
-.santa .line path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
-.santa .legs { stroke-width: 2.6 !important; }
-.santa .harness path { stroke-width: 1; opacity: 0.8; }
-.santa .runner path { stroke-width: 2.4; }
-.santa .nose { fill: #ff5a4a; }
-.santa.is-paused, .santa.is-paused .santa-bob { animation-play-state: paused; }
+/* Galloping legs: front and back pairs swing in opposite directions */
+.santa .leg {
+  fill: none;
+  stroke: #5c3a1a;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: gallop 0.42s ease-in-out infinite alternate;
+}
+.santa .leg.back { animation-direction: alternate-reverse; }
+.santa .leg.f2, .santa .leg.b2 { animation-delay: -0.12s; stroke: #6e4521; }
+/* Each reindeer bounces a little out of step with the others */
+.santa .deer { transform-box: fill-box; animation: deer-bounce 0.42s ease-in-out infinite alternate; }
+.santa g:nth-of-type(2) .deer { animation-delay: -0.1s; }
+.santa g:nth-of-type(3) .deer { animation-delay: -0.2s; }
+.santa g:nth-of-type(4) .deer { animation-delay: -0.3s; }
+.santa.is-paused, .santa.is-paused * { animation-play-state: paused !important; }
 /* Crosses in about 15 seconds, then waits off screen before the next pass */
 @keyframes santa-fly {
-  0%   { transform: translateX(-340px); }
+  0%   { transform: translateX(-360px); }
   62%  { transform: translateX(calc(100vw + 40px)); }
   100% { transform: translateX(calc(100vw + 40px)); }
 }
@@ -123,5 +134,13 @@
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50%      { transform: translateY(-10px) rotate(1deg); }
 }
-@media (max-width: 640px) { .santa { width: 190px; --santa-top: 74px; } }
+@keyframes gallop {
+  from { transform: rotate(-32deg); }
+  to   { transform: rotate(32deg); }
+}
+@keyframes deer-bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-2.5px); }
+}
+@media (max-width: 640px) { .santa { width: 200px; --santa-top: 74px; } }
 @media (prefers-reduced-motion: reduce) { .santa { display: none; } }
