@@ -1,0 +1,92 @@
+/* Winter theme (salt season). Remove this file and winter.js in spring.
+   Applies only to elements with the .winter class. */
+:root {
+  --ice: #bfe3ff;
+  --ice-2: #e6f4ff;
+  --ice-muted: #c3d3e6;
+  --ice-line: rgba(191, 227, 255, 0.22);
+  --ice-line-strong: rgba(191, 227, 255, 0.45);
+}
+
+.winter {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, #081429 0%, #0e2748 45%, #1c4673 80%, #2c6293 100%);
+}
+.winter.page-hero { background: linear-gradient(180deg, #060f22 0%, #0c2141 60%, #163d66 100%); }
+.winter .lights { display: none; }
+
+/* Snow canvas: behind the content, never catches clicks */
+.snow-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.winter > :not(.snow-canvas) { position: relative; z-index: 1; }
+
+/* Text */
+.winter .label { color: var(--ice); }
+.winter .label::before { background: var(--ice); }
+.winter .section-heading em {
+  background: linear-gradient(180deg, #ffffff 0%, var(--ice) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.winter .section-subtext,
+.winter .svc-intro,
+.winter .svc-lead,
+.winter.svc-section p:not(.label):not(.card-includes):not(.card-save):not(.card-tier),
+.winter .winter-note { color: var(--ice-muted); }
+.winter .svc-list li, .winter .svc-list li strong { color: var(--ice-2); }
+.winter a:not(.btn):not(.svc-related-card):not(.winter-card-link) { color: #ffffff; }
+.winter .breadcrumbs a, .winter .breadcrumbs span { color: var(--ice-muted); }
+.winter .breadcrumbs [aria-current] { color: #ffffff; }
+
+/* Cards */
+.winter .pricing-card {
+  background: rgba(6, 18, 38, 0.62);
+  border-color: var(--ice-line);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.winter .pricing-card:hover { border-color: var(--ice-line-strong); }
+.winter .pricing-card.featured {
+  border-color: var(--ice);
+  background: linear-gradient(180deg, rgba(20, 52, 92, 0.85) 0%, rgba(6, 18, 38, 0.7) 70%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+.winter .card-pricing { border-color: var(--ice-line); background: rgba(255, 255, 255, 0.03); }
+.winter .price-row { border-color: var(--ice-line); }
+.winter .card-features li::before { background: var(--ice); }
+.winter .badge-popular { background: var(--ice); color: #0b1d36; }
+.winter .svc-section .pricing-card p.card-save,
+.winter .pricing-card p.card-save { color: var(--ice); border-color: var(--ice-line); }
+.winter-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  align-items: start;
+}
+.winter-cards .pricing-card { height: 100%; display: flex; flex-direction: column; }
+.winter-cards .pricing-card .card-cta { margin-top: auto; }
+.card-sub { margin-top: 0.35rem; font-size: 0.78rem; color: var(--ice-muted); }
+.winter-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 2.25rem; }
+.winter-note { margin-top: 1.25rem; font-size: 0.85rem; text-align: center; }
+.winter-free {
+  display: inline-block; margin-top: 0.9rem; padding: 0.3rem 0.7rem; border-radius: 999px;
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #0b1d36; background: var(--ice);
+}
+.winter .svc-cta-box { background: rgba(6, 18, 38, 0.62); border-color: var(--ice-line); }
+.winter .svc-related-card { background: rgba(6, 18, 38, 0.62); border-color: var(--ice-line); }
+.winter .faq-item { border-color: var(--ice-line); }
+.winter .faq-answer p { color: var(--ice-muted); }
+.winter .price-strip a { background: rgba(6, 18, 38, 0.55); border-color: var(--ice-line); }
+.winter .price-strip span { color: var(--ice-muted); }
+.winter .plan-rules { margin-top: 1.5rem; }
