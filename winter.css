@@ -144,3 +144,36 @@
 }
 @media (max-width: 640px) { .santa { width: 200px; --santa-top: 74px; } }
 @media (prefers-reduced-motion: reduce) { .santa { display: none; } }
+
+/* Winter promo banner at the top of /services/ */
+.winter-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+  margin: 0 0 1.75rem;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid var(--ice-line-strong);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+.winter-banner-text { margin: 0; font-size: 0.98rem; color: var(--ice-2); }
+.winter-banner-tag {
+  display: inline-block; margin-right: 0.5rem; padding: 0.2rem 0.6rem; border-radius: 999px;
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #0b1d36; background: var(--ice);
+}
+/* Icy "winter skin" button */
+.winter-btn {
+  color: #0b1d36;
+  background: linear-gradient(180deg, #ffffff 0%, var(--ice) 55%, #8fc6ef 100%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(191, 227, 255, 0.18), 0 8px 24px rgba(10, 40, 80, 0.5);
+}
+.winter-btn::before { content: '\2744\FE0E'; margin-right: 0.55rem; font-size: 0.95em; }
+.winter-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+@media (max-width: 640px) {
+  .winter-banner { padding: 1rem; }
+  .winter-btn { width: 100%; justify-content: center; }
+}
