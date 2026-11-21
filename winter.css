@@ -26,7 +26,7 @@
   pointer-events: none;
   z-index: 0;
 }
-.winter > :not(.snow-canvas) { position: relative; z-index: 1; }
+.winter > :not(.snow-canvas):not(.santa) { position: relative; z-index: 1; }
 
 /* Text */
 .winter .label { color: var(--ice); }
@@ -90,3 +90,38 @@
 .winter .price-strip a { background: rgba(6, 18, 38, 0.55); border-color: var(--ice-line); }
 .winter .price-strip span { color: var(--ice-muted); }
 .winter .plan-rules { margin-top: 1.5rem; }
+
+/* Santa fly-by (built by winter.js inside [data-santa] sections) */
+.santa {
+  position: absolute;
+  top: var(--santa-top, 90px);
+  left: 0;
+  width: 300px;
+  z-index: 0;
+  pointer-events: none;
+  color: #e6f4ff;
+  opacity: 0.85;
+  transform: translateX(-340px);
+  animation: santa-fly 24s linear 2s infinite;
+}
+.santa-bob { animation: santa-bob 2.4s ease-in-out infinite; }
+.santa svg { display: block; width: 100%; height: auto; overflow: visible; }
+.santa svg * { fill: currentColor; }
+.santa .line path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.santa .legs { stroke-width: 2.6 !important; }
+.santa .harness path { stroke-width: 1; opacity: 0.8; }
+.santa .runner path { stroke-width: 2.4; }
+.santa .nose { fill: #ff5a4a; }
+.santa.is-paused, .santa.is-paused .santa-bob { animation-play-state: paused; }
+/* Crosses in about 15 seconds, then waits off screen before the next pass */
+@keyframes santa-fly {
+  0%   { transform: translateX(-340px); }
+  62%  { transform: translateX(calc(100vw + 40px)); }
+  100% { transform: translateX(calc(100vw + 40px)); }
+}
+@keyframes santa-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-10px) rotate(1deg); }
+}
+@media (max-width: 640px) { .santa { width: 190px; --santa-top: 74px; } }
+@media (prefers-reduced-motion: reduce) { .santa { display: none; } }
